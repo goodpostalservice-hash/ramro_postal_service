@@ -6,10 +6,12 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:ramro_postal_service/core/constants/app_export.dart'; // for AppConstant, routes, etc.
 import 'package:ramro_postal_service/order_history/view/order_history_screen.dart';
-import 'package:ramro_postal_service/screen/about/view/faq.dart';
-import 'package:ramro_postal_service/screen/about/view/privacy_policy.dart';
-import 'package:ramro_postal_service/screen/profile/controller/profile_controller.dart';
-import 'package:ramro_postal_service/screen/profile/model/profile_response_model.dart';
+import 'package:ramro_postal_service/screen/common/about/view/faq.dart';
+import 'package:ramro_postal_service/screen/common/about/view/privacy_policy.dart';
+import 'package:ramro_postal_service/screen/common/profile/controller/profile_controller.dart';
+import 'package:ramro_postal_service/screen/common/profile/model/profile_response_model.dart';
+import 'package:ramro_postal_service/screen/driver/available_orders/presentation/available_orders_screen.dart';
+import 'package:ramro_postal_service/screen/user/available_packages/presentation/pages/available_packages.dart';
 import 'package:ramro_postal_service/user_type_screen.dart';
 
 import 'widget/small_outline_button.dart';
@@ -75,6 +77,22 @@ class MenuScreen extends GetView<ProfileController> {
                         title: 'Order History',
                         onTap: () {
                           Get.to(() => OrderHistoryScreen());
+                        },
+                      ),
+                      const _DividerLine(),
+                      _SettingsTile.navTile(
+                        leadingIcon: Assets.language,
+                        title: 'Available orders',
+                        onTap: () {
+                          Get.to(() => AvailableOrdersScreen());
+                        },
+                      ),
+                      const _DividerLine(),
+                      _SettingsTile.navTile(
+                        leadingIcon: Assets.language,
+                        title: 'Available Packages',
+                        onTap: () {
+                          Get.to(() => AvailablePackageScreen());
                         },
                       ),
                       const _DividerLine(),

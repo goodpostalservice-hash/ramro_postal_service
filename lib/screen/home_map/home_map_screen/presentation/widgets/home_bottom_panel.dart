@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:ramro_postal_service/core/constants/app_export.dart';
-import 'package:ramro_postal_service/screen/navigation/navigation_screen.dart';
+import 'package:ramro_postal_service/screen/common/navigation/navigation_screen.dart';
 
 import '../controller/home_driver_map_controller.dart';
 

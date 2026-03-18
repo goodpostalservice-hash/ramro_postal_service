@@ -11,7 +11,7 @@ import 'package:ramro_postal_service/modal/map_model.dart';
 
 import 'package:dio/dio.dart' as dio;
 import 'package:ramro_postal_service/screen/home_map/home_map_screen/presentation/driver_home_map_screen.dart';
-import 'package:ramro_postal_service/screen/myQR/controller/my_qr_controller.dart';
+import 'package:ramro_postal_service/screen/common/myQR/controller/my_qr_controller.dart';
 import 'package:ramro_postal_service/screen/saved_address/controller/saved_address_controller.dart';
 
 class HomeDriverMapController extends BaseController {

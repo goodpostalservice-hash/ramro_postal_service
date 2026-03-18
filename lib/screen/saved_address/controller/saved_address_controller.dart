@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart' as dio;
 import 'package:get/get.dart';
 import 'package:ramro_postal_service/core/error/toast.dart';
-import 'package:ramro_postal_service/screen/myQR/controller/my_qr_controller.dart';
+import 'package:ramro_postal_service/screen/common/myQR/controller/my_qr_controller.dart';
 import '../../../base/base_controller.dart';
 import '../../../core/constants/api_constant.dart';
 import '../../../core/network/network_dio.dart';

@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:qr_flutter/qr_flutter.dart';
-import 'package:ramro_postal_service/screen/search/presentation/view/show_search_on_map_screen.dart';
+import 'package:ramro_postal_service/screen/common/search/presentation/view/show_search_on_map_screen.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 

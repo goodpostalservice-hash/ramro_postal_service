@@ -14,8 +14,8 @@ import 'package:qr_flutter/qr_flutter.dart';
 import 'package:ramro_postal_service/core/constants/app_export.dart';
 import 'package:share_plus/share_plus.dart';
 import '../../../../core/error/toast.dart';
-import '../../../search/controller/search_controller.dart';
-import '../../../search/presentation/view/show_search_on_map_screen.dart';
+import '../../../common/search/controller/search_controller.dart';
+import '../../../common/search/presentation/view/show_search_on_map_screen.dart';
 
 class QRScannerPage extends StatefulWidget {
   const QRScannerPage({super.key});
@@ -206,38 +206,23 @@ class _QRScannerPageState extends State<QRScannerPage>
                     horizontal: 16,
                     vertical: 12,
                   ),
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: _TabButton(
-                          text: 'Scan QR code',
-                          isSelected: isScanning,
-                          onTap: () {
-                            setState(() {
-                              isScanning = true;
-                              _scannedCode = null;
-                            });
-                            cameraController.start();
-                          },
-                        ),
-                      ),
-                      const SizedBox(width: 12),
-                      Expanded(
-                        child: _TabButton(
-                          text: 'Share your location',
-                          isSelected: !isScanning,
-                          onTap: () {
-                            setState(() {
-                              isScanning = false;
-                            });
-                            cameraController.stop();
-                          },
-                        ),
-                      ),
-                    ],
+                  child: _SegmentedTabs(
+                    segments: const ['Scan Qr code', 'Share Your location'],
+                    selectedIndex: isScanning ? 0 : 1,
+                    onChanged: (index) {
+                      if (index == 0) {
+                        setState(() {
+                          isScanning = true;
+                          _scannedCode = null;
+                        });
+                        cameraController.start();
+                      } else {
+                        setState(() => isScanning = false);
+                        cameraController.stop();
+                      }
+                    },
                   ),
                 ),
-
                 // Main panel (camera preview OR share-location card)
                 Expanded(
                   child: Padding(
@@ -529,6 +514,93 @@ class _QRScannerPageState extends State<QRScannerPage>
   }
 }
 
+class _SegmentedTabs extends StatelessWidget {
+  final List<String> segments;
+  final int selectedIndex;
+  final ValueChanged<int> onChanged;
+
+  const _SegmentedTabs({
+    required this.segments,
+    required this.selectedIndex,
+    required this.onChanged,
+  });
+
+  static const _bg = Color(0x1F787880); // #787880 @ 12%
+  static const _radius = 9.0;
+  static const _pad = 2.0;
+  static const _height = 41.0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: _height,
+      padding: const EdgeInsets.all(_pad),
+      decoration: BoxDecoration(
+        color: _bg,
+        borderRadius: BorderRadius.circular(_radius),
+      ),
+      child: LayoutBuilder(
+        builder: (context, constraints) {
+          final segmentWidth = constraints.maxWidth / segments.length;
+
+          return Stack(
+            children: [
+              // Selected pill
+              AnimatedPositioned(
+                duration: const Duration(milliseconds: 220),
+                curve: Curves.easeOutCubic,
+                left: selectedIndex * segmentWidth,
+                top: 0,
+                bottom: 0,
+                width: segmentWidth,
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(_radius - 1),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.10),
+                        blurRadius: 10,
+                        offset: const Offset(0, 3),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+
+              // Tap areas + labels
+              Row(
+                children: List.generate(segments.length, (i) {
+                  final isSelected = i == selectedIndex;
+
+                  return Expanded(
+                    child: InkWell(
+                      borderRadius: BorderRadius.circular(_radius - 1),
+                      onTap: () => onChanged(i),
+                      child: Center(
+                        child: AnimatedDefaultTextStyle(
+                          duration: const Duration(milliseconds: 180),
+                          curve: Curves.easeOut,
+                          style: CustomTextStyles.bodyMediumBlack_14_500,
+                          child: Text(
+                            segments[i],
+                            textAlign: TextAlign.center,
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+                      ),
+                    ),
+                  );
+                }),
+              ),
+            ],
+          );
+        },
+      ),
+    );
+  }
+}
 // ==========================
 // SHARE LOCATION SECTION UI
 // ==========================

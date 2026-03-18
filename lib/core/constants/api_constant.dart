@@ -11,8 +11,7 @@ class ApiConstant {
   static const String orderHistory = '$baseUrl/order-history';
   static const String orderEstimate = '$baseUrl/order-estimate';
   static const String myQR = '$baseUrl/my-qrcodes';
-
-
+  static const String availablePackages = '$baseUrl/package';
 
   static const String generateQR = '$baseUrl/generate-qrcode';
   static const String myPrintedQR = '$baseUrl/qr-history';
@@ -38,10 +37,6 @@ class ApiConstant {
 
   /// add missing place
   static const String addMissingPlace = '$baseUrl/add-missing-map';
-
- 
-
-
 
   static const String logout = '$baseUrl/logout';
   static const String address = '$baseUrl/map-all';

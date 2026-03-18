@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:ramro_postal_service/core/constants/app_export.dart';
-import 'package:ramro_postal_service/screen/search/presentation/view/show_search_on_map_screen.dart';
+import 'package:ramro_postal_service/screen/common/search/presentation/view/show_search_on_map_screen.dart';
 import '../../controller/saved_address_controller.dart';
 
 class SavedAddressScreen extends GetView<SavedAddressController> {
