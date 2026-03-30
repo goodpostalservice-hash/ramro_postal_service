@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:ramro_postal_service/core/constants/app_export.dart'; // for AppConstant, routes, etc.
-import 'package:ramro_postal_service/order_history/view/order_history_screen.dart';
+import 'package:ramro_postal_service/screen/driver/order_history/view/order_history_screen.dart';
 import 'package:ramro_postal_service/screen/common/about/view/faq.dart';
 import 'package:ramro_postal_service/screen/common/about/view/privacy_policy.dart';
 import 'package:ramro_postal_service/screen/common/profile/controller/profile_controller.dart';

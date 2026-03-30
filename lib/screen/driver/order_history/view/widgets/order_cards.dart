@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ramro_postal_service/core/constants/app_export.dart';
-import 'package:ramro_postal_service/order_history/model/order_history_model.dart';
+import 'package:ramro_postal_service/screen/driver/order_history/model/order_history_model.dart';
 
 import 'order_helper.dart';
 import 'pill_chip.dart';
