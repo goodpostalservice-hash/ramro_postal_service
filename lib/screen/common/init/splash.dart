@@ -5,6 +5,7 @@ import 'package:ramro_postal_service/core/constants/app_export.dart';
 import 'package:ramro_postal_service/core/error/toast.dart';
 import 'package:ramro_postal_service/screen/common/init/splash_controller.dart';
 import 'package:ramro_postal_service/screen/common/no_internet/no_internet_controller.dart';
+import '../../../app/core/utils/storage_util.dart';
 import '../../../manager/userdata.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -87,6 +88,10 @@ class SplashScreenState extends State<SplashScreen>
         } else {
           AppConstant.bearerToken = AppConstant.logInfo[0]['data']['token']
               .toString();
+          SStorageUtil.saveAuthData(
+            accessToken: AppConstant.bearerToken,
+            refreshToken: "",
+          );
           Get.offNamed('/dashboard');
 
           // redirect to main screen

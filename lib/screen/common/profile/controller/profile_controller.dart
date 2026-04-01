@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart' as dio;
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:ramro_postal_service/app/core/utils/storage_util.dart';
 import 'package:ramro_postal_service/core/error/toast.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../../../../base/base_controller.dart';
@@ -179,6 +180,7 @@ class ProfileController extends BaseController {
             prefs.clear();
             AppConstant.logInfo.clear();
             AppConstant.bearerToken = "";
+            SStorageUtil.deleteAuthData();
             AppConstant.logInfo.clear();
             Get.toNamed("/login");
             showSuccessMessage("Logged Out");

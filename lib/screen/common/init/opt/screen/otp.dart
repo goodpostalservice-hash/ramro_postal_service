@@ -8,6 +8,7 @@ import 'package:ramro_postal_service/core/constants/app_constant.dart';
 import 'package:ramro_postal_service/core/widgets/custom_button.dart';
 import 'package:ramro_postal_service/screen/main/dashboard.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import '../../../../../app/core/utils/storage_util.dart';
 import '../../../../../core/constants/app_export.dart';
 import '../../../../../core/error/toast.dart';
 import '../../register/screen/register.dart';
@@ -456,6 +457,10 @@ class OTPScreenState extends State<OTPScreen> {
       await prefs.clear();
 
       AppConstant.bearerToken = responseData['data']['token'];
+      SStorageUtil.saveAuthData(
+              accessToken: AppConstant.bearerToken,
+              refreshToken: "",
+            );
 
       final Map<String, dynamic> map = responseData;
       await prefs.setString('key', json.encode(map));

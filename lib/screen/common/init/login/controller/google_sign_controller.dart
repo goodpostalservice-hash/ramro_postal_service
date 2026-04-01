@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:ramro_postal_service/app/core/utils/storage_util.dart';
 import 'package:ramro_postal_service/core/constants/app_constant.dart';
 import 'package:ramro_postal_service/core/error/toast.dart';
 import 'package:ramro_postal_service/core/network/network_dio.dart';
@@ -142,6 +143,10 @@ class GoogleSignInController extends BaseController {
           if (responseData.success == true) {
             DialogLoadingHelper.hideLoading();
             AppConstant.bearerToken = responseData.token.toString();
+            SStorageUtil.saveAuthData(
+              accessToken: AppConstant.bearerToken,
+              refreshToken: "",
+            );
 
             // after login clear the temp list and store new value
             AppConstant.logInfo = [];

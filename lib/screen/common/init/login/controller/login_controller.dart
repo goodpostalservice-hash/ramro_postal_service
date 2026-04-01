@@ -7,6 +7,7 @@ import 'package:permission_handler/permission_handler.dart';
 import 'package:ramro_postal_service/core/constants/app_export.dart';
 import 'package:ramro_postal_service/resource/variable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import '../../../../../app/core/utils/storage_util.dart';
 import '../../../../../base/base_controller.dart';
 import '../../../../../core/error/toast.dart';
 import '../../../../../core/network/network_dio.dart';
@@ -120,6 +121,10 @@ class LoginController extends BaseController {
               await prefs.clear();
 
               AppConstant.bearerToken = responseData.data!.token!;
+              SStorageUtil.saveAuthData(
+              accessToken: AppConstant.bearerToken,
+              refreshToken: "",
+            );
               final Map<String, dynamic> map = result.data;
               await prefs.setString('key', json.encode(map));
 
