@@ -307,14 +307,15 @@ class NotificationScreen extends GetView<NotificationController> {
                     vm: n,
                     onDelete: () {
                       // find the live index in your GetX list by id (safe if grouped)
-                      final idx = controller.resultNotificationList
-                          .indexWhere((e) => e.id == n.id);
+                      final idx = controller.resultNotificationList.indexWhere(
+                        (e) => e.id == n.id,
+                      );
                       if (idx != -1) {
                         controller.deleteNotification(n.id, idx);
                       }
                     },
                   );
-                })
+                }),
               ],
             );
           },
@@ -436,20 +437,13 @@ class _SectionHeader extends StatelessWidget {
       color: const Color(0xFFF0F0F0),
       width: double.infinity,
       padding: const EdgeInsets.fromLTRB(16, 10, 16, 10),
-      child: Text(
-        label,
-        style: CustomTextStyles.bodyMediumGray14_400,
-      ),
+      child: Text(label, style: CustomTextStyles.bodyMediumGray14_400),
     );
   }
 }
 
 class NotificationTile extends StatelessWidget {
-  const NotificationTile({
-    super.key,
-    required this.vm,
-    this.onDelete,
-  });
+  const NotificationTile({super.key, required this.vm, this.onDelete});
 
   final NotifVM vm;
   final VoidCallback? onDelete;
@@ -494,8 +488,11 @@ class NotificationTile extends StatelessWidget {
               ),
               if (onDelete != null)
                 IconButton(
-                  icon:
-                      const Icon(Icons.close, size: 20, color: Colors.black45),
+                  icon: const Icon(
+                    Icons.close,
+                    size: 20,
+                    color: Colors.black45,
+                  ),
                   onPressed: onDelete,
                   splashRadius: 20,
                 ),
@@ -554,10 +551,7 @@ class _CtaChip extends StatelessWidget {
       ),
       child: Text(
         label,
-        style: const TextStyle(
-          fontSize: 14,
-          fontWeight: FontWeight.w600,
-        ),
+        style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
       ),
     );
   }
@@ -575,9 +569,7 @@ class _EmptyState extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             // You can swap for your asset/3D bell here
-            SvgPicture.asset(
-              'assets/icons/svg/no_notification.svg',
-            ),
+            SvgPicture.asset('assets/icons/svg/no_notification.svg'),
             const SizedBox(height: 12),
             Text(
               'No Notification',
@@ -597,10 +589,7 @@ class _EmptyState extends StatelessWidget {
 }
 
 class _SlidableNotificationTile extends StatelessWidget {
-  const _SlidableNotificationTile({
-    required this.vm,
-    this.onDelete,
-  });
+  const _SlidableNotificationTile({required this.vm, this.onDelete});
 
   final NotifVM vm;
   final VoidCallback? onDelete;

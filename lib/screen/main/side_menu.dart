@@ -14,6 +14,7 @@ import 'package:ramro_postal_service/screen/driver/available_orders/presentation
 import 'package:ramro_postal_service/screen/user/available_packages/presentation/pages/available_packages.dart';
 import 'package:ramro_postal_service/user_type_screen.dart';
 
+import '../../app/routes/app_pages.dart';
 import 'widget/small_outline_button.dart';
 
 class MenuScreen extends GetView<ProfileController> {
@@ -77,6 +78,14 @@ class MenuScreen extends GetView<ProfileController> {
                         title: 'Order History',
                         onTap: () {
                           Get.to(() => OrderHistoryScreen());
+                        },
+                      ),
+                      const _DividerLine(),
+                      _SettingsTile.navTile(
+                        leadingIcon: Assets.language,
+                        title: 'Wallet',
+                        onTap: () {
+                          Get.toNamed(Routes.WALLET);
                         },
                       ),
                       const _DividerLine(),

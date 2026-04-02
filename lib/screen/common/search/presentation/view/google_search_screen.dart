@@ -59,105 +59,121 @@ class _GoogleSearchScreenState extends State<GoogleSearchScreen> {
         elevation: 0,
         foregroundColor: appTheme.black,
       ),
-      body:
- Column(
-  children: [
-    Padding(
-      padding: const EdgeInsets.only(top: 8.0),
-      child: SearchPanel(
-        onChanged: (String value) async {
-          predictions.clear();
-          if (searchController.text.isNotEmpty) {
-            await searchResultController.getSearchAddresses(value);
-            await searchPlace(value);
-          }
-          if (mounted) {
-            setState(() {
-              predictions = searchResultController.searchResultList.toList();
-            });
-          }
-        },
-        controller: searchController,
-      ),
-    ),
-
-    // CONTENT
-    Expanded(
-      child: (predictions.isEmpty && googlePredictions.isEmpty)
-          ? const _EmptyStateSections()
-          : _PredictionLists(
-              predictions: predictions,
-              googlePredictions: googlePredictions,
-              pickLocation: widget.pickLocation,
-              onPickLocal: (MapModel m) {
-                final myList = [
-                  m.longitude!, m.latitude!, m.cordinate!, m.zipCode!,
-                  m.area!, m.zone!, m.subZone!, m.street!, m.houseNum!,
-                  m.fullAddressDetail!,
-                ];
-                if (widget.pickLocation == 0) {
-                  // usrController.dropInfo = myList;
-                  // usrController.dropLocationController.text =
-                  //     splitCoordinateString(myList[9]);
-                  FocusManager.instance.primaryFocus?.unfocus();
-                  Navigator.pop(context);
-                } else if (widget.pickLocation == 1) {
-                  // usrController.pickUpInfo = myList;
-                  // usrController.pickUpLocationController.text =
-                  //     splitCoordinateString(myList[9]);
-                  Navigator.pop(context);
-                } else if (widget.pickLocation == 2) {
-                  // profileControlelr.addressController.text = myList[9];
-                  // usrController.pickUpInfo = myList;
-                  Navigator.pop(context);
-                } else if (widget.pickLocation == 3) {
-                  savedAddressController.saveQR(
-                    m.longitude!, m.latitude!, m.fullAddressDetail!, 'ramro', true,
-                  );
-                  Navigator.pop(context);
-                } else {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => ShowSearchOnMapScreen(
-                        longitude: double.parse(m.longitude!),
-                        latitude: double.parse(m.latitude!),
-                        address: m.fullAddressDetail!,
-                        houseno: m.houseNum ?? '',
-                        street: m.street ?? '',
-                        zone: m.zone ?? '',
-                        sub: m.subZone ?? '',
-                      ),
-                    ),
-                  );
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(top: 8.0),
+            child: SearchPanel(
+              onChanged: (String value) async {
+                predictions.clear();
+                if (searchController.text.isNotEmpty) {
+                  await searchResultController.getSearchAddresses(value);
+                  await searchPlace(value);
+                }
+                if (mounted) {
+                  setState(() {
+                    predictions = searchResultController.searchResultList
+                        .toList();
+                  });
                 }
               },
-              onPickGoogle: (PlacePrediction p) async {
-                final LatLng? ll = await getPlaceCoordinates(p.placeId);
-                if (ll == null) return;
-                if (widget.pickLocation == 0) {
-                  // usrController.dropLocationController.text = p.description;
-                  // usrController.pickUpInfo = [ll.longitude.toString(), ll.latitude.toString()];
-                  FocusManager.instance.primaryFocus?.unfocus();
-                  Navigator.pop(context);
-                } else if (widget.pickLocation == 1) {
-                  // usrController.pickUpLocationController.text = p.description;
-                  // usrController.dropInfo = [ll.longitude.toString(), ll.latitude.toString()];
-                  Navigator.pop(context);
-                } else {
-                  Get.to(ShowSearchOnMapScreen(
-                    latitude: ll.latitude,
-                    longitude: ll.longitude,
-                    address: p.description,
-                    houseno: '', street: '', zone: '', sub: '',
-                  ));
-                }
-              },
+              controller: searchController,
             ),
-    ),
-  ],
-),
- );
+          ),
+
+          // CONTENT
+          Expanded(
+            child: (predictions.isEmpty && googlePredictions.isEmpty)
+                ? const _EmptyStateSections()
+                : _PredictionLists(
+                    predictions: predictions,
+                    googlePredictions: googlePredictions,
+                    pickLocation: widget.pickLocation,
+                    onPickLocal: (MapModel m) {
+                      final myList = [
+                        m.longitude!,
+                        m.latitude!,
+                        m.cordinate!,
+                        m.zipCode!,
+                        m.area!,
+                        m.zone!,
+                        m.subZone!,
+                        m.street!,
+                        m.houseNum!,
+                        m.fullAddressDetail!,
+                      ];
+                      if (widget.pickLocation == 0) {
+                        // usrController.dropInfo = myList;
+                        // usrController.dropLocationController.text =
+                        //     splitCoordinateString(myList[9]);
+                        FocusManager.instance.primaryFocus?.unfocus();
+                        Navigator.pop(context);
+                      } else if (widget.pickLocation == 1) {
+                        // usrController.pickUpInfo = myList;
+                        // usrController.pickUpLocationController.text =
+                        //     splitCoordinateString(myList[9]);
+                        Navigator.pop(context);
+                      } else if (widget.pickLocation == 2) {
+                        // profileControlelr.addressController.text = myList[9];
+                        // usrController.pickUpInfo = myList;
+                        Navigator.pop(context);
+                      } else if (widget.pickLocation == 3) {
+                        savedAddressController.saveQR(
+                          m.longitude!,
+                          m.latitude!,
+                          m.fullAddressDetail!,
+                          'ramro',
+                          true,
+                        );
+                        Navigator.pop(context);
+                      } else {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => ShowSearchOnMapScreen(
+                              longitude: double.parse(m.longitude!),
+                              latitude: double.parse(m.latitude!),
+                              address: m.fullAddressDetail!,
+                              houseno: m.houseNum ?? '',
+                              street: m.street ?? '',
+                              zone: m.zone ?? '',
+                              sub: m.subZone ?? '',
+                            ),
+                          ),
+                        );
+                      }
+                    },
+                    onPickGoogle: (PlacePrediction p) async {
+                      final LatLng? ll = await getPlaceCoordinates(p.placeId);
+                      if (ll == null) return;
+                      if (widget.pickLocation == 0) {
+                        // usrController.dropLocationController.text = p.description;
+                        // usrController.pickUpInfo = [ll.longitude.toString(), ll.latitude.toString()];
+                        FocusManager.instance.primaryFocus?.unfocus();
+                        Navigator.pop(context);
+                      } else if (widget.pickLocation == 1) {
+                        // usrController.pickUpLocationController.text = p.description;
+                        // usrController.dropInfo = [ll.longitude.toString(), ll.latitude.toString()];
+                        Navigator.pop(context);
+                      } else {
+                        Get.to(
+                          ShowSearchOnMapScreen(
+                            latitude: ll.latitude,
+                            longitude: ll.longitude,
+                            address: p.description,
+                            houseno: '',
+                            street: '',
+                            zone: '',
+                            sub: '',
+                          ),
+                        );
+                      }
+                    },
+                  ),
+          ),
+        ],
+      ),
+    );
   }
 
   searchPlace(String input) async {
@@ -223,10 +239,10 @@ class _GoogleSearchScreenState extends State<GoogleSearchScreen> {
       print(e);
       return null;
     }
-  }}
+  }
+}
 
-
-  /* =================== EMPTY STATE: matches the screenshot =================== */
+/* =================== EMPTY STATE: matches the screenshot =================== */
 class _EmptyStateSections extends StatelessWidget {
   const _EmptyStateSections();
 
@@ -268,12 +284,14 @@ class _EmptyStateSections extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('Current location',
-                          style: TextStyle(
-                            color: title,
-                            fontWeight: FontWeight.w700,
-                            fontSize: 14,
-                          )),
+                      Text(
+                        'Current location',
+                        style: TextStyle(
+                          color: title,
+                          fontWeight: FontWeight.w700,
+                          fontSize: 14,
+                        ),
+                      ),
                       const SizedBox(height: 4),
                       Text(
                         '41 Ca service road, kathmandu 44600',
@@ -293,12 +311,14 @@ class _EmptyStateSections extends StatelessWidget {
           const SizedBox(height: 18),
 
           // Favourites header
-          Text('Favourites',
-              style: TextStyle(
-                color: title,
-                fontWeight: FontWeight.w600,
-                fontSize: 14,
-              )),
+          Text(
+            'Favourites',
+            style: TextStyle(
+              color: title,
+              fontWeight: FontWeight.w600,
+              fontSize: 14,
+            ),
+          ),
           const SizedBox(height: 10),
 
           // Home tile (outlined)
@@ -321,12 +341,14 @@ class _EmptyStateSections extends StatelessWidget {
           const SizedBox(height: 18),
 
           // Nearby locations header
-          Text('Nearby locations',
-              style: TextStyle(
-                color: title,
-                fontWeight: FontWeight.w600,
-                fontSize: 14,
-              )),
+          Text(
+            'Nearby locations',
+            style: TextStyle(
+              color: title,
+              fontWeight: FontWeight.w600,
+              fontSize: 14,
+            ),
+          ),
           const SizedBox(height: 10),
 
           // Chips row
@@ -396,12 +418,14 @@ class _OutlinedTile extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(title,
-                    style: TextStyle(
-                      color: textPrimary,
-                      fontWeight: FontWeight.w700,
-                      fontSize: 14,
-                    )),
+                Text(
+                  title,
+                  style: TextStyle(
+                    color: textPrimary,
+                    fontWeight: FontWeight.w700,
+                    fontSize: 14,
+                  ),
+                ),
                 const SizedBox(height: 4),
                 Text(
                   subtitle,
@@ -482,10 +506,7 @@ class _PredictionLists extends StatelessWidget {
               ),
               child: Text(
                 _splitAddress(m.fullAddressDetail ?? ''),
-                style: const TextStyle(
-                  fontSize: 15,
-                  color: Colors.black87,
-                ),
+                style: const TextStyle(fontSize: 15, color: Colors.black87),
               ),
             ),
           );
@@ -517,12 +538,10 @@ class _PredictionLists extends StatelessWidget {
       },
     );
   }
+
   String _splitAddress(String address) {
     final parts = address.split(',');
     if (parts.length <= 2) return address;
     return parts.sublist(0, parts.length - 2).join(',');
   }
-
 }
-
-

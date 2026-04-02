@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_single_quotes
 class SAppAssets {
   SAppAssets._();
-  
+
   /// Assets for animCoinFlip
   /// assets/anim/coin_flip.json
   static const String animCoinFlip = "assets/anim/coin_flip.json";
@@ -20,7 +20,8 @@ class SAppAssets {
 
   /// Assets for animQuestionmarkLottie
   /// assets/anim/questionmark_lottie.json
-  static const String animQuestionmarkLottie = "assets/anim/questionmark_lottie.json";
+  static const String animQuestionmarkLottie =
+      "assets/anim/questionmark_lottie.json";
 
   /// Assets for animSteps
   /// assets/anim/steps.json
@@ -44,67 +45,83 @@ class SAppAssets {
 
   /// Assets for fontGibsonFontspringDEMOGibsonBold
   /// assets/font/gibson/Fontspring-DEMO-gibson-bold.otf
-  static const String fontGibsonFontspringDEMOGibsonBold = "assets/font/gibson/Fontspring-DEMO-gibson-bold.otf";
+  static const String fontGibsonFontspringDEMOGibsonBold =
+      "assets/font/gibson/Fontspring-DEMO-gibson-bold.otf";
 
   /// Assets for fontGibsonFontspringDEMOGibsonBolditalic
   /// assets/font/gibson/Fontspring-DEMO-gibson-bolditalic.otf
-  static const String fontGibsonFontspringDEMOGibsonBolditalic = "assets/font/gibson/Fontspring-DEMO-gibson-bolditalic.otf";
+  static const String fontGibsonFontspringDEMOGibsonBolditalic =
+      "assets/font/gibson/Fontspring-DEMO-gibson-bolditalic.otf";
 
   /// Assets for fontGibsonFontspringDEMOGibsonBook
   /// assets/font/gibson/Fontspring-DEMO-gibson-book.otf
-  static const String fontGibsonFontspringDEMOGibsonBook = "assets/font/gibson/Fontspring-DEMO-gibson-book.otf";
+  static const String fontGibsonFontspringDEMOGibsonBook =
+      "assets/font/gibson/Fontspring-DEMO-gibson-book.otf";
 
   /// Assets for fontGibsonFontspringDEMOGibsonBookitalic
   /// assets/font/gibson/Fontspring-DEMO-gibson-bookitalic.otf
-  static const String fontGibsonFontspringDEMOGibsonBookitalic = "assets/font/gibson/Fontspring-DEMO-gibson-bookitalic.otf";
+  static const String fontGibsonFontspringDEMOGibsonBookitalic =
+      "assets/font/gibson/Fontspring-DEMO-gibson-bookitalic.otf";
 
   /// Assets for fontGibsonFontspringDEMOGibsonHeavy
   /// assets/font/gibson/Fontspring-DEMO-gibson-heavy.otf
-  static const String fontGibsonFontspringDEMOGibsonHeavy = "assets/font/gibson/Fontspring-DEMO-gibson-heavy.otf";
+  static const String fontGibsonFontspringDEMOGibsonHeavy =
+      "assets/font/gibson/Fontspring-DEMO-gibson-heavy.otf";
 
   /// Assets for fontGibsonFontspringDEMOGibsonHeavyitalic
   /// assets/font/gibson/Fontspring-DEMO-gibson-heavyitalic.otf
-  static const String fontGibsonFontspringDEMOGibsonHeavyitalic = "assets/font/gibson/Fontspring-DEMO-gibson-heavyitalic.otf";
+  static const String fontGibsonFontspringDEMOGibsonHeavyitalic =
+      "assets/font/gibson/Fontspring-DEMO-gibson-heavyitalic.otf";
 
   /// Assets for fontGibsonFontspringDEMOGibsonItalic
   /// assets/font/gibson/Fontspring-DEMO-gibson-italic.otf
-  static const String fontGibsonFontspringDEMOGibsonItalic = "assets/font/gibson/Fontspring-DEMO-gibson-italic.otf";
+  static const String fontGibsonFontspringDEMOGibsonItalic =
+      "assets/font/gibson/Fontspring-DEMO-gibson-italic.otf";
 
   /// Assets for fontGibsonFontspringDEMOGibsonLight
   /// assets/font/gibson/Fontspring-DEMO-gibson-light.otf
-  static const String fontGibsonFontspringDEMOGibsonLight = "assets/font/gibson/Fontspring-DEMO-gibson-light.otf";
+  static const String fontGibsonFontspringDEMOGibsonLight =
+      "assets/font/gibson/Fontspring-DEMO-gibson-light.otf";
 
   /// Assets for fontGibsonFontspringDEMOGibsonLightitalic
   /// assets/font/gibson/Fontspring-DEMO-gibson-lightitalic.otf
-  static const String fontGibsonFontspringDEMOGibsonLightitalic = "assets/font/gibson/Fontspring-DEMO-gibson-lightitalic.otf";
+  static const String fontGibsonFontspringDEMOGibsonLightitalic =
+      "assets/font/gibson/Fontspring-DEMO-gibson-lightitalic.otf";
 
   /// Assets for fontGibsonFontspringDEMOGibsonMedium
   /// assets/font/gibson/Fontspring-DEMO-gibson-medium.otf
-  static const String fontGibsonFontspringDEMOGibsonMedium = "assets/font/gibson/Fontspring-DEMO-gibson-medium.otf";
+  static const String fontGibsonFontspringDEMOGibsonMedium =
+      "assets/font/gibson/Fontspring-DEMO-gibson-medium.otf";
 
   /// Assets for fontGibsonFontspringDEMOGibsonMediumitalic
   /// assets/font/gibson/Fontspring-DEMO-gibson-mediumitalic.otf
-  static const String fontGibsonFontspringDEMOGibsonMediumitalic = "assets/font/gibson/Fontspring-DEMO-gibson-mediumitalic.otf";
+  static const String fontGibsonFontspringDEMOGibsonMediumitalic =
+      "assets/font/gibson/Fontspring-DEMO-gibson-mediumitalic.otf";
 
   /// Assets for fontGibsonFontspringDEMOGibsonRegular
   /// assets/font/gibson/Fontspring-DEMO-gibson-regular.otf
-  static const String fontGibsonFontspringDEMOGibsonRegular = "assets/font/gibson/Fontspring-DEMO-gibson-regular.otf";
+  static const String fontGibsonFontspringDEMOGibsonRegular =
+      "assets/font/gibson/Fontspring-DEMO-gibson-regular.otf";
 
   /// Assets for fontGibsonFontspringDEMOGibsonSemibold
   /// assets/font/gibson/Fontspring-DEMO-gibson-semibold.otf
-  static const String fontGibsonFontspringDEMOGibsonSemibold = "assets/font/gibson/Fontspring-DEMO-gibson-semibold.otf";
+  static const String fontGibsonFontspringDEMOGibsonSemibold =
+      "assets/font/gibson/Fontspring-DEMO-gibson-semibold.otf";
 
   /// Assets for fontGibsonFontspringDEMOGibsonSemibolditalic
   /// assets/font/gibson/Fontspring-DEMO-gibson-semibolditalic.otf
-  static const String fontGibsonFontspringDEMOGibsonSemibolditalic = "assets/font/gibson/Fontspring-DEMO-gibson-semibolditalic.otf";
+  static const String fontGibsonFontspringDEMOGibsonSemibolditalic =
+      "assets/font/gibson/Fontspring-DEMO-gibson-semibolditalic.otf";
 
   /// Assets for fontGibsonFontspringDEMOGibsonThin
   /// assets/font/gibson/Fontspring-DEMO-gibson-thin.otf
-  static const String fontGibsonFontspringDEMOGibsonThin = "assets/font/gibson/Fontspring-DEMO-gibson-thin.otf";
+  static const String fontGibsonFontspringDEMOGibsonThin =
+      "assets/font/gibson/Fontspring-DEMO-gibson-thin.otf";
 
   /// Assets for fontGibsonFontspringDEMOGibsonThinitalic
   /// assets/font/gibson/Fontspring-DEMO-gibson-thinitalic.otf
-  static const String fontGibsonFontspringDEMOGibsonThinitalic = "assets/font/gibson/Fontspring-DEMO-gibson-thinitalic.otf";
+  static const String fontGibsonFontspringDEMOGibsonThinitalic =
+      "assets/font/gibson/Fontspring-DEMO-gibson-thinitalic.otf";
 
   /// Assets for iconAds
   /// assets/icon/ads.svg
@@ -128,7 +145,8 @@ class SAppAssets {
 
   /// Assets for iconBibleFloatingActionButton
   /// assets/icon/bible_floating_action_button.png
-  static const String iconBibleFloatingActionButton = "assets/icon/bible_floating_action_button.png";
+  static const String iconBibleFloatingActionButton =
+      "assets/icon/bible_floating_action_button.png";
 
   /// Assets for iconBibleStudy
   /// assets/icon/bible_study.svg
@@ -168,15 +186,18 @@ class SAppAssets {
 
   /// Assets for iconCurveArrowDownRight
   /// assets/icon/curve_arrow_down_right.svg
-  static const String iconCurveArrowDownRight = "assets/icon/curve_arrow_down_right.svg";
+  static const String iconCurveArrowDownRight =
+      "assets/icon/curve_arrow_down_right.svg";
 
   /// Assets for iconCurveArrowDownRightThree
   /// assets/icon/curve_arrow_down_right_three.svg
-  static const String iconCurveArrowDownRightThree = "assets/icon/curve_arrow_down_right_three.svg";
+  static const String iconCurveArrowDownRightThree =
+      "assets/icon/curve_arrow_down_right_three.svg";
 
   /// Assets for iconCurveArrowDownRightTwo
   /// assets/icon/curve_arrow_down_right_two.svg
-  static const String iconCurveArrowDownRightTwo = "assets/icon/curve_arrow_down_right_two.svg";
+  static const String iconCurveArrowDownRightTwo =
+      "assets/icon/curve_arrow_down_right_two.svg";
 
   /// Assets for iconError
   /// assets/icon/error.svg
@@ -220,11 +241,13 @@ class SAppAssets {
 
   /// Assets for iconMarketplaceSelect
   /// assets/icon/marketplace_select.svg
-  static const String iconMarketplaceSelect = "assets/icon/marketplace_select.svg";
+  static const String iconMarketplaceSelect =
+      "assets/icon/marketplace_select.svg";
 
   /// Assets for iconMarketplaceUnselect
   /// assets/icon/marketplace_unselect.svg
-  static const String iconMarketplaceUnselect = "assets/icon/marketplace_unselect.svg";
+  static const String iconMarketplaceUnselect =
+      "assets/icon/marketplace_unselect.svg";
 
   /// Assets for iconMessenger
   /// assets/icon/messenger.png
@@ -308,7 +331,8 @@ class SAppAssets {
 
   /// Assets for imageCoursesIllustration
   /// assets/image/courses_illustration.png
-  static const String imageCoursesIllustration = "assets/image/courses_illustration.png";
+  static const String imageCoursesIllustration =
+      "assets/image/courses_illustration.png";
 
   /// Assets for imageFirstStep
   /// assets/image/first_step.png
@@ -336,7 +360,8 @@ class SAppAssets {
 
   /// Assets for imageOnboardLessonBg
   /// assets/image/onboard_lesson_bg.png
-  static const String imageOnboardLessonBg = "assets/image/onboard_lesson_bg.png";
+  static const String imageOnboardLessonBg =
+      "assets/image/onboard_lesson_bg.png";
 
   /// Assets for imagePlaceholder
   /// assets/image/placeholder.png
@@ -352,11 +377,13 @@ class SAppAssets {
 
   /// Assets for imageSuccessGradientBg
   /// assets/image/success_gradient_bg.png
-  static const String imageSuccessGradientBg = "assets/image/success_gradient_bg.png";
+  static const String imageSuccessGradientBg =
+      "assets/image/success_gradient_bg.png";
 
   /// Assets for imageUserPlaceholder
   /// assets/image/user_placeholder.jpg
-  static const String imageUserPlaceholder = "assets/image/user_placeholder.jpg";
+  static const String imageUserPlaceholder =
+      "assets/image/user_placeholder.jpg";
 
   /// Assets for imageVerseKeeper
   /// assets/image/verse_keeper.png
@@ -386,4 +413,3 @@ class SAppAssets {
   /// assets/translation/np-NP.json
   static const String translationNpNP = "assets/translation/np-NP.json";
 }
-

@@ -63,8 +63,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '316410213877',
     projectId: 'ramro-postal-service-26993',
     storageBucket: 'ramro-postal-service-26993.firebasestorage.app',
-    iosClientId: '316410213877-e9aper9bpusbh2l9qhjh52tlgutj58bp.apps.googleusercontent.com',
+    iosClientId:
+        '316410213877-e9aper9bpusbh2l9qhjh52tlgutj58bp.apps.googleusercontent.com',
     iosBundleId: 'com.rps.ramroPostalService',
   );
-
 }

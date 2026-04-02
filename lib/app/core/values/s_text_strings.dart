@@ -45,6 +45,6 @@ class STextString {
   static const String phoneNumber = 'Phone number';
 
   static const String home = 'Home';
- static const String dishHomeText =
+  static const String dishHomeText =
       "This app facilitates Dish Home subscribers to interact with various operation of dishhome like check the balance,reauthorize the channels,check the disconnection date,Add Pay Per View etc,change the package.";
 }

@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ramro_postal_service/core/constants/app_export.dart';
 
-
-
-
 class RoleSelectionPage extends StatefulWidget {
   const RoleSelectionPage({super.key});
 
@@ -16,7 +13,6 @@ class _RoleSelectionPageState extends State<RoleSelectionPage> {
 
   @override
   Widget build(BuildContext context) {
-
     final t = Theme.of(context);
     final cs = t.colorScheme;
 
@@ -79,19 +75,18 @@ class _RoleSelectionPageState extends State<RoleSelectionPage> {
                 onPressed: selectedRole == null
                     ? null
                     : () {
-                        final roleText =
-                            selectedRole == 'driver' ? 'Driver' : 'Rider';
+                        final roleText = selectedRole == 'driver'
+                            ? 'Driver'
+                            : 'Rider';
                         ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(
-                            content: Text('Continuing as $roleText'),
-                          ),
+                          SnackBar(content: Text('Continuing as $roleText')),
                         );
                       },
                 // buttonStyle: selectedRole == null
                 //     ? CustomButtonStyles.fillGray
                 //     : CustomButtonStyles.fillPrimary,
                 minHeight: getVerticalSize(56),
-                 label: 'Continue',
+                label: 'Continue',
                 // radius is handled by your button styles; if your AppButton supports it, you can set.
               ),
 
@@ -136,11 +131,7 @@ class _AppLogo extends StatelessWidget {
           ),
         ],
       ),
-      child: Icon(
-        Icons.directions_car,
-        size: getSize(56),
-        color: cs.onPrimary,
-      ),
+      child: Icon(Icons.directions_car, size: getSize(56), color: cs.onPrimary),
     );
   }
 }
@@ -169,8 +160,9 @@ class RoleCard extends StatelessWidget {
     final bg = isSelected ? cs.primary : cs.surface;
     final border = isSelected ? cs.primary : cs.outlineVariant;
     final titleColor = isSelected ? cs.onPrimary : cs.onSurface;
-    final descColor =
-        isSelected ? cs.onPrimary.withOpacity(0.9) : cs.onSurfaceVariant;
+    final descColor = isSelected
+        ? cs.onPrimary.withOpacity(0.9)
+        : cs.onSurfaceVariant;
 
     return InkWell(
       onTap: onTap,
@@ -181,10 +173,7 @@ class RoleCard extends StatelessWidget {
         decoration: BoxDecoration(
           color: bg,
           borderRadius: BorderRadiusStyle.circleBorder19,
-          border: Border.all(
-            color: border,
-            width: getHorizontalSize(1.5),
-          ),
+          border: Border.all(color: border, width: getHorizontalSize(1.5)),
           boxShadow: [
             BoxShadow(
               color: isSelected
@@ -227,19 +216,13 @@ class RoleCard extends StatelessWidget {
                   SizedBox(height: getVerticalSize(4)),
                   Text(
                     description,
-                    style: t.textTheme.bodyMedium?.copyWith(
-                      color: descColor,
-                    ),
+                    style: t.textTheme.bodyMedium?.copyWith(color: descColor),
                   ),
                 ],
               ),
             ),
             if (isSelected)
-              Icon(
-                Icons.check_circle,
-                color: cs.onPrimary,
-                size: getSize(26),
-              ),
+              Icon(Icons.check_circle, color: cs.onPrimary, size: getSize(26)),
           ],
         ),
       ),

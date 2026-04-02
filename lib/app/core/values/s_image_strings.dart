@@ -157,7 +157,7 @@ List paymentMethodList = [
   SImageAssets.imePng,
   SImageAssets.esewaPng,
   SImageAssets.khaltiPng,
-  SImageAssets.cipsPng
+  SImageAssets.cipsPng,
 ];
 
 //home icon
@@ -166,7 +166,6 @@ const List homeIcon = [h1, h2, h3, h4];
 // const List routerList = [r1, r2];
 
 //Expansion tile
-
 
 //General Setting menu icons and list
 const s1 = "assets/menu/setting.svg";
@@ -213,18 +212,14 @@ const List settingMenuTetx = [
   // "Billing History",
   "Speed Test",
   "Account Diagnostic",
-  "Refer & Earn"
+  "Refer & Earn",
 ];
 const List securitySettingTetx = [
   // "Unlock with Biometric",
   "Change Password",
   // "Safe Net",
 ];
-const List tvppvText = [
-  "Our Package",
-  "Tv Subscription",
-  "PPV",
-];
+const List tvppvText = ["Our Package", "Tv Subscription", "PPV"];
 //Tools Settings
 const List toolsSettingText = [
   // "Redeem Code",
@@ -232,7 +227,7 @@ const List toolsSettingText = [
   "FAQ",
   // "Language Selection",
   "Send Feedback",
-  "Terms & Condition"
+  "Terms & Condition",
 ];
 const List featureText = [
   // "Redeem Code",
@@ -242,7 +237,7 @@ const List featureText = [
   // "Request Support",
   // "Store",
   // "Internet"
-  "Speed Test"
+  "Speed Test",
 ];
 
 //General setting List
@@ -254,11 +249,7 @@ const List securitySettingIcons = [
   // safenet,
 ];
 //tv/ppv
-const List tvppvIcons = [
-  s9,
-  s10,
-  s11,
-];
+const List tvppvIcons = [s9, s10, s11];
 //tool setting icons
 const List toolSettingIcons = [s14, s16, s17];
 // const List toolSettingIcons = [s12, s13, s14, s15, s16, s17];
@@ -296,7 +287,7 @@ class AssetImages {
   static const String otpVector = 'assets/images/otp_vector.jpg';
   static const String placeholderImage = 'assets/images/placeholder_image.png';
   static const String userPlaceholder = 'assets/images/user_placeholder.jpg';
-   static const String noMovies = 'assets/images/no_movies.svg';
+  static const String noMovies = 'assets/images/no_movies.svg';
 }
 
 class AssetChannel {
@@ -324,8 +315,6 @@ class AssetChannel {
   static const String a7 = 'assets/images/channel/a7.png';
   static const String a8 = 'assets/images/channel/a8.png';
   static const String a9 = 'assets/images/channel/a9.png';
-
- 
 }
 
 class AssetIcons {
@@ -386,8 +375,8 @@ class AssetIcons {
   static const String wallet = 'assets/icons/wallet.png';
   static const String wallet1 = 'assets/icons/wallet1.svg';
   static const String wifi = 'assets/icons/wifi.svg';
-    static const String privacyIcons = 'assets/icons/privacyIcon.svg';
-    static const String warningIcons = 'assets/icons/warning.svg';
+  static const String privacyIcons = 'assets/icons/privacyIcon.svg';
+  static const String warningIcons = 'assets/icons/warning.svg';
 }
 
 class AssetMenu {
@@ -565,12 +554,12 @@ class AssetSvg {
   static const String gmail = 'assets/icons/svg/gmail.svg';
   static const String watsap1 = 'assets/icons/svg/watsap.svg';
   static const String offerhorn = 'assets/icons/svg/offerhorn.svg';
-   static const String offerpromos = 'assets/icons/svg/offerpromos.svg';
-   static const String lockdhgo = 'assets/icons/svg/lockdhgo.svg';
-         static const String requestottdhgo = 'assets/icons/svg/requestottdhgo.svg';
-            static const String buypackages = 'assets/icons/svg/buypackage.svg';
-               static const String renewdhgo = 'assets/icons/svg/renewdhgo.svg';
-               static const String shareicon = 'assets/icons/svg/shareicon.svg';
+  static const String offerpromos = 'assets/icons/svg/offerpromos.svg';
+  static const String lockdhgo = 'assets/icons/svg/lockdhgo.svg';
+  static const String requestottdhgo = 'assets/icons/svg/requestottdhgo.svg';
+  static const String buypackages = 'assets/icons/svg/buypackage.svg';
+  static const String renewdhgo = 'assets/icons/svg/renewdhgo.svg';
+  static const String shareicon = 'assets/icons/svg/shareicon.svg';
 
   static const dhgo2 = 'assets/icons/svg/dh_go.svg';
 }

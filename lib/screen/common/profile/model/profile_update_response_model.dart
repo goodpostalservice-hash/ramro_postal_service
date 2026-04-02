@@ -8,8 +8,9 @@ class ProfileUpdateResponseModel {
   ProfileUpdateResponseModel.fromJson(Map<String, dynamic> json) {
     success = json['success'];
     message = json['message'];
-    data =
-        json['data'] != null ? ProfileUpdateData.fromJson(json['data']) : null;
+    data = json['data'] != null
+        ? ProfileUpdateData.fromJson(json['data'])
+        : null;
   }
 
   Map<String, dynamic> toJson() {

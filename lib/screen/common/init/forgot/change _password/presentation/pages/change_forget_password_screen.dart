@@ -5,8 +5,8 @@ import '../../../../../../../core/error/toast.dart';
 import '../../../../../../../resource/color.dart';
 import '../../controller/change_forget_password_controller.dart';
 
-class ChangeForgetPasswordScreen extends GetView<ChangeForgetPasswordController> {
-
+class ChangeForgetPasswordScreen
+    extends GetView<ChangeForgetPasswordController> {
   static String phone = '';
 
   final formKey = GlobalKey<FormState>();
@@ -48,7 +48,6 @@ class ChangeForgetPasswordScreen extends GetView<ChangeForgetPasswordController>
                 button(),
 
                 const SizedBox(height: 20.0),
-
               ],
             ),
           ),
@@ -58,98 +57,149 @@ class ChangeForgetPasswordScreen extends GetView<ChangeForgetPasswordController>
   }
 
   Widget passwordWidget() {
-    return Obx(() => Container(
-      margin: const EdgeInsets.only(top: 30.0, bottom: 20.0),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
-          TextFormField(
-            keyboardType: TextInputType.text,
-            controller: _password,
-            textAlign: TextAlign.start,
-            inputFormatters: [LengthLimitingTextInputFormatter(30)],
-            style: const TextStyle(
-                fontSize: 17.0, fontWeight: FontWeight.bold
-            ),
-            obscureText: controller.isObscureText.value,
-            decoration: InputDecoration(
-              suffixIcon: controller.isObscureText.value ? IconButton(onPressed: () {controller.updateObscure();},
-                  icon: const Icon(Icons.visibility_off)) : IconButton(onPressed: () {controller.updateObscure();},
-                  icon: const Icon(Icons.visibility)),
-              isDense: true,
-              fillColor: Colors.white,
-              hintText: 'New Password',
-              focusedBorder:OutlineInputBorder(
-                borderSide: const BorderSide(color: Colors.black54, width: 1.0),
-                borderRadius: BorderRadius.circular(5.0),
-              ),
-              enabledBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: AppColors.borderColor, width: 1.0),
-                borderRadius: BorderRadius.circular(5.0),
-              ),
-            ),
-          ),
-          const SizedBox(height: 7.0),
-          TextFormField(
-            keyboardType: TextInputType.text,
-            controller: _cpassword,
-            textAlign: TextAlign.start,
-            inputFormatters: [LengthLimitingTextInputFormatter(30)],
-            style: const TextStyle(
-                fontSize: 17.0, fontWeight: FontWeight.bold
-            ),
-            obscureText: controller.isObscureText.value,
-            decoration: InputDecoration(
-              suffixIcon: controller.isObscureText.value ? IconButton(onPressed: () {controller.updateObscure();},
-                  icon: const Icon(Icons.visibility_off)) : IconButton(onPressed: () {controller.updateObscure();},
-                  icon: const Icon(Icons.visibility)),
-              isDense: true,
-              fillColor: Colors.white,
-              hintText: 'Confirm Password',
-              focusedBorder:OutlineInputBorder(
-                borderSide: const BorderSide(color: Colors.black54, width: 1.0),
-                borderRadius: BorderRadius.circular(5.0),
-              ),
-              enabledBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: AppColors.borderColor, width: 1.0),
-                borderRadius: BorderRadius.circular(5.0),
-              ),
-            ),
-          ),
-        ],
-      ),
-    ));
-  }
-
-  Widget button() {
-    return Obx(() => ElevatedButton(
-      onPressed: () {
-        if (_password.text.toString() == _cpassword.text.toString()) {
-          // Navigator.push(context, MaterialPageRoute(builder: (context) => PasswordScreen()));
-          // controller.loadProductData('977${_phoneController.text}');
-          controller.isToLoadMore.value = true;
-          controller.requestForgetPassword(ChangeForgetPasswordScreen.phone, _password.text.toString());
-          // controller.loadProductData('9779811811888');
-        } else {
-          showErrorMessage('Password and confirm password must be same');
-        }
-      },
-      style: ElevatedButton.styleFrom(
-        backgroundColor: controller.isToLoadMore.value ? AppColors.disabledPrimaryBtn : AppColors.primary,
-      ),
-      child: SizedBox(
-        width: double.infinity,
-        height: 50.0,
+    return Obx(
+      () => Container(
+        margin: const EdgeInsets.only(top: 30.0, bottom: 20.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            Text(controller.isToLoadMore.value ? 'Please wait'.toUpperCase() : 'Update Password'.toUpperCase(), style: const TextStyle(fontSize: 15.0,
-                fontWeight: FontWeight.normal, color: Colors.white))
+            TextFormField(
+              keyboardType: TextInputType.text,
+              controller: _password,
+              textAlign: TextAlign.start,
+              inputFormatters: [LengthLimitingTextInputFormatter(30)],
+              style: const TextStyle(
+                fontSize: 17.0,
+                fontWeight: FontWeight.bold,
+              ),
+              obscureText: controller.isObscureText.value,
+              decoration: InputDecoration(
+                suffixIcon: controller.isObscureText.value
+                    ? IconButton(
+                        onPressed: () {
+                          controller.updateObscure();
+                        },
+                        icon: const Icon(Icons.visibility_off),
+                      )
+                    : IconButton(
+                        onPressed: () {
+                          controller.updateObscure();
+                        },
+                        icon: const Icon(Icons.visibility),
+                      ),
+                isDense: true,
+                fillColor: Colors.white,
+                hintText: 'New Password',
+                focusedBorder: OutlineInputBorder(
+                  borderSide: const BorderSide(
+                    color: Colors.black54,
+                    width: 1.0,
+                  ),
+                  borderRadius: BorderRadius.circular(5.0),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: AppColors.borderColor,
+                    width: 1.0,
+                  ),
+                  borderRadius: BorderRadius.circular(5.0),
+                ),
+              ),
+            ),
+            const SizedBox(height: 7.0),
+            TextFormField(
+              keyboardType: TextInputType.text,
+              controller: _cpassword,
+              textAlign: TextAlign.start,
+              inputFormatters: [LengthLimitingTextInputFormatter(30)],
+              style: const TextStyle(
+                fontSize: 17.0,
+                fontWeight: FontWeight.bold,
+              ),
+              obscureText: controller.isObscureText.value,
+              decoration: InputDecoration(
+                suffixIcon: controller.isObscureText.value
+                    ? IconButton(
+                        onPressed: () {
+                          controller.updateObscure();
+                        },
+                        icon: const Icon(Icons.visibility_off),
+                      )
+                    : IconButton(
+                        onPressed: () {
+                          controller.updateObscure();
+                        },
+                        icon: const Icon(Icons.visibility),
+                      ),
+                isDense: true,
+                fillColor: Colors.white,
+                hintText: 'Confirm Password',
+                focusedBorder: OutlineInputBorder(
+                  borderSide: const BorderSide(
+                    color: Colors.black54,
+                    width: 1.0,
+                  ),
+                  borderRadius: BorderRadius.circular(5.0),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: AppColors.borderColor,
+                    width: 1.0,
+                  ),
+                  borderRadius: BorderRadius.circular(5.0),
+                ),
+              ),
+            ),
           ],
         ),
       ),
-    ));
+    );
+  }
+
+  Widget button() {
+    return Obx(
+      () => ElevatedButton(
+        onPressed: () {
+          if (_password.text.toString() == _cpassword.text.toString()) {
+            // Navigator.push(context, MaterialPageRoute(builder: (context) => PasswordScreen()));
+            // controller.loadProductData('977${_phoneController.text}');
+            controller.isToLoadMore.value = true;
+            controller.requestForgetPassword(
+              ChangeForgetPasswordScreen.phone,
+              _password.text.toString(),
+            );
+            // controller.loadProductData('9779811811888');
+          } else {
+            showErrorMessage('Password and confirm password must be same');
+          }
+        },
+        style: ElevatedButton.styleFrom(
+          backgroundColor: controller.isToLoadMore.value
+              ? AppColors.disabledPrimaryBtn
+              : AppColors.primary,
+        ),
+        child: SizedBox(
+          width: double.infinity,
+          height: 50.0,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(
+                controller.isToLoadMore.value
+                    ? 'Please wait'.toUpperCase()
+                    : 'Update Password'.toUpperCase(),
+                style: const TextStyle(
+                  fontSize: 15.0,
+                  fontWeight: FontWeight.normal,
+                  color: Colors.white,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 
   Widget info() {
@@ -158,9 +208,11 @@ class ChangeForgetPasswordScreen extends GetView<ChangeForgetPasswordController>
       child: Text.rich(
         TextSpan(
           children: [
-            TextSpan(text: 'Change your password. Please enter your new password and confirm password to continue. ', style: TextStyle(
-                color: AppColors.blackBold, fontSize: 15.0
-            )),
+            TextSpan(
+              text:
+                  'Change your password. Please enter your new password and confirm password to continue. ',
+              style: TextStyle(color: AppColors.blackBold, fontSize: 15.0),
+            ),
           ],
         ),
         textAlign: TextAlign.center,

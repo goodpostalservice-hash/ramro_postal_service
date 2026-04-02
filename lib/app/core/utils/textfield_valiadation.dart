@@ -57,7 +57,7 @@ class ValidatorUtils {
     return null;
   }
 
-  String?validatePassword(value) {
+  String? validatePassword(value) {
     // String pattern =
     //     r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$';
     // RegExp regex = RegExp(pattern);

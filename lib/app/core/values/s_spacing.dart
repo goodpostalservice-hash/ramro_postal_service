@@ -59,71 +59,103 @@ class SSpacing {
   static const EdgeInsets epicMargin = EdgeInsets.all(SDimension.epic);
 
   // Combined spacing (margin and padding)
-  static const EdgeInsets xxsMarginH =
-      EdgeInsets.symmetric(vertical: SDimension.xxs);
-  static const EdgeInsets xsMarginH =
-      EdgeInsets.symmetric(vertical: SDimension.xs);
-  static const EdgeInsets smMarginH =
-      EdgeInsets.symmetric(vertical: SDimension.sm);
-  static const EdgeInsets mdMarginH =
-      EdgeInsets.symmetric(vertical: SDimension.md);
-  static const EdgeInsets lgMarginH =
-      EdgeInsets.symmetric(vertical: SDimension.lg);
-  static const EdgeInsets xlMarginH =
-      EdgeInsets.symmetric(vertical: SDimension.xl);
-  static const EdgeInsets xxlMarginH =
-      EdgeInsets.symmetric(vertical: SDimension.xxl);
-  static const EdgeInsets xxxlMarginH =
-      EdgeInsets.symmetric(vertical: SDimension.xxxl);
-  static const EdgeInsets jumboMarginH =
-      EdgeInsets.symmetric(vertical: SDimension.jumbo);
-  static const EdgeInsets giantMarginH =
-      EdgeInsets.symmetric(vertical: SDimension.giant);
-  static const EdgeInsets colossalMarginH =
-      EdgeInsets.symmetric(vertical: SDimension.colossal);
-  static const EdgeInsets megaMarginH =
-      EdgeInsets.symmetric(vertical: SDimension.mega);
-  static const EdgeInsets superMarginH =
-      EdgeInsets.symmetric(vertical: SDimension.superSize);
-  static const EdgeInsets ultraMarginH =
-      EdgeInsets.symmetric(vertical: SDimension.ultra);
-  static const EdgeInsets hyperMarginH =
-      EdgeInsets.symmetric(vertical: SDimension.hyper);
-  static const EdgeInsets epicMarginH =
-      EdgeInsets.symmetric(vertical: SDimension.epic);
+  static const EdgeInsets xxsMarginH = EdgeInsets.symmetric(
+    vertical: SDimension.xxs,
+  );
+  static const EdgeInsets xsMarginH = EdgeInsets.symmetric(
+    vertical: SDimension.xs,
+  );
+  static const EdgeInsets smMarginH = EdgeInsets.symmetric(
+    vertical: SDimension.sm,
+  );
+  static const EdgeInsets mdMarginH = EdgeInsets.symmetric(
+    vertical: SDimension.md,
+  );
+  static const EdgeInsets lgMarginH = EdgeInsets.symmetric(
+    vertical: SDimension.lg,
+  );
+  static const EdgeInsets xlMarginH = EdgeInsets.symmetric(
+    vertical: SDimension.xl,
+  );
+  static const EdgeInsets xxlMarginH = EdgeInsets.symmetric(
+    vertical: SDimension.xxl,
+  );
+  static const EdgeInsets xxxlMarginH = EdgeInsets.symmetric(
+    vertical: SDimension.xxxl,
+  );
+  static const EdgeInsets jumboMarginH = EdgeInsets.symmetric(
+    vertical: SDimension.jumbo,
+  );
+  static const EdgeInsets giantMarginH = EdgeInsets.symmetric(
+    vertical: SDimension.giant,
+  );
+  static const EdgeInsets colossalMarginH = EdgeInsets.symmetric(
+    vertical: SDimension.colossal,
+  );
+  static const EdgeInsets megaMarginH = EdgeInsets.symmetric(
+    vertical: SDimension.mega,
+  );
+  static const EdgeInsets superMarginH = EdgeInsets.symmetric(
+    vertical: SDimension.superSize,
+  );
+  static const EdgeInsets ultraMarginH = EdgeInsets.symmetric(
+    vertical: SDimension.ultra,
+  );
+  static const EdgeInsets hyperMarginH = EdgeInsets.symmetric(
+    vertical: SDimension.hyper,
+  );
+  static const EdgeInsets epicMarginH = EdgeInsets.symmetric(
+    vertical: SDimension.epic,
+  );
 
-  static const EdgeInsets xxsMarginW =
-      EdgeInsets.symmetric(horizontal: SDimension.xxs);
-  static const EdgeInsets xsMarginW =
-      EdgeInsets.symmetric(horizontal: SDimension.xs);
-  static const EdgeInsets smMarginW =
-      EdgeInsets.symmetric(horizontal: SDimension.sm);
-  static const EdgeInsets mdMarginW =
-      EdgeInsets.symmetric(horizontal: SDimension.md);
-  static const EdgeInsets lgMarginW =
-      EdgeInsets.symmetric(horizontal: SDimension.lg);
-  static const EdgeInsets xlMarginW =
-      EdgeInsets.symmetric(horizontal: SDimension.xl);
-  static const EdgeInsets xxlMarginW =
-      EdgeInsets.symmetric(horizontal: SDimension.xxl);
-  static const EdgeInsets xxxlMarginW =
-      EdgeInsets.symmetric(horizontal: SDimension.xxxl);
-  static const EdgeInsets jumboMarginW =
-      EdgeInsets.symmetric(horizontal: SDimension.jumbo);
-  static const EdgeInsets giantMarginW =
-      EdgeInsets.symmetric(horizontal: SDimension.giant);
-  static const EdgeInsets colossalMarginW =
-      EdgeInsets.symmetric(horizontal: SDimension.colossal);
-  static const EdgeInsets megaMarginW =
-      EdgeInsets.symmetric(horizontal: SDimension.mega);
-  static const EdgeInsets superMarginW =
-      EdgeInsets.symmetric(horizontal: SDimension.superSize);
-  static const EdgeInsets ultraMarginW =
-      EdgeInsets.symmetric(horizontal: SDimension.ultra);
-  static const EdgeInsets hyperMarginW =
-      EdgeInsets.symmetric(horizontal: SDimension.hyper);
-  static const EdgeInsets epicMarginW =
-      EdgeInsets.symmetric(horizontal: SDimension.epic);
+  static const EdgeInsets xxsMarginW = EdgeInsets.symmetric(
+    horizontal: SDimension.xxs,
+  );
+  static const EdgeInsets xsMarginW = EdgeInsets.symmetric(
+    horizontal: SDimension.xs,
+  );
+  static const EdgeInsets smMarginW = EdgeInsets.symmetric(
+    horizontal: SDimension.sm,
+  );
+  static const EdgeInsets mdMarginW = EdgeInsets.symmetric(
+    horizontal: SDimension.md,
+  );
+  static const EdgeInsets lgMarginW = EdgeInsets.symmetric(
+    horizontal: SDimension.lg,
+  );
+  static const EdgeInsets xlMarginW = EdgeInsets.symmetric(
+    horizontal: SDimension.xl,
+  );
+  static const EdgeInsets xxlMarginW = EdgeInsets.symmetric(
+    horizontal: SDimension.xxl,
+  );
+  static const EdgeInsets xxxlMarginW = EdgeInsets.symmetric(
+    horizontal: SDimension.xxxl,
+  );
+  static const EdgeInsets jumboMarginW = EdgeInsets.symmetric(
+    horizontal: SDimension.jumbo,
+  );
+  static const EdgeInsets giantMarginW = EdgeInsets.symmetric(
+    horizontal: SDimension.giant,
+  );
+  static const EdgeInsets colossalMarginW = EdgeInsets.symmetric(
+    horizontal: SDimension.colossal,
+  );
+  static const EdgeInsets megaMarginW = EdgeInsets.symmetric(
+    horizontal: SDimension.mega,
+  );
+  static const EdgeInsets superMarginW = EdgeInsets.symmetric(
+    horizontal: SDimension.superSize,
+  );
+  static const EdgeInsets ultraMarginW = EdgeInsets.symmetric(
+    horizontal: SDimension.ultra,
+  );
+  static const EdgeInsets hyperMarginW = EdgeInsets.symmetric(
+    horizontal: SDimension.hyper,
+  );
+  static const EdgeInsets epicMarginW = EdgeInsets.symmetric(
+    horizontal: SDimension.epic,
+  );
 }
 
 // Example usage:

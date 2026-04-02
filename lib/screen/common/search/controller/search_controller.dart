@@ -13,8 +13,11 @@ class SearchMapController extends BaseController {
     try {
       final map = {"data": data};
 
-      final result =
-          await restClient.request(ApiConstant.searchResult, Method.POST, map);
+      final result = await restClient.request(
+        ApiConstant.searchResult,
+        Method.POST,
+        map,
+      );
 
       if (result != null) {
         if (result is dio.Response) {

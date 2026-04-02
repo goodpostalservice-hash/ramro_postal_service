@@ -4,6 +4,10 @@ class SavedAddressModel {
   final List<String>? qrData;
   final List<bool>? selectedItems;
 
-  SavedAddressModel(
-      {this.selectedId, this.customerName, this.qrData, this.selectedItems});
+  SavedAddressModel({
+    this.selectedId,
+    this.customerName,
+    this.qrData,
+    this.selectedItems,
+  });
 }

@@ -12,7 +12,6 @@ class SColors {
   static const Color warningColor = Color(0XFFFFA500);
   static const Color infoColor = Color(0XFF0000FF);
 
-
   static const Color lightPink = Color(0xFFFF9494);
   static const Color goldenYellow = Color(0xFFFFF30d);
   static const Color skyBlue = Color(0xFF56d8ff);

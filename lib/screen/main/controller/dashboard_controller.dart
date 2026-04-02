@@ -5,7 +5,4 @@ class DashboardController extends BaseController {
   final showBottomNav = true.obs;
 
   /// Local toggles (you can wire them to real settings later)
-
-
- 
 }

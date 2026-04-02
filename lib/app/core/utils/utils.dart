@@ -61,7 +61,10 @@ class SUtils {
     );
   }
 
-  static Future<T?> displayBottomDialog<T>(BuildContext context, Widget widget) {
+  static Future<T?> displayBottomDialog<T>(
+    BuildContext context,
+    Widget widget,
+  ) {
     return showModalBottomSheet(
       isScrollControlled: true,
       useSafeArea: true,

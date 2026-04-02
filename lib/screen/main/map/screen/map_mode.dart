@@ -73,8 +73,9 @@ class _MapScreenState extends State<MapScreen> {
                 },
                 child: Container(
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(90.0),
-                      color: Colors.white),
+                    borderRadius: BorderRadius.circular(90.0),
+                    color: Colors.white,
+                  ),
                   width: 40.0,
                   height: 40.0,
                   child: const Icon(Icons.arrow_back),
@@ -85,8 +86,10 @@ class _MapScreenState extends State<MapScreen> {
             Positioned(
               top: height / 2 - 125,
               left: width / 2 - 20.0,
-              child: Image.asset("assets/icons/ic_marker_rides_destination.png",
-                  height: 55.0),
+              child: Image.asset(
+                "assets/icons/ic_marker_rides_destination.png",
+                height: 55.0,
+              ),
             ),
 
             // adjust my location position
@@ -113,8 +116,10 @@ class _MapScreenState extends State<MapScreen> {
                         ),
                       ],
                     ),
-                    child: const Icon(Icons.location_searching,
-                        color: Colors.black54),
+                    child: const Icon(
+                      Icons.location_searching,
+                      color: Colors.black54,
+                    ),
                   ),
                 ),
               ),
@@ -130,18 +135,25 @@ class _MapScreenState extends State<MapScreen> {
               // confirm destination
               Container(
                 margin: const EdgeInsets.only(
-                    left: 0.0, right: 0.0, top: 5.0, bottom: 14.0),
+                  left: 0.0,
+                  right: 0.0,
+                  top: 5.0,
+                  bottom: 14.0,
+                ),
                 decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(5.0),
-                    border:
-                        Border.all(color: AppColors.borderColor, width: 1.0)),
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(5.0),
+                  border: Border.all(color: AppColors.borderColor, width: 1.0),
+                ),
                 width: MediaQuery.of(context).size.width,
                 padding: const EdgeInsets.only(left: 10.0, right: 10.0),
                 child: Row(
                   children: <Widget>[
-                    Image.asset("assets/icons/ic_shop_destination.png",
-                        height: 28.0, width: 28.0),
+                    Image.asset(
+                      "assets/icons/ic_shop_destination.png",
+                      height: 28.0,
+                      width: 28.0,
+                    ),
                     SizedBox(
                       width: width - 92.0,
                       child: TextField(
@@ -150,14 +162,19 @@ class _MapScreenState extends State<MapScreen> {
                         keyboardType: TextInputType.text,
                         style: const TextStyle(fontSize: 14.0),
                         decoration: const InputDecoration(
-                            border: InputBorder.none,
-                            focusedBorder: InputBorder.none,
-                            enabledBorder: InputBorder.none,
-                            errorBorder: InputBorder.none,
-                            disabledBorder: InputBorder.none,
-                            contentPadding: EdgeInsets.only(
-                                left: 15, bottom: 11, top: 11, right: 15),
-                            labelText: "Generate Location (QR)"),
+                          border: InputBorder.none,
+                          focusedBorder: InputBorder.none,
+                          enabledBorder: InputBorder.none,
+                          errorBorder: InputBorder.none,
+                          disabledBorder: InputBorder.none,
+                          contentPadding: EdgeInsets.only(
+                            left: 15,
+                            bottom: 11,
+                            top: 11,
+                            right: 15,
+                          ),
+                          labelText: "Generate Location (QR)",
+                        ),
                       ),
                     ),
                   ],
@@ -206,8 +223,10 @@ class _MapScreenState extends State<MapScreen> {
       }),
       onCameraIdle: (() async {
         if (center != null) {
-          getCurrentLocationName(center!.latitude, center!.longitude)
-              .toString();
+          getCurrentLocationName(
+            center!.latitude,
+            center!.longitude,
+          ).toString();
         }
       }),
     );
@@ -217,32 +236,36 @@ class _MapScreenState extends State<MapScreen> {
     return ElevatedButton(
       onPressed: () async {
         Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (context) => ShowQRScreen(
-                    location_detail: _dropController.text.toString(),
-                    latitude: _latitude.toString(),
-                    longitude: _longitude.toString())));
+          context,
+          MaterialPageRoute(
+            builder: (context) => ShowQRScreen(
+              location_detail: _dropController.text.toString(),
+              latitude: _latitude.toString(),
+              longitude: _longitude.toString(),
+            ),
+          ),
+        );
       },
-      style: ElevatedButton.styleFrom(
-        backgroundColor: AppColors.primary,
-      ),
+      style: ElevatedButton.styleFrom(backgroundColor: AppColors.primary),
       child: Container(
         width: double.infinity,
         height: 50.0,
         decoration: BoxDecoration(
-            color:
-                initButton ? AppColors.primary : AppColors.disabledPrimaryBtn,
-            borderRadius: BorderRadius.circular(5.0)),
+          color: initButton ? AppColors.primary : AppColors.disabledPrimaryBtn,
+          borderRadius: BorderRadius.circular(5.0),
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text('Confirm And Generate QR'.toUpperCase(),
-                style: const TextStyle(
-                    fontSize: 15.0,
-                    fontWeight: FontWeight.normal,
-                    color: Colors.white))
+            Text(
+              'Confirm And Generate QR'.toUpperCase(),
+              style: const TextStyle(
+                fontSize: 15.0,
+                fontWeight: FontWeight.normal,
+                color: Colors.white,
+              ),
+            ),
           ],
         ),
       ),
@@ -251,16 +274,19 @@ class _MapScreenState extends State<MapScreen> {
 
   void showMyLocation() async {
     Position position = await Geolocator.getCurrentPosition(
-        desiredAccuracy: LocationAccuracy.high);
+      desiredAccuracy: LocationAccuracy.high,
+    );
 
     mapController!.animateCamera(
-        CameraUpdate.newLatLng(LatLng(position.latitude, position.longitude)));
+      CameraUpdate.newLatLng(LatLng(position.latitude, position.longitude)),
+    );
   }
 
   // location workout
   _getCurrentLocation() async {
     Position position = await Geolocator.getCurrentPosition(
-        desiredAccuracy: LocationAccuracy.high);
+      desiredAccuracy: LocationAccuracy.high,
+    );
 
     setState(() {
       _latitude = position.latitude;
@@ -279,15 +305,10 @@ class _MapScreenState extends State<MapScreen> {
         "https://easytaxinepal.com/nominatim/reverse?format=json&lat=$latitude&lon=$longitude&zoom=16&addressdetails=1";
     var dio = Dio();
     final response = await dio
-        .get(
-      pinURL,
-      options: Options(
-        headers: {},
-      ),
-    )
+        .get(pinURL, options: Options(headers: {}))
         .catchError((error, stackTrace) {
-      log("Error Data: $error");
-    });
+          log("Error Data: $error");
+        });
 
     final responseData = response.data;
     setState(() {

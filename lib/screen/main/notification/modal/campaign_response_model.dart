@@ -9,16 +9,17 @@ class CampaignResponseModel {
   String? updatedAt;
   String? url;
 
-  CampaignResponseModel(
-      {this.id,
-        this.title,
-        this.slug,
-        this.featureImage,
-        this.description,
-        this.status,
-        this.createdAt,
-        this.updatedAt,
-        this.url});
+  CampaignResponseModel({
+    this.id,
+    this.title,
+    this.slug,
+    this.featureImage,
+    this.description,
+    this.status,
+    this.createdAt,
+    this.updatedAt,
+    this.url,
+  });
 
   CampaignResponseModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];

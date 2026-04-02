@@ -67,17 +67,19 @@ class _RegisterScreenState extends State<RegisterScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 customBackButton(context),
-                Text('Create Your Account',
-                    style: CustomTextStyles.headlineMedium_32_600),
+                Text(
+                  'Create Your Account',
+                  style: CustomTextStyles.headlineMedium_32_600,
+                ),
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 8.0),
-                  child: Text('Enter full name',
-                      style: CustomTextStyles.bodyMediumBlack1000_14_500),
+                  child: Text(
+                    'Enter full name',
+                    style: CustomTextStyles.bodyMediumBlack1000_14_500,
+                  ),
                 ),
                 formWidget(),
-                const SizedBox(
-                  height: 15.0,
-                ),
+                const SizedBox(height: 15.0),
                 submitWidget(),
               ],
             ),
@@ -89,7 +91,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   void _handleGetDeviceState() async {
     var status = OneSignal.User.pushSubscription.id;
-    if ( status == null) return;
+    if (status == null) return;
 
     DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
     AndroidDeviceInfo androidInfo = await deviceInfo.androidInfo;
@@ -118,7 +120,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       }
     } on PlatformException {
       deviceData = <String, dynamic>{
-        'Error:': 'Failed to get platform version.'
+        'Error:': 'Failed to get platform version.',
       };
     }
 
@@ -163,18 +165,21 @@ class _RegisterScreenState extends State<RegisterScreen> {
         ),
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 8.0),
-          child: Text('Enter your email',
-              style: CustomTextStyles.bodyMediumBlack1000_14_500),
+          child: Text(
+            'Enter your email',
+            style: CustomTextStyles.bodyMediumBlack1000_14_500,
+          ),
         ),
         CustomTextFormField(
-            controller: _emailController,
-            hint: 'Enter your email address',
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return "Enter your email.";
-              }
-              return null;
-            }),
+          controller: _emailController,
+          hint: 'Enter your email address',
+          validator: (value) {
+            if (value == null || value.isEmpty) {
+              return "Enter your email.";
+            }
+            return null;
+          },
+        ),
       ],
     );
   }
@@ -195,24 +200,24 @@ class _RegisterScreenState extends State<RegisterScreen> {
           registerUser(myJSON);
         }
       },
-      style: ElevatedButton.styleFrom(
-        backgroundColor: appTheme.orangeBase,
-      ),
+      style: ElevatedButton.styleFrom(backgroundColor: appTheme.orangeBase),
       child: Container(
         width: double.infinity,
         height: 50.0,
         decoration: BoxDecoration(
-            color: appTheme.orangeBase,
-            borderRadius: BorderRadius.circular(15.0)),
+          color: appTheme.orangeBase,
+          borderRadius: BorderRadius.circular(15.0),
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-                isLoading
-                    ? 'Please wait'.toUpperCase()
-                    : 'Register Account'.toUpperCase(),
-                style: CustomTextStyles.bodyLargeGray_16_500)
+              isLoading
+                  ? 'Please wait'.toUpperCase()
+                  : 'Register Account'.toUpperCase(),
+              style: CustomTextStyles.bodyLargeGray_16_500,
+            ),
           ],
         ),
       ),
@@ -278,18 +283,16 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
     final response = await dio
         .post(
-      ApiConstant.user,
-      options: Options(
-        headers: {'Accept': 'application/json'},
-      ),
-      data: FormData.fromMap(userDetail),
-    )
+          ApiConstant.user,
+          options: Options(headers: {'Accept': 'application/json'}),
+          data: FormData.fromMap(userDetail),
+        )
         .catchError((error, stackTrace) {
-      setState(() {
-        isLoading = false;
-      });
-      showErrorMessage('Something went wrong while registering.');
-    });
+          setState(() {
+            isLoading = false;
+          });
+          showErrorMessage('Something went wrong while registering.');
+        });
 
     final responseData = response.data;
     if (response.statusCode == 200) {
@@ -298,8 +301,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
           isLoading = false;
           OTPScreen.phone = userDetail['phone'];
           showSuccessMessage(responseData['message'].toString());
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => const OTPScreen()));
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const OTPScreen()),
+          );
         } else {
           setState(() {
             isLoading = false;

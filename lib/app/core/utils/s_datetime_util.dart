@@ -16,7 +16,9 @@ class SDateTimeUtil {
   static const String formatPattern9 = 'dd/MM/yyyy';
 
   static const String formatPattern10 = 'MMMM dd, yyyy hh:mm a';
-  static const String formatPattern11 = 'EEE, MMM d, ' 'yy';
+  static const String formatPattern11 =
+      'EEE, MMM d, '
+      'yy';
   static const String formatPattern12 = 'HH:mm:ss';
   static const String formatPattern13 = 'yyyy/MM/dd';
   static const String formatPattern14 = 'dd/MM/yyyy HH:mm';
@@ -73,17 +75,18 @@ class SDateTimeUtil {
   // Convert DateTime to a formatted string
   static String dateTimeToString(DateTime? dateTime, String format) {
     try {
-      final formattedString =
-          DateFormat(format).format(dateTime ?? DateTime.now());
+      final formattedString = DateFormat(
+        format,
+      ).format(dateTime ?? DateTime.now());
       return formattedString;
     } catch (e) {
       throw Exception('Invalid date format: $e');
     }
   }
 
-  // convert date time to nepali time 
+  // convert date time to nepali time
 
-  static  formatDateTimeStringNepal(DateTime? originalDateTimeString) {
+  static formatDateTimeStringNepal(DateTime? originalDateTimeString) {
     if (originalDateTimeString == null) return null;
     try {
       // DateFormat outputFormat = DateFormat("d MMMM yyyy, HH:mm a");
@@ -98,12 +101,12 @@ class SDateTimeUtil {
       DateTime utcTime = DateTime.parse(utcTimeStr);
 
       // Add the time difference for Nepal (UTC+5:45)
-      DateTime nepaliTime = utcTime.add(Duration(hours: 6,));
+      DateTime nepaliTime = utcTime.add(Duration(hours: 6));
 
       // Format the Nepali time
       String formattedNepaliTime =
           // DateFormat('dd MMM yyyy hh:mm a').format(nepaliTime);
-            DateFormat('hh:mm a').format(nepaliTime);
+          DateFormat('hh:mm a').format(nepaliTime);
 
       print("DBD${formattedNepaliTime}");
       return formattedNepaliTime.toString();
@@ -113,7 +116,7 @@ class SDateTimeUtil {
     }
   }
 
-   static  formatDateTimeStringNepal1(DateTime? originalDateTimeString) {
+  static formatDateTimeStringNepal1(DateTime? originalDateTimeString) {
     if (originalDateTimeString == null) return null;
     try {
       // DateFormat outputFormat = DateFormat("d MMMM yyyy, HH:mm a");
@@ -128,12 +131,12 @@ class SDateTimeUtil {
       DateTime utcTime = DateTime.parse(utcTimeStr);
 
       // Add the time difference for Nepal (UTC+5:45)
-      DateTime nepaliTime = utcTime.add(Duration(hours: 6,));
+      DateTime nepaliTime = utcTime.add(Duration(hours: 6));
 
       // Format the Nepali time
       String formattedNepaliTime =
           // DateFormat('dd MMM yyyy hh:mm a').format(nepaliTime);
-            DateFormat('hh:mm ').format(nepaliTime);
+          DateFormat('hh:mm ').format(nepaliTime);
 
       print("DBD${formattedNepaliTime}");
       return formattedNepaliTime.toString();
@@ -142,8 +145,9 @@ class SDateTimeUtil {
       return null;
     }
   }
-//date with time
-  static  formatDateTimeStringNepal2(DateTime? originalDateTimeString) {
+
+  //date with time
+  static formatDateTimeStringNepal2(DateTime? originalDateTimeString) {
     if (originalDateTimeString == null) return null;
     try {
       // DateFormat outputFormat = DateFormat("d MMMM yyyy, HH:mm a");
@@ -158,12 +162,13 @@ class SDateTimeUtil {
       DateTime utcTime = DateTime.parse(utcTimeStr);
 
       // Add the time difference for Nepal (UTC+5:45)
-      DateTime nepaliTime = utcTime.add(Duration(hours: 6,));
+      DateTime nepaliTime = utcTime.add(Duration(hours: 6));
 
       // Format the Nepali time
-      String formattedNepaliTime =
-          DateFormat('dd MMM yyyy hh:mm a').format(nepaliTime);
-            // DateFormat('hh:mm ').format(nepaliTime);
+      String formattedNepaliTime = DateFormat(
+        'dd MMM yyyy hh:mm a',
+      ).format(nepaliTime);
+      // DateFormat('hh:mm ').format(nepaliTime);
 
       print("DBD${formattedNepaliTime}");
       return formattedNepaliTime.toString();

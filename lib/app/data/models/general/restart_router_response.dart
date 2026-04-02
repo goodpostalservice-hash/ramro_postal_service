@@ -79,36 +79,37 @@ class RestartRouterResponse extends Equatable {
   }
 
   Map<String, dynamic> toMap() => {
-        'ResponseCode': responseCode,
-        'ResponseDescription': responseDescription,
-        'OLTName': oltName,
-        'Frame': frame,
-        'Slot': slot,
-        'Port': port,
-        'SerialNumber': serialNumber,
-        'ONTID': ontid,
-        'ONTName': ontName,
-        'EquipmentID': equipmentId,
-        'VLANID': vlanid,
-        'WANUsername': wanUsername,
-        'WifiStatResult': wifiStatResult,
-        'WifiStatResult5G': wifiStatResult5G,
-        'VLANInfoResult': vlanInfoResult,
-        'VLANInfoList': vlanInfoList,
-        'WLANInfoList': wlanInfoList,
-        'OntInfoList': ontInfoList,
-        'AlarmList': alarmList,
-        'LP_List': lpList,
-        'OLTList': oltList,
-        'ConnectedDeviceList': connectedDeviceList,
-      };
+    'ResponseCode': responseCode,
+    'ResponseDescription': responseDescription,
+    'OLTName': oltName,
+    'Frame': frame,
+    'Slot': slot,
+    'Port': port,
+    'SerialNumber': serialNumber,
+    'ONTID': ontid,
+    'ONTName': ontName,
+    'EquipmentID': equipmentId,
+    'VLANID': vlanid,
+    'WANUsername': wanUsername,
+    'WifiStatResult': wifiStatResult,
+    'WifiStatResult5G': wifiStatResult5G,
+    'VLANInfoResult': vlanInfoResult,
+    'VLANInfoList': vlanInfoList,
+    'WLANInfoList': wlanInfoList,
+    'OntInfoList': ontInfoList,
+    'AlarmList': alarmList,
+    'LP_List': lpList,
+    'OLTList': oltList,
+    'ConnectedDeviceList': connectedDeviceList,
+  };
 
   /// `dart:convert`
   ///
   /// Parses the string and returns the resulting Json object as [RestartRouterResponse].
   factory RestartRouterResponse.fromJson(String data) {
     return RestartRouterResponse.fromMap(
-        json.decode(data) as Map<String, dynamic>);
+      json.decode(data) as Map<String, dynamic>,
+    );
   }
 
   /// `dart:convert`

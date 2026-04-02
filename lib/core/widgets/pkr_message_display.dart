@@ -3,10 +3,8 @@ import 'package:flutter/material.dart';
 class CpnUsMessageDisplay extends StatelessWidget {
   final String message;
 
-  const CpnUsMessageDisplay({
-    Key? key,
-    required this.message,
-  }) : super(key: key);
+  const CpnUsMessageDisplay({Key? key, required this.message})
+    : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +13,9 @@ class CpnUsMessageDisplay extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text(message,style: Theme.of(context).textTheme.bodySmall,
+          Text(
+            message,
+            style: Theme.of(context).textTheme.bodySmall,
             textAlign: TextAlign.center,
           ),
         ],

@@ -122,9 +122,9 @@ class LoginController extends BaseController {
 
               AppConstant.bearerToken = responseData.data!.token!;
               SStorageUtil.saveAuthData(
-              accessToken: AppConstant.bearerToken,
-              refreshToken: "",
-            );
+                accessToken: AppConstant.bearerToken,
+                refreshToken: "",
+              );
               final Map<String, dynamic> map = result.data;
               await prefs.setString('key', json.encode(map));
 

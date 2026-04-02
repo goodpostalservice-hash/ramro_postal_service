@@ -15,7 +15,7 @@ class ColorManager {
   static Color cardLightDarkColor = "#525252".fromHex;
   static Color cardHeaderGreyColor = "D9D9D9".fromHex;
 
-  //new colors 
+  //new colors
   static Color darkPrimary = "#d0e1dd".fromHex;
   static Color grey1 = "#707070".fromHex;
   static Color grey2 = "#797979".fromHex;
@@ -33,7 +33,7 @@ class ColorManager {
 }
 
 extension HexColor on String {
-  Color get fromHex{
+  Color get fromHex {
     String hexColorString = this;
     hexColorString = hexColorString.replaceAll('#', '');
     if (hexColorString.length == 6) {

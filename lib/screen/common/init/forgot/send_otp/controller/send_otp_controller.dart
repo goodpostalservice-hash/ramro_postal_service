@@ -18,7 +18,10 @@ class SendOTPController extends BaseController {
       final map = {'phone': "977$phone"};
 
       final result = await restClient.request(
-          ApiConstant.forgetPassword, Method.POST, map);
+        ApiConstant.forgetPassword,
+        Method.POST,
+        map,
+      );
 
       if (result != null) {
         if (result is dio.Response) {

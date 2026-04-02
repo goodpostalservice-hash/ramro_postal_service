@@ -34,17 +34,11 @@ class PreviewCardImage extends StatelessWidget {
         height: height,
         width: width,
         clipBehavior: Clip.antiAliasWithSaveLayer,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(radius),
-        ),
-        child: Image(
-          image: imageProvider,
-          fit: boxFit,
-        ),
+        decoration: BoxDecoration(borderRadius: BorderRadius.circular(radius)),
+        child: Image(image: imageProvider, fit: boxFit),
       ),
-      placeholder: (context, url) => CupertinoActivityIndicator(
-        color: Get.theme.primaryColor,
-      ),
+      placeholder: (context, url) =>
+          CupertinoActivityIndicator(color: Get.theme.primaryColor),
       errorWidget: (context, url, error) => Container(
         height: height,
         width: width,
@@ -53,10 +47,7 @@ class PreviewCardImage extends StatelessWidget {
           borderRadius: BorderRadius.circular(radius),
           // color: Get.theme.primaryColor,
         ),
-        child: Image(
-          image: errorImage,
-          fit: boxFit,
-        ),
+        child: Image(image: errorImage, fit: boxFit),
       ),
     );
   }

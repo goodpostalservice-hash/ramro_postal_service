@@ -15,8 +15,10 @@ import '../model/add_missing_place_model.dart';
 
 class AddPlaceController extends BaseController {
   // final LatLng initialPosition = LatLng(AddPlaceScreen.lat!,AddPlaceScreen.lng!); // Initial map position
-  final LatLng initialPosition =
-      const LatLng(27.712405, 85.353815); // Initial map position
+  final LatLng initialPosition = const LatLng(
+    27.712405,
+    85.353815,
+  ); // Initial map position
   GoogleMapController? mapController;
 
   final placeNameController = TextEditingController();
@@ -27,7 +29,8 @@ class AddPlaceController extends BaseController {
   final selectedIndex = 0.obs;
   final selectedValue = ''.obs;
   final selectedItem = PlaceList
-      .allList[0].obs; // Assuming the first item as the default selected item.
+      .allList[0]
+      .obs; // Assuming the first item as the default selected item.
 
   void onMapCreated(GoogleMapController controller) {
     mapController = controller;
@@ -44,8 +47,13 @@ class AddPlaceController extends BaseController {
     super.dispose();
   }
 
-  addMissingPlace(String latitude, String longitude, String locationName,
-      String fullAddressDetail, String houseNumber) async {
+  addMissingPlace(
+    String latitude,
+    String longitude,
+    String locationName,
+    String fullAddressDetail,
+    String houseNumber,
+  ) async {
     isToLoadMore.value = true;
 
     try {
@@ -54,11 +62,14 @@ class AddPlaceController extends BaseController {
         'longitude': longitude,
         'location_name': locationName,
         'full_address_detail': fullAddressDetail,
-        'house_num': houseNumber
+        'house_num': houseNumber,
       };
 
       final result = await restClient.request(
-          ApiConstant.addMissingPlace, Method.POST, map);
+        ApiConstant.addMissingPlace,
+        Method.POST,
+        map,
+      );
 
       if (result != null) {
         if (result is dio.Response) {
@@ -88,11 +99,14 @@ class AddPlaceController extends BaseController {
       final map = <String, dynamic>{
         "latitude": latitude,
         "longitude": longitude,
-        "distance": 0.2
+        "distance": 0.2,
       };
 
-      final result =
-          await restClient.request(ApiConstant.houseNumber, Method.GET, map);
+      final result = await restClient.request(
+        ApiConstant.houseNumber,
+        Method.GET,
+        map,
+      );
 
       if (result != null) {
         if (result is dio.Response) {

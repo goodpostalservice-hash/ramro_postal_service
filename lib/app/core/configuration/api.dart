@@ -5,6 +5,8 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:dio/io.dart';
 import 'package:flutter/foundation.dart';
+import 'package:logarte/logarte.dart';
+import '../utils/logarte_util.dart';
 import '../utils/storage_util.dart';
 import '../utils/utils.dart';
 import '../values/const_keys.dart';
@@ -43,7 +45,7 @@ class SApi {
     dio.interceptors.clear();
     dio.interceptors.addAll({ErrorInterceptor(dio)});
     dio.interceptors.add(HeaderInterceptor());
-    // dio.interceptors.add(LogarteDioInterceptor(logarte));
+    dio.interceptors.add(LogarteDioInterceptor(logarte));
     dio.interceptors.addAll({
       LogInterceptor(
         requestBody: true,

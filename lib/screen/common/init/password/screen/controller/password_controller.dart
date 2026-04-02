@@ -103,7 +103,7 @@ class PasswordController extends BaseController {
               position.latitude,
               position.longitude,
             );
-        
+
             Get.offNamed('/dashboard');
 
             showSuccessMessage("Login success");

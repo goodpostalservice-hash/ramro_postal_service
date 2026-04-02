@@ -14,21 +14,22 @@ class MapModel {
   String? createdAt;
   String? updatedAt;
 
-  MapModel(
-      {this.id,
-      this.longitude,
-      this.latitude,
-      this.cordinate,
-      this.zipCode,
-      this.area,
-      this.zone,
-      this.subZone,
-      this.street,
-      this.houseNum,
-      this.fullAddressDetail,
-      this.locationName,
-      this.createdAt,
-      this.updatedAt});
+  MapModel({
+    this.id,
+    this.longitude,
+    this.latitude,
+    this.cordinate,
+    this.zipCode,
+    this.area,
+    this.zone,
+    this.subZone,
+    this.street,
+    this.houseNum,
+    this.fullAddressDetail,
+    this.locationName,
+    this.createdAt,
+    this.updatedAt,
+  });
 
   MapModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];

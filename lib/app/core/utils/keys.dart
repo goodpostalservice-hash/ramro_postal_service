@@ -9,11 +9,11 @@ class SConstKeys {
   static const String fingerprintMobile = "fingerprintMobile";
   static const String fingerprintPassword = "fingerprintPassword";
 
-//Auth and isFirstTime
+  //Auth and isFirstTime
   static const isFirstTime = "FirstTime";
   static const fullName = "Fullname";
   static const number = "Number";
-   static const password = "Password";
+  static const password = "Password";
   static const rememberme = "isremember";
   static const accessToken = "AccessToken";
   static const refreshToken = "RefreshToken";

@@ -4,7 +4,8 @@ class CustomSwitchButton extends StatefulWidget {
   final bool initialValue;
   final Function(bool value) onChanged;
 
-  const CustomSwitchButton({super.key, 
+  const CustomSwitchButton({
+    super.key,
     required this.initialValue,
     required this.onChanged,
   });
@@ -32,7 +33,12 @@ class CustomSwitchButtonState extends State<CustomSwitchButton> {
         widget.onChanged(_value);
       },
       child: Container(
-        padding: const EdgeInsets.only(left: 12.0, right: 12.0, top: 7.0, bottom: 7.0),
+        padding: const EdgeInsets.only(
+          left: 12.0,
+          right: 12.0,
+          top: 7.0,
+          bottom: 7.0,
+        ),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
           color: _value ? Colors.green : Colors.red,

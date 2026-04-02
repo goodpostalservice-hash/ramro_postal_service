@@ -8,7 +8,6 @@ import '../model/send_otp_response_model.dart';
 import 'package:dio/dio.dart' as dio;
 
 class ChangeForgetPasswordController extends BaseController {
-
   final isToLoadMore = false.obs;
   final isObscureText = true.obs;
   var showPassword = false.obs;
@@ -22,24 +21,21 @@ class ChangeForgetPasswordController extends BaseController {
   }
 
   requestForgetPassword(String phone, String password) async {
-
     isToLoadMore.value = true;
 
     try {
-      final map = {
-        'phone': phone,
-        'password' : password
-      };
+      final map = {'phone': phone, 'password': password};
 
       print(map.toString());
 
       final result = await restClient.request(
-          ApiConstant.changeForgetPassword, Method.POST, map
+        ApiConstant.changeForgetPassword,
+        Method.POST,
+        map,
       );
 
       if (result != null) {
         if (result is dio.Response) {
-
           var responseData = SendOTPResponseModel.fromJson(result.data);
 
           if (responseData.success == true) {

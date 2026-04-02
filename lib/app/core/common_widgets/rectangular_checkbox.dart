@@ -29,13 +29,8 @@ class _RectangularCheckBoxState extends State<RectangularCheckBox> {
     return Checkbox(
       checkColor: Colors.blue,
       fillColor: MaterialStateProperty.resolveWith(getColor),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(6.0),
-      ),
-      side: BorderSide(
-        color: SColors.grey.withOpacity(0.6),
-        width: 1.5,
-      ),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6.0)),
+      side: BorderSide(color: SColors.grey.withOpacity(0.6), width: 1.5),
       value: isChecked,
       onChanged: (bool? value) {
         setState(() {

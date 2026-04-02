@@ -43,12 +43,7 @@ class ProfileMenuItem extends StatelessWidget {
               //   color: Get.theme.colorScheme.outline,
               // ),
               SSpacing.mdW,
-              Expanded(
-                child: Text(
-                  title,
-                  style: Get.textTheme.bodyMedium,
-                ),
-              ),
+              Expanded(child: Text(title, style: Get.textTheme.bodyMedium)),
               // const Icon(
               //   FontAwesome.chevron_right_solid,
               // ),
@@ -89,12 +84,7 @@ class ProfileMenuItemTwo extends StatelessWidget {
             children: [
               Icon(icon, color: SColors.black),
               SSpacing.mdW,
-              Expanded(
-                child: Text(
-                  title,
-                  style: Get.textTheme.bodyMedium,
-                ),
-              ),
+              Expanded(child: Text(title, style: Get.textTheme.bodyMedium)),
               // const Icon(
               //   FontAwesome.chevron_right_solid,
               // ),

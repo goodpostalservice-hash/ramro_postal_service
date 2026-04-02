@@ -49,123 +49,144 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
       body: SingleChildScrollView(
         child: Container(
           padding: const EdgeInsets.all(20.0),
-          child: Column(children: <Widget>[
-            if (clicked == false)
-              Form(
-                key: formKey,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const SizedBox(height: 70.0),
-                    Text(AppStrings.enter_your_mobile,
+          child: Column(
+            children: <Widget>[
+              if (clicked == false)
+                Form(
+                  key: formKey,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const SizedBox(height: 70.0),
+                      Text(
+                        AppStrings.enter_your_mobile,
                         style: TextStyle(
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.bold,
-                            color: AppColors.highlightBlackColor)),
-                    dropDownCountry(),
-                    if (true == true)
-                      Container(
-                        child: Column(
-                          children: <Widget>[
-                            Container(
-                              margin:
-                                  const EdgeInsets.only(left: 5.0, right: 10.0),
-                              width: 1.0,
-                              height: 30.0,
-                              color: AppColors.fieldHint,
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(
-                                  left: 10.0, right: 10.0),
-                              child: SizedBox(
-                                width: 185.0,
-                                child: TextFormField(
-                                  controller: _otpController,
-                                  inputFormatters: [
-                                    LengthLimitingTextInputFormatter(10)
-                                  ],
-                                  keyboardType: TextInputType.number,
-                                  onChanged: (value) {},
-                                  style: TextStyle(
+                          fontSize: 16.0,
+                          fontWeight: FontWeight.bold,
+                          color: AppColors.highlightBlackColor,
+                        ),
+                      ),
+                      dropDownCountry(),
+                      if (true == true)
+                        Container(
+                          child: Column(
+                            children: <Widget>[
+                              Container(
+                                margin: const EdgeInsets.only(
+                                  left: 5.0,
+                                  right: 10.0,
+                                ),
+                                width: 1.0,
+                                height: 30.0,
+                                color: AppColors.fieldHint,
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                  left: 10.0,
+                                  right: 10.0,
+                                ),
+                                child: SizedBox(
+                                  width: 185.0,
+                                  child: TextFormField(
+                                    controller: _otpController,
+                                    inputFormatters: [
+                                      LengthLimitingTextInputFormatter(10),
+                                    ],
+                                    keyboardType: TextInputType.number,
+                                    onChanged: (value) {},
+                                    style: TextStyle(
                                       color: AppColors.blackBold,
                                       fontSize: 17.0,
-                                      fontWeight: FontWeight.bold),
-                                  decoration: InputDecoration(
-                                    isDense: true,
-                                    hintText: '6 digits otp',
-                                    hintStyle: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                    decoration: InputDecoration(
+                                      isDense: true,
+                                      hintText: '6 digits otp',
+                                      hintStyle: TextStyle(
                                         color: AppColors.fieldHint,
                                         fontSize: 17.0,
-                                        fontWeight: FontWeight.bold),
-                                    border: InputBorder.none,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                      border: InputBorder.none,
+                                    ),
                                   ),
                                 ),
                               ),
-                            ),
-                            otpVerifyButton()
-                          ],
-                        ),
-                      )
-                    else
-                      button(),
-                    Align(
-                      alignment: Alignment.center,
-                      child: Padding(
-                        padding: const EdgeInsets.only(top: 20.0, bottom: 20.0),
-                        child: Text(
+                              otpVerifyButton(),
+                            ],
+                          ),
+                        )
+                      else
+                        button(),
+                      Align(
+                        alignment: Alignment.center,
+                        child: Padding(
+                          padding: const EdgeInsets.only(
+                            top: 20.0,
+                            bottom: 20.0,
+                          ),
+                          child: Text(
                             'Please wait. Sometime it takes few minutes to receive otp on your device.',
                             style: TextStyle(
-                                color: AppColors.lightGrey,
-                                fontSize: 17.0,
-                                fontWeight: FontWeight.normal),
-                            textAlign: TextAlign.center),
+                              color: AppColors.lightGrey,
+                              fontSize: 17.0,
+                              fontWeight: FontWeight.normal,
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-              )
-            else
-              Form(
-                key: formKey,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const SizedBox(height: 40.0),
-                    Text("Reset Your Password",
+                    ],
+                  ),
+                )
+              else
+                Form(
+                  key: formKey,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const SizedBox(height: 40.0),
+                      Text(
+                        "Reset Your Password",
                         style: TextStyle(
-                            fontSize: 17.0,
-                            fontWeight: FontWeight.bold,
-                            color: AppColors.blackBold)),
-                    const SizedBox(height: 30.0),
-                    Container(
-                      padding: const EdgeInsets.only(top: 12.0, bottom: 10.0),
-                      child: const Text("New Password"),
-                    ),
-                    TextFormField(
-                      autofocus: false,
-                      obscureText: true,
-                      controller: _newPasswordController,
-                      decoration:
-                          passwordInputDecoration('*********', Icons.lock),
-                    ),
-                    const SizedBox(
-                      height: 20.0,
-                    ),
-                    Container(
-                      padding: const EdgeInsets.only(top: 12.0, bottom: 10.0),
-                      child: const Text("Confirm Password"),
-                    ),
-                    TextFormField(
-                      autofocus: false,
-                      obscureText: true,
-                      controller: _confirmPasswordController,
-                      decoration:
-                          passwordInputDecoration('*********', Icons.lock),
-                    ),
-                  ],
+                          fontSize: 17.0,
+                          fontWeight: FontWeight.bold,
+                          color: AppColors.blackBold,
+                        ),
+                      ),
+                      const SizedBox(height: 30.0),
+                      Container(
+                        padding: const EdgeInsets.only(top: 12.0, bottom: 10.0),
+                        child: const Text("New Password"),
+                      ),
+                      TextFormField(
+                        autofocus: false,
+                        obscureText: true,
+                        controller: _newPasswordController,
+                        decoration: passwordInputDecoration(
+                          '*********',
+                          Icons.lock,
+                        ),
+                      ),
+                      const SizedBox(height: 20.0),
+                      Container(
+                        padding: const EdgeInsets.only(top: 12.0, bottom: 10.0),
+                        child: const Text("Confirm Password"),
+                      ),
+                      TextFormField(
+                        autofocus: false,
+                        obscureText: true,
+                        controller: _confirmPasswordController,
+                        decoration: passwordInputDecoration(
+                          '*********',
+                          Icons.lock,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-              )
-          ]),
+            ],
+          ),
         ),
       ),
     );
@@ -176,9 +197,10 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
       padding: const EdgeInsets.all(10.0),
       margin: const EdgeInsets.only(top: 20.0, bottom: 25.0),
       decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(5.0),
-          border: Border.all(color: AppColors.borderColor, width: 1.0)),
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(5.0),
+        border: Border.all(color: AppColors.borderColor, width: 1.0),
+      ),
       child: Row(
         children: <Widget>[
           Container(
@@ -204,16 +226,18 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                 inputFormatters: [LengthLimitingTextInputFormatter(10)],
                 keyboardType: TextInputType.number,
                 style: TextStyle(
-                    color: AppColors.blackBold,
-                    fontSize: 17.0,
-                    fontWeight: FontWeight.bold),
+                  color: AppColors.blackBold,
+                  fontSize: 17.0,
+                  fontWeight: FontWeight.bold,
+                ),
                 decoration: InputDecoration(
                   isDense: true,
                   hintText: 'XXXXXXXXXX',
                   hintStyle: TextStyle(
-                      color: AppColors.fieldHint,
-                      fontSize: 17.0,
-                      fontWeight: FontWeight.bold),
+                    color: AppColors.fieldHint,
+                    fontSize: 17.0,
+                    fontWeight: FontWeight.bold,
+                  ),
                   border: InputBorder.none,
                 ),
               ),
@@ -227,84 +251,99 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
   // set otp button
   Widget button() {
     return SizedBox(
-        width: double.infinity,
-        height: 50.0,
-        child: ElevatedButton(
-          onPressed: () {},
-          child: Container(
-            width: double.infinity,
-            height: 50.0,
-            decoration: BoxDecoration(
-                color: true ? AppColors.disabledPrimaryBtn : AppColors.primary,
-                borderRadius: BorderRadius.circular(5.0)),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Text('Send OTP'.toUpperCase(),
-                    style: const TextStyle(
-                        fontSize: 15.0,
-                        fontWeight: FontWeight.normal,
-                        color: Colors.white))
-              ],
-            ),
+      width: double.infinity,
+      height: 50.0,
+      child: ElevatedButton(
+        onPressed: () {},
+        child: Container(
+          width: double.infinity,
+          height: 50.0,
+          decoration: BoxDecoration(
+            color: true ? AppColors.disabledPrimaryBtn : AppColors.primary,
+            borderRadius: BorderRadius.circular(5.0),
           ),
-        ));
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(
+                'Send OTP'.toUpperCase(),
+                style: const TextStyle(
+                  fontSize: 15.0,
+                  fontWeight: FontWeight.normal,
+                  color: Colors.white,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 
   // set verify otp
   Widget otpVerifyButton() {
     return SizedBox(
-        width: double.infinity,
-        height: 50.0,
-        child: ElevatedButton(
-          onPressed: () {},
-          child: Container(
-            width: double.infinity,
-            height: 50.0,
-            decoration: BoxDecoration(
-                color: true ? AppColors.disabledPrimaryBtn : AppColors.primary,
-                borderRadius: BorderRadius.circular(5.0)),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Text('Continue'.toUpperCase(),
-                    style: const TextStyle(
-                        fontSize: 15.0,
-                        fontWeight: FontWeight.normal,
-                        color: Colors.white))
-              ],
-            ),
+      width: double.infinity,
+      height: 50.0,
+      child: ElevatedButton(
+        onPressed: () {},
+        child: Container(
+          width: double.infinity,
+          height: 50.0,
+          decoration: BoxDecoration(
+            color: true ? AppColors.disabledPrimaryBtn : AppColors.primary,
+            borderRadius: BorderRadius.circular(5.0),
           ),
-        ));
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(
+                'Continue'.toUpperCase(),
+                style: const TextStyle(
+                  fontSize: 15.0,
+                  fontWeight: FontWeight.normal,
+                  color: Colors.white,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 
   // set change password button
   Widget sendOTPButton() {
     return SizedBox(
-        width: double.infinity,
-        height: 50.0,
-        child: ElevatedButton(
-          onPressed: () {},
-          child: Container(
-            width: double.infinity,
-            height: 50.0,
-            decoration: BoxDecoration(
-                color: true ? AppColors.disabledPrimaryBtn : AppColors.primary,
-                borderRadius: BorderRadius.circular(5.0)),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Text('Continue'.toUpperCase(),
-                    style: const TextStyle(
-                        fontSize: 15.0,
-                        fontWeight: FontWeight.normal,
-                        color: Colors.white))
-              ],
-            ),
+      width: double.infinity,
+      height: 50.0,
+      child: ElevatedButton(
+        onPressed: () {},
+        child: Container(
+          width: double.infinity,
+          height: 50.0,
+          decoration: BoxDecoration(
+            color: true ? AppColors.disabledPrimaryBtn : AppColors.primary,
+            borderRadius: BorderRadius.circular(5.0),
           ),
-        ));
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(
+                'Continue'.toUpperCase(),
+                style: const TextStyle(
+                  fontSize: 15.0,
+                  fontWeight: FontWeight.normal,
+                  color: Colors.white,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }

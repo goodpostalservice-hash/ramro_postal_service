@@ -29,8 +29,11 @@ class SavedAddressController extends BaseController {
   loadMyQRData() async {
     final map = <String, dynamic>{};
     try {
-      final result =
-          await restClient.request(ApiConstant.myQR, Method.GET, map);
+      final result = await restClient.request(
+        ApiConstant.myQR,
+        Method.GET,
+        map,
+      );
       if (result != null) {
         if (result is dio.Response) {
           // clear the list to replace with new value
@@ -55,22 +58,31 @@ class SavedAddressController extends BaseController {
       // Get.offAllNamed('/no_internet');
       isToLoadMore.value = false;
       showErrorMessage(
-          'Something went wrong while fetching data. Try again later.');
+        'Something went wrong while fetching data. Try again later.',
+      );
     }
   }
 
-  saveQR(String longitude, String latitude, String address, String? addressType,
-      bool isDefault) async {
+  saveQR(
+    String longitude,
+    String latitude,
+    String address,
+    String? addressType,
+    bool isDefault,
+  ) async {
     final map = <String, dynamic>{
       'longitude': longitude,
       'latitude': latitude,
       'address_map': address,
       'address_type': addressType ?? 'other',
-      'is_default': isDefault == true ? '1' : '0'
+      'is_default': isDefault == true ? '1' : '0',
     };
 
-    final result =
-        await restClient.request(ApiConstant.addLocation, Method.POST, map);
+    final result = await restClient.request(
+      ApiConstant.addLocation,
+      Method.POST,
+      map,
+    );
     if (result != null) {
       if (result is dio.Response) {
         var responseData = result.data;
@@ -87,15 +99,16 @@ class SavedAddressController extends BaseController {
     }
   }
 
-  deleteQR(
-    int id,
-  ) async {
+  deleteQR(int id) async {
     try {
       Map<String, dynamic> map = {
-        "id": [id]
+        "id": [id],
       };
-      final result =
-          await restClient.request(ApiConstant.deleteQR, Method.POST_JSON, map);
+      final result = await restClient.request(
+        ApiConstant.deleteQR,
+        Method.POST_JSON,
+        map,
+      );
 
       if (result.data['success'] = true) {
         if (result is dio.Response) {
@@ -116,13 +129,14 @@ class SavedAddressController extends BaseController {
     }
   }
 
-  deleteSelectedQR(
-    List<int> selectedId,
-  ) async {
+  deleteSelectedQR(List<int> selectedId) async {
     try {
       final map = {'id': selectedId};
-      final result =
-          await restClient.request(ApiConstant.deleteQR, Method.POST_JSON, map);
+      final result = await restClient.request(
+        ApiConstant.deleteQR,
+        Method.POST_JSON,
+        map,
+      );
 
       if (result != null) {
         if (result is dio.Response) {

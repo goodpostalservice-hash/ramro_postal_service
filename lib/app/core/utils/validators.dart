@@ -5,11 +5,9 @@ import 'package:get/get.dart';
 
 class SValidator {
   static String? emailValidator(String? value) {
-    
-     if (value?.isEmpty ?? true) {
+    if (value?.isEmpty ?? true) {
       return 'Required*';
-    }
-   else  if (!value!.isEmail) {
+    } else if (!value!.isEmail) {
       return 'Enter valid email';
     } else {
       return null;
@@ -17,7 +15,6 @@ class SValidator {
   }
 
   static String? stringValidator(String? value) {
-    
     if (value!.isEmpty) {
       return 'Required*';
     } else {
@@ -94,7 +91,10 @@ class SValidator {
     }
   }
 
-static  String? validateConfirmPassword(String confirmPassword, String password) {
+  static String? validateConfirmPassword(
+    String confirmPassword,
+    String password,
+  ) {
     // Confirm password must match the original password.
     if (confirmPassword != password) {
       return 'Passwords do not match';

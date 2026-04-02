@@ -22,17 +22,18 @@ class TwoMessageSuccessResponse extends Equatable {
   }
 
   Map<String, dynamic> toMap() => {
-        'success': success,
-        'message': message,
-        'phoneNumber': phoneNumber,
-      };
+    'success': success,
+    'message': message,
+    'phoneNumber': phoneNumber,
+  };
 
   /// `dart:convert`
   ///
   /// Parses the string and returns the resulting Json object as [TwoMessageSuccessResponse].
   factory TwoMessageSuccessResponse.fromJson(String data) {
     return TwoMessageSuccessResponse.fromMap(
-        json.decode(data) as Map<String, dynamic>);
+      json.decode(data) as Map<String, dynamic>,
+    );
   }
 
   /// `dart:convert`

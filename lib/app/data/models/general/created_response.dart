@@ -15,10 +15,7 @@ class CreatedResponse extends Equatable {
     );
   }
 
-  Map<String, dynamic> toMap() => {
-        'success': success,
-        'message': message,
-      };
+  Map<String, dynamic> toMap() => {'success': success, 'message': message};
 
   /// `dart:convert`
   ///
@@ -32,10 +29,7 @@ class CreatedResponse extends Equatable {
   /// Converts [CreatedResponse] to a JSON string.
   String toJson() => json.encode(toMap());
 
-  CreatedResponse copyWith({
-    bool? success,
-    String? message,
-  }) {
+  CreatedResponse copyWith({bool? success, String? message}) {
     return CreatedResponse(
       success: success ?? this.success,
       message: message ?? this.message,

@@ -3,48 +3,82 @@ import 'package:flutter/cupertino.dart';
 import 'font_manager.dart';
 
 TextStyle _getTextStyle(
-    double fontSize, String fontFamily, FontWeight fontWeight, Color color) {
+  double fontSize,
+  String fontFamily,
+  FontWeight fontWeight,
+  Color color,
+) {
   return TextStyle(
     fontSize: fontSize,
     fontFamily: fontFamily,
     fontWeight: fontWeight,
     color: color,
-    
+
     //decorationStyle: TextDecorationStyle.wavy,
   );
 }
 
 //regular style
-TextStyle getRegularStyle(
-    {double fontSize = FontSize.s12, required Color color}) {
+TextStyle getRegularStyle({
+  double fontSize = FontSize.s12,
+  required Color color,
+}) {
   return _getTextStyle(
-      fontSize, FontConstants.fontFamily, FontWeightManager.regular, color);
+    fontSize,
+    FontConstants.fontFamily,
+    FontWeightManager.regular,
+    color,
+  );
 }
 
 //light text style
-TextStyle getLightStyle(
-    {double fontSize = FontSize.s12, required Color color}) {
+TextStyle getLightStyle({
+  double fontSize = FontSize.s12,
+  required Color color,
+}) {
   return _getTextStyle(
-      fontSize, FontConstants.fontFamily, FontWeightManager.light, color);
+    fontSize,
+    FontConstants.fontFamily,
+    FontWeightManager.light,
+    color,
+  );
 }
 
 //medium text style
-TextStyle getMediumTextStyle(
-    {double fontSize = FontSize.s12, required Color color}) {
+TextStyle getMediumTextStyle({
+  double fontSize = FontSize.s12,
+  required Color color,
+}) {
   return _getTextStyle(
-      fontSize, FontConstants.fontFamily, FontWeightManager.medium, color);
+    fontSize,
+    FontConstants.fontFamily,
+    FontWeightManager.medium,
+    color,
+  );
 }
 
 //semi bold text style
-TextStyle getSemiBoldTextStyle(
-    {double fontSize = FontSize.s12, required Color color}) {
+TextStyle getSemiBoldTextStyle({
+  double fontSize = FontSize.s12,
+  required Color color,
+}) {
   return _getTextStyle(
-      fontSize, FontConstants.fontFamily, FontWeightManager.semiBold, color);
+    fontSize,
+    FontConstants.fontFamily,
+    FontWeightManager.semiBold,
+    color,
+  );
 }
 
 //bold text stle
-TextStyle getBoldTextStyle(
-    {double fontSize = FontSize.s12, required Color color}) {
+TextStyle getBoldTextStyle({
+  double fontSize = FontSize.s12,
+  required Color color,
+}) {
   return _getTextStyle(
-      fontSize, FontConstants.fontFamily, FontWeightManager.bold, color);
+    fontSize,
+    FontConstants.fontFamily,
+    FontWeightManager.bold,
+    color,
+  );
 }

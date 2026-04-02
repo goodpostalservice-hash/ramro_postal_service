@@ -7,7 +7,6 @@ import '../model/update_password_response_model.dart';
 import 'package:dio/dio.dart' as dio;
 
 class UpdatePasswordController extends BaseController {
-
   final isToLoadMore = false.obs;
   final isObscureText = true.obs;
   var showPassword = false.obs;
@@ -21,22 +20,19 @@ class UpdatePasswordController extends BaseController {
   }
 
   requestForgetPassword(String oldPassword, String password) async {
-
     isToLoadMore.value = true;
 
     try {
-      final map = {
-        'old_password': oldPassword,
-        'password' : password
-      };
+      final map = {'old_password': oldPassword, 'password': password};
 
       final result = await restClient.request(
-          ApiConstant.updatePassword, Method.POST, map
+        ApiConstant.updatePassword,
+        Method.POST,
+        map,
       );
 
       if (result != null) {
         if (result is dio.Response) {
-
           var responseData = UpdatePasswordResponseModel.fromJson(result.data);
           if (responseData.success == true) {
             showSuccessMessage(responseData.message.toString());

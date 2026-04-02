@@ -2,12 +2,11 @@
 
 class NotificationService {
   static final NotificationService _notificationService =
-  NotificationService._internal();
+      NotificationService._internal();
 
   factory NotificationService() {
     return _notificationService;
   }
 
   NotificationService._internal();
-
 }

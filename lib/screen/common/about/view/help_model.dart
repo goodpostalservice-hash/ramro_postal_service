@@ -6,13 +6,14 @@ class HelpModel {
   String? createdAt;
   String? updatedAt;
 
-  HelpModel(
-      {this.id,
-      this.question,
-      this.answer,
-      this.status,
-      this.createdAt,
-      this.updatedAt});
+  HelpModel({
+    this.id,
+    this.question,
+    this.answer,
+    this.status,
+    this.createdAt,
+    this.updatedAt,
+  });
 
   HelpModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];

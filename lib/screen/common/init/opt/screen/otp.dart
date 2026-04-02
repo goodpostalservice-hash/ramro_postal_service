@@ -458,9 +458,9 @@ class OTPScreenState extends State<OTPScreen> {
 
       AppConstant.bearerToken = responseData['data']['token'];
       SStorageUtil.saveAuthData(
-              accessToken: AppConstant.bearerToken,
-              refreshToken: "",
-            );
+        accessToken: AppConstant.bearerToken,
+        refreshToken: "",
+      );
 
       final Map<String, dynamic> map = responseData;
       await prefs.setString('key', json.encode(map));

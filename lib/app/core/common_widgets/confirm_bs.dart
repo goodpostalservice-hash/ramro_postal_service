@@ -25,14 +25,16 @@ class ConfirmDialogBottomSheet extends StatelessWidget {
       onClosing: () {},
       builder: (context) {
         return Container(
-          padding: const EdgeInsets.only(left: 18,right: 18,bottom: 10,top: 26),
+          padding: const EdgeInsets.only(
+            left: 18,
+            right: 18,
+            bottom: 10,
+            top: 26,
+          ),
           height: 150,
           child: Column(
             children: [
-              Text(
-                title,
-                style: Get.textTheme.titleLarge,
-              ),
+              Text(title, style: Get.textTheme.titleLarge),
               SSpacing.lgH,
               Row(
                 children: [
@@ -50,7 +52,7 @@ class ConfirmDialogBottomSheet extends StatelessWidget {
                     ),
                   ),
                 ],
-              )
+              ),
             ],
           ),
         );

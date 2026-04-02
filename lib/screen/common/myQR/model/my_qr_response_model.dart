@@ -12,19 +12,20 @@ class MyQRResponseModel {
   String? createdAt;
   String? updatedAt;
 
-  MyQRResponseModel(
-      {this.id,
-        this.userId,
-        this.longitude,
-        this.latitude,
-        this.ishomeaddress,
-        this.addOnMap,
-        this.deleveryAddress,
-        this.isDefault,
-        this.addressType,
-        this.addressMap,
-        this.createdAt,
-        this.updatedAt});
+  MyQRResponseModel({
+    this.id,
+    this.userId,
+    this.longitude,
+    this.latitude,
+    this.ishomeaddress,
+    this.addOnMap,
+    this.deleveryAddress,
+    this.isDefault,
+    this.addressType,
+    this.addressMap,
+    this.createdAt,
+    this.updatedAt,
+  });
 
   MyQRResponseModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];

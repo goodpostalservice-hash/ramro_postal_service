@@ -38,11 +38,7 @@ class TurnInstructionBanner extends StatelessWidget {
         ),
         child: Row(
           children: [
-            Icon(
-              _maneuverIcon(maneuver),
-              color: Colors.white,
-              size: 32,
-            ),
+            Icon(_maneuverIcon(maneuver), color: Colors.white, size: 32),
             const SizedBox(width: 12),
             Expanded(
               child: Text(
@@ -56,11 +52,8 @@ class TurnInstructionBanner extends StatelessWidget {
             ),
             Text(
               distance,
-              style: const TextStyle(
-                color: Colors.white70,
-                fontSize: 16,
-              ),
-            )
+              style: const TextStyle(color: Colors.white70, fontSize: 16),
+            ),
           ],
         ),
       ),
