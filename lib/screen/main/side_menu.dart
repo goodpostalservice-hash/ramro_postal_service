@@ -91,6 +91,14 @@ class MenuScreen extends GetView<ProfileController> {
                       const _DividerLine(),
                       _SettingsTile.navTile(
                         leadingIcon: Assets.language,
+                        title: 'My Subscription',
+                        onTap: () {
+                          Get.toNamed(Routes.MY_SUBSCRIPTION);
+                        },
+                      ),
+                      const _DividerLine(),
+                      _SettingsTile.navTile(
+                        leadingIcon: Assets.language,
                         title: 'Available orders',
                         onTap: () {
                           Get.to(() => AvailableOrdersScreen());

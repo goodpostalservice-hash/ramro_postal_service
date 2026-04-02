@@ -5,7 +5,7 @@ import 'package:ramro_postal_service/app/core/values/s_spacing.dart';
 
 import '../controllers/wallet_controller.dart';
 
-import 'package:intl/intl.dart'; 
+import 'package:intl/intl.dart';
 
 class WalletView extends GetView<WalletController> {
   const WalletView({super.key});

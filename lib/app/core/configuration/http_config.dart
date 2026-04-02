@@ -13,4 +13,5 @@ class HttpConfig {
 
   static const String wallet = '/api/wallet';
 
+  static const String subscription = '/api/my-subscription';
 }

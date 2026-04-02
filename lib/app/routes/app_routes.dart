@@ -4,9 +4,11 @@ part of 'app_pages.dart';
 abstract class Routes {
   Routes._();
   static const WALLET = _Paths.WALLET;
+  static const MY_SUBSCRIPTION = _Paths.MY_SUBSCRIPTION;
 }
 
 abstract class _Paths {
   _Paths._();
   static const WALLET = '/wallet';
+  static const MY_SUBSCRIPTION = '/my-subscription';
 }

@@ -56,8 +56,9 @@ class SSnackbarUtil {
         messageText: Text(
           newMessage,
           maxLines: 4,
-          style: Get.textTheme.bodyMedium!
-              .copyWith(color: Get.theme.colorScheme.onPrimary),
+          style: Get.textTheme.bodyMedium!.copyWith(
+            color: Get.theme.colorScheme.onPrimary,
+          ),
         ),
         // borderRadius: 12,
         // borderWidth: 2,
