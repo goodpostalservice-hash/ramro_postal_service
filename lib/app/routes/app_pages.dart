@@ -33,6 +33,8 @@ import '../../screen/update_password/binding/update_password_binding.dart';
 import '../../screen/update_password/presentation/pages/update_password_screen.dart';
 import '../modules/my_subscription/bindings/my_subscription_binding.dart';
 import '../modules/my_subscription/views/my_subscription_view.dart';
+import '../modules/order_detail/bindings/order_detail_binding.dart';
+import '../modules/order_detail/views/order_detail_view.dart';
 import '../modules/wallet/bindings/wallet_binding.dart';
 import '../modules/wallet/views/wallet_view.dart';
 
@@ -128,6 +130,11 @@ class AppPages {
       name: _Paths.MY_SUBSCRIPTION,
       page: () => const MySubscriptionView(),
       binding: MySubscriptionBinding(),
+    ),
+    GetPage(
+      name: _Paths.ORDER_DETAIL,
+      page: () => const OrderDetailView(),
+      binding: OrderDetailBinding(),
     ),
   ];
 }

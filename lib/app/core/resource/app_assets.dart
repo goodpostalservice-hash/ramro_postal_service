@@ -2,414 +2,409 @@
 class SAppAssets {
   SAppAssets._();
 
-  /// Assets for animCoinFlip
-  /// assets/anim/coin_flip.json
-  static const String animCoinFlip = "assets/anim/coin_flip.json";
-
-  /// Assets for animGrowthLottie
-  /// assets/anim/growth_lottie.json
-  static const String animGrowthLottie = "assets/anim/growth_lottie.json";
-
-  /// Assets for animHighlighter
-  /// assets/anim/highlighter.json
-  static const String animHighlighter = "assets/anim/highlighter.json";
-
-  /// Assets for animMessage
-  /// assets/anim/message.json
-  static const String animMessage = "assets/anim/message.json";
-
-  /// Assets for animQuestionmarkLottie
-  /// assets/anim/questionmark_lottie.json
-  static const String animQuestionmarkLottie =
-      "assets/anim/questionmark_lottie.json";
-
-  /// Assets for animSteps
-  /// assets/anim/steps.json
-  static const String animSteps = "assets/anim/steps.json";
-
-  /// Assets for animStreak
-  /// assets/anim/streak.json
-  static const String animStreak = "assets/anim/streak.json";
-
-  /// Assets for animUser
-  /// assets/anim/user.json
-  static const String animUser = "assets/anim/user.json";
-
-  /// Assets for animUserAdd
-  /// assets/anim/user_add.json
-  static const String animUserAdd = "assets/anim/user_add.json";
-
-  /// Assets for audioAudio1
-  /// assets/audio/audio1.mp3
-  static const String audioAudio1 = "assets/audio/audio1.mp3";
-
-  /// Assets for fontGibsonFontspringDEMOGibsonBold
-  /// assets/font/gibson/Fontspring-DEMO-gibson-bold.otf
-  static const String fontGibsonFontspringDEMOGibsonBold =
-      "assets/font/gibson/Fontspring-DEMO-gibson-bold.otf";
-
-  /// Assets for fontGibsonFontspringDEMOGibsonBolditalic
-  /// assets/font/gibson/Fontspring-DEMO-gibson-bolditalic.otf
-  static const String fontGibsonFontspringDEMOGibsonBolditalic =
-      "assets/font/gibson/Fontspring-DEMO-gibson-bolditalic.otf";
-
-  /// Assets for fontGibsonFontspringDEMOGibsonBook
-  /// assets/font/gibson/Fontspring-DEMO-gibson-book.otf
-  static const String fontGibsonFontspringDEMOGibsonBook =
-      "assets/font/gibson/Fontspring-DEMO-gibson-book.otf";
-
-  /// Assets for fontGibsonFontspringDEMOGibsonBookitalic
-  /// assets/font/gibson/Fontspring-DEMO-gibson-bookitalic.otf
-  static const String fontGibsonFontspringDEMOGibsonBookitalic =
-      "assets/font/gibson/Fontspring-DEMO-gibson-bookitalic.otf";
-
-  /// Assets for fontGibsonFontspringDEMOGibsonHeavy
-  /// assets/font/gibson/Fontspring-DEMO-gibson-heavy.otf
-  static const String fontGibsonFontspringDEMOGibsonHeavy =
-      "assets/font/gibson/Fontspring-DEMO-gibson-heavy.otf";
-
-  /// Assets for fontGibsonFontspringDEMOGibsonHeavyitalic
-  /// assets/font/gibson/Fontspring-DEMO-gibson-heavyitalic.otf
-  static const String fontGibsonFontspringDEMOGibsonHeavyitalic =
-      "assets/font/gibson/Fontspring-DEMO-gibson-heavyitalic.otf";
-
-  /// Assets for fontGibsonFontspringDEMOGibsonItalic
-  /// assets/font/gibson/Fontspring-DEMO-gibson-italic.otf
-  static const String fontGibsonFontspringDEMOGibsonItalic =
-      "assets/font/gibson/Fontspring-DEMO-gibson-italic.otf";
-
-  /// Assets for fontGibsonFontspringDEMOGibsonLight
-  /// assets/font/gibson/Fontspring-DEMO-gibson-light.otf
-  static const String fontGibsonFontspringDEMOGibsonLight =
-      "assets/font/gibson/Fontspring-DEMO-gibson-light.otf";
-
-  /// Assets for fontGibsonFontspringDEMOGibsonLightitalic
-  /// assets/font/gibson/Fontspring-DEMO-gibson-lightitalic.otf
-  static const String fontGibsonFontspringDEMOGibsonLightitalic =
-      "assets/font/gibson/Fontspring-DEMO-gibson-lightitalic.otf";
-
-  /// Assets for fontGibsonFontspringDEMOGibsonMedium
-  /// assets/font/gibson/Fontspring-DEMO-gibson-medium.otf
-  static const String fontGibsonFontspringDEMOGibsonMedium =
-      "assets/font/gibson/Fontspring-DEMO-gibson-medium.otf";
-
-  /// Assets for fontGibsonFontspringDEMOGibsonMediumitalic
-  /// assets/font/gibson/Fontspring-DEMO-gibson-mediumitalic.otf
-  static const String fontGibsonFontspringDEMOGibsonMediumitalic =
-      "assets/font/gibson/Fontspring-DEMO-gibson-mediumitalic.otf";
-
-  /// Assets for fontGibsonFontspringDEMOGibsonRegular
-  /// assets/font/gibson/Fontspring-DEMO-gibson-regular.otf
-  static const String fontGibsonFontspringDEMOGibsonRegular =
-      "assets/font/gibson/Fontspring-DEMO-gibson-regular.otf";
-
-  /// Assets for fontGibsonFontspringDEMOGibsonSemibold
-  /// assets/font/gibson/Fontspring-DEMO-gibson-semibold.otf
-  static const String fontGibsonFontspringDEMOGibsonSemibold =
-      "assets/font/gibson/Fontspring-DEMO-gibson-semibold.otf";
-
-  /// Assets for fontGibsonFontspringDEMOGibsonSemibolditalic
-  /// assets/font/gibson/Fontspring-DEMO-gibson-semibolditalic.otf
-  static const String fontGibsonFontspringDEMOGibsonSemibolditalic =
-      "assets/font/gibson/Fontspring-DEMO-gibson-semibolditalic.otf";
-
-  /// Assets for fontGibsonFontspringDEMOGibsonThin
-  /// assets/font/gibson/Fontspring-DEMO-gibson-thin.otf
-  static const String fontGibsonFontspringDEMOGibsonThin =
-      "assets/font/gibson/Fontspring-DEMO-gibson-thin.otf";
-
-  /// Assets for fontGibsonFontspringDEMOGibsonThinitalic
-  /// assets/font/gibson/Fontspring-DEMO-gibson-thinitalic.otf
-  static const String fontGibsonFontspringDEMOGibsonThinitalic =
-      "assets/font/gibson/Fontspring-DEMO-gibson-thinitalic.otf";
-
-  /// Assets for iconAds
-  /// assets/icon/ads.svg
-  static const String iconAds = "assets/icon/ads.svg";
-
-  /// Assets for iconAisearch
-  /// assets/icon/aisearch.svg
-  static const String iconAisearch = "assets/icon/aisearch.svg";
-
-  /// Assets for iconAnswerQuestion
-  /// assets/icon/answer_question.svg
-  static const String iconAnswerQuestion = "assets/icon/answer_question.svg";
-
-  /// Assets for iconApple
-  /// assets/icon/apple.svg
-  static const String iconApple = "assets/icon/apple.svg";
-
-  /// Assets for iconAppstore
-  /// assets/icon/appstore.svg
-  static const String iconAppstore = "assets/icon/appstore.svg";
-
-  /// Assets for iconBibleFloatingActionButton
-  /// assets/icon/bible_floating_action_button.png
-  static const String iconBibleFloatingActionButton =
-      "assets/icon/bible_floating_action_button.png";
-
-  /// Assets for iconBibleStudy
-  /// assets/icon/bible_study.svg
-  static const String iconBibleStudy = "assets/icon/bible_study.svg";
-
-  /// Assets for iconCheckYourEmail
-  /// assets/icon/check_your_email.svg
-  static const String iconCheckYourEmail = "assets/icon/check_your_email.svg";
-
-  /// Assets for iconCheckmark
-  /// assets/icon/checkmark.svg
-  static const String iconCheckmark = "assets/icon/checkmark.svg";
-
-  /// Assets for iconChurch
-  /// assets/icon/church.svg
-  static const String iconChurch = "assets/icon/church.svg";
-
-  /// Assets for iconCoin
-  /// assets/icon/coin.svg
-  static const String iconCoin = "assets/icon/coin.svg";
-
-  /// Assets for iconCoinGlow
-  /// assets/icon/coin_glow.svg
-  static const String iconCoinGlow = "assets/icon/coin_glow.svg";
-
-  /// Assets for iconCompleteTick
-  /// assets/icon/complete_tick.svg
-  static const String iconCompleteTick = "assets/icon/complete_tick.svg";
-
-  /// Assets for iconCourseSelect
-  /// assets/icon/course_select.svg
-  static const String iconCourseSelect = "assets/icon/course_select.svg";
-
-  /// Assets for iconCourseUnselect
-  /// assets/icon/course_unselect.svg
-  static const String iconCourseUnselect = "assets/icon/course_unselect.svg";
-
-  /// Assets for iconCurveArrowDownRight
-  /// assets/icon/curve_arrow_down_right.svg
-  static const String iconCurveArrowDownRight =
-      "assets/icon/curve_arrow_down_right.svg";
-
-  /// Assets for iconCurveArrowDownRightThree
-  /// assets/icon/curve_arrow_down_right_three.svg
-  static const String iconCurveArrowDownRightThree =
-      "assets/icon/curve_arrow_down_right_three.svg";
-
-  /// Assets for iconCurveArrowDownRightTwo
-  /// assets/icon/curve_arrow_down_right_two.svg
-  static const String iconCurveArrowDownRightTwo =
-      "assets/icon/curve_arrow_down_right_two.svg";
-
-  /// Assets for iconError
-  /// assets/icon/error.svg
-  static const String iconError = "assets/icon/error.svg";
-
-  /// Assets for iconFacebook
-  /// assets/icon/facebook.svg
-  static const String iconFacebook = "assets/icon/facebook.svg";
-
-  /// Assets for iconFire
-  /// assets/icon/fire.svg
-  static const String iconFire = "assets/icon/fire.svg";
-
-  /// Assets for iconFriendSelect
-  /// assets/icon/friend_select.svg
-  static const String iconFriendSelect = "assets/icon/friend_select.svg";
-
-  /// Assets for iconFriendUnselect
-  /// assets/icon/friend_unselect.svg
-  static const String iconFriendUnselect = "assets/icon/friend_unselect.svg";
-
-  /// Assets for iconGiftSelect
-  /// assets/icon/gift_select.svg
-  static const String iconGiftSelect = "assets/icon/gift_select.svg";
-
-  /// Assets for iconGiftUnselect
-  /// assets/icon/gift_unselect.svg
-  static const String iconGiftUnselect = "assets/icon/gift_unselect.svg";
-
-  /// Assets for iconGoogle
-  /// assets/icon/google.svg
-  static const String iconGoogle = "assets/icon/google.svg";
-
-  /// Assets for iconHomeSelect
-  /// assets/icon/home_select.svg
-  static const String iconHomeSelect = "assets/icon/home_select.svg";
-
-  /// Assets for iconHomeUnselect
-  /// assets/icon/home_unselect.svg
-  static const String iconHomeUnselect = "assets/icon/home_unselect.svg";
-
-  /// Assets for iconMarketplaceSelect
-  /// assets/icon/marketplace_select.svg
-  static const String iconMarketplaceSelect =
-      "assets/icon/marketplace_select.svg";
-
-  /// Assets for iconMarketplaceUnselect
-  /// assets/icon/marketplace_unselect.svg
-  static const String iconMarketplaceUnselect =
-      "assets/icon/marketplace_unselect.svg";
-
-  /// Assets for iconMessenger
-  /// assets/icon/messenger.png
-  static const String iconMessenger = "assets/icon/messenger.png";
-
-  /// Assets for iconNoAccountFound
-  /// assets/icon/no_account_found.svg
-  static const String iconNoAccountFound = "assets/icon/no_account_found.svg";
-
-  /// Assets for iconPasswordUpdated
-  /// assets/icon/password_updated.svg
-  static const String iconPasswordUpdated = "assets/icon/password_updated.svg";
-
-  /// Assets for iconProfileSelect
-  /// assets/icon/profile_select.svg
-  static const String iconProfileSelect = "assets/icon/profile_select.svg";
-
-  /// Assets for iconProfileUnselect
-  /// assets/icon/profile_unselect.svg
-  static const String iconProfileUnselect = "assets/icon/profile_unselect.svg";
-
-  /// Assets for iconSteps
-  /// assets/icon/steps.svg
-  static const String iconSteps = "assets/icon/steps.svg";
-
-  /// Assets for iconStreak
-  /// assets/icon/streak.svg
-  static const String iconStreak = "assets/icon/streak.svg";
-
-  /// Assets for iconSuccessful
-  /// assets/icon/successful.svg
-  static const String iconSuccessful = "assets/icon/successful.svg";
-
-  /// Assets for iconSyncContacts
-  /// assets/icon/sync_contacts.svg
-  static const String iconSyncContacts = "assets/icon/sync_contacts.svg";
-
-  /// Assets for iconTiktok
-  /// assets/icon/tiktok.svg
-  static const String iconTiktok = "assets/icon/tiktok.svg";
-
-  /// Assets for iconTime
-  /// assets/icon/time.svg
-  static const String iconTime = "assets/icon/time.svg";
-
-  /// Assets for iconTrackGrowth
-  /// assets/icon/track_growth.svg
-  static const String iconTrackGrowth = "assets/icon/track_growth.svg";
-
-  /// Assets for iconVerseSelect
-  /// assets/icon/verse_select.svg
-  static const String iconVerseSelect = "assets/icon/verse_select.svg";
-
-  /// Assets for iconVerseUnselect
-  /// assets/icon/verse_unselect.svg
-  static const String iconVerseUnselect = "assets/icon/verse_unselect.svg";
-
-  /// Assets for iconWarning
-  /// assets/icon/warning.svg
-  static const String iconWarning = "assets/icon/warning.svg";
-
-  /// Assets for iconWhatsapp
-  /// assets/icon/whatsapp.svg
-  static const String iconWhatsapp = "assets/icon/whatsapp.svg";
-
-  /// Assets for iconYoutube
-  /// assets/icon/youtube.svg
-  static const String iconYoutube = "assets/icon/youtube.svg";
-
-  /// Assets for imageAllowReminders
-  /// assets/image/allow_reminders.png
-  static const String imageAllowReminders = "assets/image/allow_reminders.png";
-
-  /// Assets for imageBiblePage
-  /// assets/image/bible_page.png
-  static const String imageBiblePage = "assets/image/bible_page.png";
-
-  /// Assets for imageCheckEmail
-  /// assets/image/check_email.svg
-  static const String imageCheckEmail = "assets/image/check_email.svg";
-
-  /// Assets for imageCoursesIllustration
-  /// assets/image/courses_illustration.png
-  static const String imageCoursesIllustration =
-      "assets/image/courses_illustration.png";
-
-  /// Assets for imageFirstStep
-  /// assets/image/first_step.png
-  static const String imageFirstStep = "assets/image/first_step.png";
-
-  /// Assets for imageFocusBuilder
-  /// assets/image/focus_builder.png
-  static const String imageFocusBuilder = "assets/image/focus_builder.png";
-
-  /// Assets for imageGradientBg
-  /// assets/image/gradient_bg.png
-  static const String imageGradientBg = "assets/image/gradient_bg.png";
-
-  /// Assets for imageGreatProgress
-  /// assets/image/great_progress.png
-  static const String imageGreatProgress = "assets/image/great_progress.png";
-
-  /// Assets for imageLessonTitleBg
-  /// assets/image/lesson_title_bg.png
-  static const String imageLessonTitleBg = "assets/image/lesson_title_bg.png";
-
-  /// Assets for imageMichael
-  /// assets/image/michael.png
-  static const String imageMichael = "assets/image/michael.png";
-
-  /// Assets for imageOnboardLessonBg
-  /// assets/image/onboard_lesson_bg.png
-  static const String imageOnboardLessonBg =
-      "assets/image/onboard_lesson_bg.png";
-
-  /// Assets for imagePlaceholder
-  /// assets/image/placeholder.png
-  static const String imagePlaceholder = "assets/image/placeholder.png";
-
-  /// Assets for imageProfileBg
-  /// assets/image/profile_bg.png
-  static const String imageProfileBg = "assets/image/profile_bg.png";
-
-  /// Assets for imageSteadyWalker
-  /// assets/image/steady_walker.png
-  static const String imageSteadyWalker = "assets/image/steady_walker.png";
-
-  /// Assets for imageSuccessGradientBg
-  /// assets/image/success_gradient_bg.png
-  static const String imageSuccessGradientBg =
-      "assets/image/success_gradient_bg.png";
-
-  /// Assets for imageUserPlaceholder
-  /// assets/image/user_placeholder.jpg
-  static const String imageUserPlaceholder =
-      "assets/image/user_placeholder.jpg";
-
-  /// Assets for imageVerseKeeper
-  /// assets/image/verse_keeper.png
-  static const String imageVerseKeeper = "assets/image/verse_keeper.png";
-
-  /// Assets for imageWelcomeBg
-  /// assets/image/welcome_bg.png
-  static const String imageWelcomeBg = "assets/image/welcome_bg.png";
-
-  /// Assets for logoDevLogo
-  /// assets/logo/dev/logo.png
-  static const String logoDevLogo = "assets/logo/dev/logo.png";
-
-  /// Assets for logoProdLogo
-  /// assets/logo/prod/logo.png
-  static const String logoProdLogo = "assets/logo/prod/logo.png";
-
-  /// Assets for logoStgLogo
-  /// assets/logo/stg/logo.png
-  static const String logoStgLogo = "assets/logo/stg/logo.png";
-
-  /// Assets for translationEnUS
-  /// assets/translation/en-US.json
-  static const String translationEnUS = "assets/translation/en-US.json";
-
-  /// Assets for translationNpNP
-  /// assets/translation/np-NP.json
-  static const String translationNpNP = "assets/translation/np-NP.json";
+  /// Assets for bannersFoodBanner
+  /// assets/banners/food_banner.jpg
+  static const String bannersFoodBanner = "assets/banners/food_banner.jpg";
+
+  /// Assets for bannersFreeRideBanner
+  /// assets/banners/free_ride_banner.png
+  static const String bannersFreeRideBanner =
+      "assets/banners/free_ride_banner.png";
+
+  /// Assets for bannersIcAppCardPlaceholder
+  /// assets/banners/ic_app_card_placeholder.png
+  static const String bannersIcAppCardPlaceholder =
+      "assets/banners/ic_app_card_placeholder.png";
+
+  /// Assets for bannersImgNoRiderIllustration
+  /// assets/banners/img_no_rider_illustration.png
+  static const String bannersImgNoRiderIllustration =
+      "assets/banners/img_no_rider_illustration.png";
+
+  /// Assets for bannersMyQr
+  /// assets/banners/my_qr.png
+  static const String bannersMyQr = "assets/banners/my_qr.png";
+
+  /// Assets for bannersNoInternetFound
+  /// assets/banners/no_internet_found.jpg
+  static const String bannersNoInternetFound =
+      "assets/banners/no_internet_found.jpg";
+
+  /// Assets for flagFlagBg
+  /// assets/flag/flag_bg.png
+  static const String flagFlagBg = "assets/flag/flag_bg.png";
+
+  /// Assets for flagFlagIn
+  /// assets/flag/flag_in.png
+  static const String flagFlagIn = "assets/flag/flag_in.png";
+
+  /// Assets for flagFlagNp
+  /// assets/flag/flag_np.png
+  static const String flagFlagNp = "assets/flag/flag_np.png";
+
+  /// Assets for iconsChat
+  /// assets/icons/chat.jpg
+  static const String iconsChat = "assets/icons/chat.jpg";
+
+  /// Assets for iconsDelivery
+  /// assets/icons/delivery.png
+  static const String iconsDelivery = "assets/icons/delivery.png";
+
+  /// Assets for iconsDemoUser
+  /// assets/icons/demo_user.png
+  static const String iconsDemoUser = "assets/icons/demo_user.png";
+
+  /// Assets for iconsDummyUser
+  /// assets/icons/dummy_user.jpg
+  static const String iconsDummyUser = "assets/icons/dummy_user.jpg";
+
+  /// Assets for iconsGoogle
+  /// assets/icons/google.png
+  static const String iconsGoogle = "assets/icons/google.png";
+
+  /// Assets for iconsHomeIcon
+  /// assets/icons/home_icon.png
+  static const String iconsHomeIcon = "assets/icons/home_icon.png";
+
+  /// Assets for iconsIcBnvHistory
+  /// assets/icons/ic_bnv_history.png
+  static const String iconsIcBnvHistory = "assets/icons/ic_bnv_history.png";
+
+  /// Assets for iconsIcBnvHome
+  /// assets/icons/ic_bnv_home.png
+  static const String iconsIcBnvHome = "assets/icons/ic_bnv_home.png";
+
+  /// Assets for iconsIcBnvInbox
+  /// assets/icons/ic_bnv_inbox.png
+  static const String iconsIcBnvInbox = "assets/icons/ic_bnv_inbox.png";
+
+  /// Assets for iconsIcBnvMore
+  /// assets/icons/ic_bnv_more.png
+  static const String iconsIcBnvMore = "assets/icons/ic_bnv_more.png";
+
+  /// Assets for iconsIcDestinationAsh
+  /// assets/icons/ic_destination_ash.png
+  static const String iconsIcDestinationAsh =
+      "assets/icons/ic_destination_ash.png";
+
+  /// Assets for iconsIcDiscountBadgeGreenSmall
+  /// assets/icons/ic_discount_badge_green_small.png
+  static const String iconsIcDiscountBadgeGreenSmall =
+      "assets/icons/ic_discount_badge_green_small.png";
+
+  /// Assets for iconsIcFavorite
+  /// assets/icons/ic_favorite.png
+  static const String iconsIcFavorite = "assets/icons/ic_favorite.png";
+
+  /// Assets for iconsIcFoodExpand
+  /// assets/icons/ic_food_expand.png
+  static const String iconsIcFoodExpand = "assets/icons/ic_food_expand.png";
+
+  /// Assets for iconsIcFoodFilterUnselected
+  /// assets/icons/ic_food_filter_unselected.png
+  static const String iconsIcFoodFilterUnselected =
+      "assets/icons/ic_food_filter_unselected.png";
+
+  /// Assets for iconsIcFoodSearch
+  /// assets/icons/ic_food_search.png
+  static const String iconsIcFoodSearch = "assets/icons/ic_food_search.png";
+
+  /// Assets for iconsIcFoodSearchRed
+  /// assets/icons/ic_food_search_red.png
+  static const String iconsIcFoodSearchRed =
+      "assets/icons/ic_food_search_red.png";
+
+  /// Assets for iconsIcFoodUnfavorite
+  /// assets/icons/ic_food_unfavorite.png
+  static const String iconsIcFoodUnfavorite =
+      "assets/icons/ic_food_unfavorite.png";
+
+  /// Assets for iconsIcInsurance
+  /// assets/icons/ic_insurance.png
+  static const String iconsIcInsurance = "assets/icons/ic_insurance.png";
+
+  /// Assets for iconsIcInsuranceShield
+  /// assets/icons/ic_insurance_shield.png
+  static const String iconsIcInsuranceShield =
+      "assets/icons/ic_insurance_shield.png";
+
+  /// Assets for iconsIcLocationAccess
+  /// assets/icons/ic_location_access.png
+  static const String iconsIcLocationAccess =
+      "assets/icons/ic_location_access.png";
+
+  /// Assets for iconsIcMarkerRidesDestination
+  /// assets/icons/ic_marker_rides_destination.png
+  static const String iconsIcMarkerRidesDestination =
+      "assets/icons/ic_marker_rides_destination.png";
+
+  /// Assets for iconsIcMarkerRidesPickup
+  /// assets/icons/ic_marker_rides_pickup.png
+  static const String iconsIcMarkerRidesPickup =
+      "assets/icons/ic_marker_rides_pickup.png";
+
+  /// Assets for iconsIcPickupAddress
+  /// assets/icons/ic_pickup_address.png
+  static const String iconsIcPickupAddress =
+      "assets/icons/ic_pickup_address.png";
+
+  /// Assets for iconsIcPlatform
+  /// assets/icons/ic_platform.png
+  static const String iconsIcPlatform = "assets/icons/ic_platform.png";
+
+  /// Assets for iconsIcProfile
+  /// assets/icons/ic_profile.png
+  static const String iconsIcProfile = "assets/icons/ic_profile.png";
+
+  /// Assets for iconsIcRidesFare
+  /// assets/icons/ic_rides_fare.png
+  static const String iconsIcRidesFare = "assets/icons/ic_rides_fare.png";
+
+  /// Assets for iconsIcRidesMover
+  /// assets/icons/ic_rides_mover.png
+  static const String iconsIcRidesMover = "assets/icons/ic_rides_mover.png";
+
+  /// Assets for iconsIcRidesSetOnMap
+  /// assets/icons/ic_rides_set_on_map.png
+  static const String iconsIcRidesSetOnMap =
+      "assets/icons/ic_rides_set_on_map.png";
+
+  /// Assets for iconsIcSetHome
+  /// assets/icons/ic_set_home.png
+  static const String iconsIcSetHome = "assets/icons/ic_set_home.png";
+
+  /// Assets for iconsIcSetWork
+  /// assets/icons/ic_set_work.png
+  static const String iconsIcSetWork = "assets/icons/ic_set_work.png";
+
+  /// Assets for iconsIcShareRide
+  /// assets/icons/ic_share_ride.png
+  static const String iconsIcShareRide = "assets/icons/ic_share_ride.png";
+
+  /// Assets for iconsIcShopDestination
+  /// assets/icons/ic_shop_destination.png
+  static const String iconsIcShopDestination =
+      "assets/icons/ic_shop_destination.png";
+
+  /// Assets for iconsIcStarOrange11dp
+  /// assets/icons/ic_star_orange_11dp.png
+  static const String iconsIcStarOrange11dp =
+      "assets/icons/ic_star_orange_11dp.png";
+
+  /// Assets for iconsLocationOn
+  /// assets/icons/location_on.png
+  static const String iconsLocationOn = "assets/icons/location_on.png";
+
+  /// Assets for iconsLogo
+  /// assets/icons/logo.png
+  static const String iconsLogo = "assets/icons/logo.png";
+
+  /// Assets for iconsNavigation
+  /// assets/icons/navigation.png
+  static const String iconsNavigation = "assets/icons/navigation.png";
+
+  /// Assets for iconsNoNotification
+  /// assets/icons/no_notification.jpg
+  static const String iconsNoNotification = "assets/icons/no_notification.jpg";
+
+  /// Assets for iconsNotificationIcon
+  /// assets/icons/notification_icon.png
+  static const String iconsNotificationIcon =
+      "assets/icons/notification_icon.png";
+
+  /// Assets for iconsPeople
+  /// assets/icons/people.png
+  static const String iconsPeople = "assets/icons/people.png";
+
+  /// Assets for iconsPickupMapPin
+  /// assets/icons/pickup_map_pin.png
+  static const String iconsPickupMapPin = "assets/icons/pickup_map_pin.png";
+
+  /// Assets for iconsPickupMarker
+  /// assets/icons/pickup_marker.png
+  static const String iconsPickupMarker = "assets/icons/pickup_marker.png";
+
+  /// Assets for iconsPickupMarkerIcon
+  /// assets/icons/pickup_marker_icon.png
+  static const String iconsPickupMarkerIcon =
+      "assets/icons/pickup_marker_icon.png";
+
+  /// Assets for iconsScannerimg
+  /// assets/icons/scannerimg.png
+  static const String iconsScannerimg = "assets/icons/scannerimg.png";
+
+  /// Assets for iconsStraight
+  /// assets/icons/straight.png
+  static const String iconsStraight = "assets/icons/straight.png";
+
+  /// Assets for iconsSvgAddLocation
+  /// assets/icons/svg/add_location.svg
+  static const String iconsSvgAddLocation = "assets/icons/svg/add_location.svg";
+
+  /// Assets for iconsSvgAddMissingPlace
+  /// assets/icons/svg/add_missing_place.svg
+  static const String iconsSvgAddMissingPlace =
+      "assets/icons/svg/add_missing_place.svg";
+
+  /// Assets for iconsSvgAssistantNavigation
+  /// assets/icons/svg/assistant_navigation.svg
+  static const String iconsSvgAssistantNavigation =
+      "assets/icons/svg/assistant_navigation.svg";
+
+  /// Assets for iconsSvgBookmark
+  /// assets/icons/svg/bookmark.svg
+  static const String iconsSvgBookmark = "assets/icons/svg/bookmark.svg";
+
+  /// Assets for iconsSvgCamera
+  /// assets/icons/svg/camera.svg
+  static const String iconsSvgCamera = "assets/icons/svg/camera.svg";
+
+  /// Assets for iconsSvgGallery
+  /// assets/icons/svg/gallery.svg
+  static const String iconsSvgGallery = "assets/icons/svg/gallery.svg";
+
+  /// Assets for iconsSvgHome
+  /// assets/icons/svg/home.svg
+  static const String iconsSvgHome = "assets/icons/svg/home.svg";
+
+  /// Assets for iconsSvgHybrid
+  /// assets/icons/svg/hybrid.svg
+  static const String iconsSvgHybrid = "assets/icons/svg/hybrid.svg";
+
+  /// Assets for iconsSvgLanguage
+  /// assets/icons/svg/language.svg
+  static const String iconsSvgLanguage = "assets/icons/svg/language.svg";
+
+  /// Assets for iconsSvgLocation
+  /// assets/icons/svg/location.svg
+  static const String iconsSvgLocation = "assets/icons/svg/location.svg";
+
+  /// Assets for iconsSvgLocationOn
+  /// assets/icons/svg/location_on.svg
+  static const String iconsSvgLocationOn = "assets/icons/svg/location_on.svg";
+
+  /// Assets for iconsSvgLocationPin
+  /// assets/icons/svg/location_pin.svg
+  static const String iconsSvgLocationPin = "assets/icons/svg/location_pin.svg";
+
+  /// Assets for iconsSvgLogout
+  /// assets/icons/svg/logout.svg
+  static const String iconsSvgLogout = "assets/icons/svg/logout.svg";
+
+  /// Assets for iconsSvgMapType
+  /// assets/icons/svg/map_type.svg
+  static const String iconsSvgMapType = "assets/icons/svg/map_type.svg";
+
+  /// Assets for iconsSvgMovedLocation
+  /// assets/icons/svg/moved_location.svg
+  static const String iconsSvgMovedLocation =
+      "assets/icons/svg/moved_location.svg";
+
+  /// Assets for iconsSvgNavigation
+  /// assets/icons/svg/navigation.svg
+  static const String iconsSvgNavigation = "assets/icons/svg/navigation.svg";
+
+  /// Assets for iconsSvgNoNotification
+  /// assets/icons/svg/no_notification.svg
+  static const String iconsSvgNoNotification =
+      "assets/icons/svg/no_notification.svg";
+
+  /// Assets for iconsSvgNotification
+  /// assets/icons/svg/notification.svg
+  static const String iconsSvgNotification =
+      "assets/icons/svg/notification.svg";
+
+  /// Assets for iconsSvgPassword
+  /// assets/icons/svg/password.svg
+  static const String iconsSvgPassword = "assets/icons/svg/password.svg";
+
+  /// Assets for iconsSvgPeople
+  /// assets/icons/svg/people.svg
+  static const String iconsSvgPeople = "assets/icons/svg/people.svg";
+
+  /// Assets for iconsSvgPersonPinCircle
+  /// assets/icons/svg/person_pin_circle.svg
+  static const String iconsSvgPersonPinCircle =
+      "assets/icons/svg/person_pin_circle.svg";
+
+  /// Assets for iconsSvgPlus
+  /// assets/icons/svg/plus.svg
+  static const String iconsSvgPlus = "assets/icons/svg/plus.svg";
+
+  /// Assets for iconsSvgPrint
+  /// assets/icons/svg/print.svg
+  static const String iconsSvgPrint = "assets/icons/svg/print.svg";
+
+  /// Assets for iconsSvgQrCode
+  /// assets/icons/svg/Qr_Code.svg
+  static const String iconsSvgQrCode = "assets/icons/svg/Qr_Code.svg";
+
+  /// Assets for iconsSvgRoute
+  /// assets/icons/svg/route.svg
+  static const String iconsSvgRoute = "assets/icons/svg/route.svg";
+
+  /// Assets for iconsSvgSatellite
+  /// assets/icons/svg/satellite.svg
+  static const String iconsSvgSatellite = "assets/icons/svg/satellite.svg";
+
+  /// Assets for iconsSvgSaved
+  /// assets/icons/svg/saved.svg
+  static const String iconsSvgSaved = "assets/icons/svg/saved.svg";
+
+  /// Assets for iconsSvgSearch
+  /// assets/icons/svg/search.svg
+  static const String iconsSvgSearch = "assets/icons/svg/search.svg";
+
+  /// Assets for iconsSvgSettings
+  /// assets/icons/svg/settings.svg
+  static const String iconsSvgSettings = "assets/icons/svg/settings.svg";
+
+  /// Assets for iconsSvgShare
+  /// assets/icons/svg/share.svg
+  static const String iconsSvgShare = "assets/icons/svg/share.svg";
+
+  /// Assets for iconsSvgStandard
+  /// assets/icons/svg/standard.svg
+  static const String iconsSvgStandard = "assets/icons/svg/standard.svg";
+
+  /// Assets for iconsSvgSupport
+  /// assets/icons/svg/support.svg
+  static const String iconsSvgSupport = "assets/icons/svg/support.svg";
+
+  /// Assets for iconsSvgTerms
+  /// assets/icons/svg/terms.svg
+  static const String iconsSvgTerms = "assets/icons/svg/terms.svg";
+
+  /// Assets for iconsSvgVector
+  /// assets/icons/svg/vector.svg
+  static const String iconsSvgVector = "assets/icons/svg/vector.svg";
+
+  /// Assets for iconsUserLocationIcon
+  /// assets/icons/user_location_icon.png
+  static const String iconsUserLocationIcon =
+      "assets/icons/user_location_icon.png";
+
+  /// Assets for iconsViewmapscan
+  /// assets/icons/viewmapscan.png
+  static const String iconsViewmapscan = "assets/icons/viewmapscan.png";
+
+  /// Assets for imagesCar
+  /// assets/images/car.png
+  static const String imagesCar = "assets/images/car.png";
+
+  /// Assets for imagesLocateMe
+  /// assets/images/locate_me.png
+  static const String imagesLocateMe = "assets/images/locate_me.png";
+
+  /// Assets for imagesMapIcon
+  /// assets/images/map_icon.png
+  static const String imagesMapIcon = "assets/images/map_icon.png";
+
+  /// Assets for imagesQrImage
+  /// assets/images/qr_image.png
+  static const String imagesQrImage = "assets/images/qr_image.png";
+
+  /// Assets for imagesUpRight
+  /// assets/images/up_right.png
+  static const String imagesUpRight = "assets/images/up_right.png";
 }

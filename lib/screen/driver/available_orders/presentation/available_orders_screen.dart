@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
+import 'package:get/get.dart';
 import 'package:ramro_postal_service/core/constants/app_export.dart';
 import 'package:ramro_postal_service/core/widgets/custom_app_widget.dart';
 
+import '../../../../app/routes/app_pages.dart';
 import '../model/available_orders_model.dart';
 
 // ─── Sample Data ────────────────────────────────────────────────────────────
@@ -371,7 +373,10 @@ class _OrderCardState extends State<_OrderCard>
 
     return GestureDetector(
       onTapDown: (_) => _pressController.reverse(),
-      onTapUp: (_) => _pressController.forward(),
+      onTapUp: (_) {
+        _pressController.forward();
+        Get.toNamed(Routes.ORDER_DETAIL, arguments: o.id);
+      },
       onTapCancel: () => _pressController.forward(),
       child: AnimatedBuilder(
         animation: _pressController,

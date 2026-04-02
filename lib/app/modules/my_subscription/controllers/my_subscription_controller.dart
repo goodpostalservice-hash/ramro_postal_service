@@ -7,7 +7,6 @@ import '../../../data/models/my_subscription_response/my_subscription_response.d
 import '../../../data/services/my_subscripiton/my_subscription_service.dart';
 
 class MySubscriptionController extends GetxController {
-
   final count = 0.obs;
   @override
   void onInit() {

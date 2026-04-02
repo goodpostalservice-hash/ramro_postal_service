@@ -1,21 +1,22 @@
 import 'package:dartz/dartz.dart';
 import 'package:ramro_postal_service/app/core/configuration/http_config.dart';
-import 'package:ramro_postal_service/app/data/models/my_subscription_response/my_subscription_response.dart';
+import 'package:ramro_postal_service/app/data/models/order_detail_response/order_detail_response.dart';
 
 import '../../../core/configuration/api.dart';
 
-class MySubscriptionService {
-  static Future<Either<String, MySubscriptionResponse>>
-  getMySubscription() async {
+class OrderDetailService {
+  static Future<Either<String, OrderDetailResponse>> getOrderDetail({
+    required int orderId,
+  }) async {
     var res = await SApi().get(
-      HttpConfig.subscription,
+      HttpConfig.orderDetail(orderId),
       addAuthInterceptor: true,
     );
 
     if (res.isSuccess) {
-      late MySubscriptionResponse data;
+      late OrderDetailResponse data;
       try {
-        data = MySubscriptionResponse.fromMap(res.data ?? {});
+        data = OrderDetailResponse.fromMap(res.data ?? {});
       } catch (e) {
         return Left("data parsing error: $e");
       }

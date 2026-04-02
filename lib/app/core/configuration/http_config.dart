@@ -12,6 +12,8 @@ class HttpConfig {
   static const String login = '/v1/auth/login';
 
   static const String wallet = '/api/wallet';
+  
+  static String orderDetail(int id) => '/api/driver/order-details/$id';
 
   static const String subscription = '/api/my-subscription';
 }

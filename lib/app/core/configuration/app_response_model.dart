@@ -17,5 +17,3 @@ class AppResponse<T> extends AppEntity<T> {
 
   bool get isSuccess => success ?? false;
 }
-
-
