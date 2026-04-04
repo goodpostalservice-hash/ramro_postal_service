@@ -9,6 +9,7 @@ import 'package:ramro_postal_service/core/widgets/custom_button.dart';
 import 'package:ramro_postal_service/screen/main/dashboard.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../../../../../app/core/utils/storage_util.dart';
+import '../../../../../app/core/values/const_keys.dart';
 import '../../../../../core/constants/app_export.dart';
 import '../../../../../core/error/toast.dart';
 import '../../register/screen/register.dart';
@@ -425,7 +426,9 @@ class OTPScreenState extends State<OTPScreen> {
     Response? response;
     try {
       response = await dio.post(
-        ApiConstant.verify,
+        SStorageUtil.getData(key: SConstKeys.selectedRole) == 'driver'
+            ? ApiConstant.driverVerify
+            : ApiConstant.verify,
         options: Options(headers: {'Accept': 'application/json'}),
         data: FormData.fromMap(payload),
       );
@@ -491,7 +494,9 @@ class OTPScreenState extends State<OTPScreen> {
     Response? response;
     try {
       response = await dio.post(
-        ApiConstant.resendOtp,
+        SStorageUtil.getData(key: SConstKeys.selectedRole) == 'driver'
+            ? ApiConstant.driverResendOtp
+            : ApiConstant.resendOtp,
         options: Options(headers: {'Accept': 'application/json'}),
         data: FormData.fromMap(payload),
       );

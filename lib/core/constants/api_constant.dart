@@ -4,9 +4,12 @@ class ApiConstant {
 
   static const String verify = '$baseUrl/check-otp';
   static const String resendOtp = '$baseUrl/resend-otp';
+  static const String driverVerify = '$baseUrl/driver/check-otp';
+  static const String driverResendOtp = '$baseUrl/driver/resend-otp';
   static const String user = '$baseUrl/v2/register';
   static const String profile = '$baseUrl/profile';
   static const String login = '$baseUrl/login';
+  static const String driverLogin = '$baseUrl/driver/login';
   static const String placeOrder = '$baseUrl/place-order';
   static const String orderHistory = '$baseUrl/order-history';
   static const String orderEstimate = '$baseUrl/order-estimate';

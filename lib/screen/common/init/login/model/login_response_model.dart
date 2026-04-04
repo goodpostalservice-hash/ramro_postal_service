@@ -49,7 +49,7 @@ class User {
   String? firstName;
   String? lastName;
   Null image;
-  Null email;
+  dynamic email;
   Null emailVerifiedAt;
   String? countryCode;
   String? phone;
@@ -64,7 +64,7 @@ class User {
   String? lastLoginIp;
   String? lastLoginAt;
   String? userType;
-  int? isOnline;
+  dynamic isOnline;
   String? status;
   String? createdAt;
   String? updatedAt;

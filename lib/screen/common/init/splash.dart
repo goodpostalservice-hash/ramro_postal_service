@@ -1,11 +1,13 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:ramro_postal_service/app/core/values/const_keys.dart';
 import 'package:ramro_postal_service/core/constants/app_export.dart';
 import 'package:ramro_postal_service/core/error/toast.dart';
 import 'package:ramro_postal_service/screen/common/init/splash_controller.dart';
 import 'package:ramro_postal_service/screen/common/no_internet/no_internet_controller.dart';
 import '../../../app/core/utils/storage_util.dart';
+import '../../../app/routes/app_pages.dart';
 import '../../../manager/userdata.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -82,9 +84,8 @@ class SplashScreenState extends State<SplashScreen>
       bool isSucceed = await splash.determinePosition();
 
       if (isSucceed == true) {
-        if (AppConstant.logInfo.toString() == '[]') {
-          // Get.offNamed('/dashboard');
-          Get.offNamed('/login');
+        if (!(SStorageUtil.getData(key: SConstKeys.isLoggedIn) ?? false)) {
+          Get.offNamed(Routes.SELECT_ROLE);
         } else {
           AppConstant.bearerToken = AppConstant.logInfo[0]['data']['token']
               .toString();

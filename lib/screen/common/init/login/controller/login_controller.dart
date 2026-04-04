@@ -4,6 +4,7 @@ import 'package:dio/dio.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:ramro_postal_service/app/core/utils/keys.dart';
 import 'package:ramro_postal_service/core/constants/app_export.dart';
 import 'package:ramro_postal_service/resource/variable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -102,7 +103,9 @@ class LoginController extends BaseController {
       };
 
       final result = await restClient.request(
-        ApiConstant.login,
+        SStorageUtil.getData(key: SConstKeys.selectedRole) == 'driver'
+            ? ApiConstant.driverLogin
+            : ApiConstant.login,
         Method.POST,
         map,
       );
