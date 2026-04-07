@@ -547,10 +547,7 @@ class ErrorResponse {
 class HeaderInterceptor extends Interceptor {
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
-    options.headers = {
-      'Content-Type': 'application/json',
-      'Accept': 'application/json',
-    };
+    options.headers = {'Content-Type': 'application/json', 'Accept': '*/*'};
     return handler.next(options);
   }
 }
@@ -639,7 +636,7 @@ class AuthInterceptor extends Interceptor {
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
     options.headers = {
       'Authorization':
-          'Bearer ${"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIwMTljNDM2NS02NDVmLTcyZDQtYmM4Ny05ZjlkMDM5MjA5M2YiLCJqdGkiOiJhNGM4ZjA3ZjJkOGNhMWIxOTJjMjA1ODQ0Njc3MzhmMWE0NzhjOWMyMDBmYzA5YjVjYTIzNDYwZTg5ZGI1NjY3ZTFkZjg5MzI1N2JmNzUxMyIsImlhdCI6MTc3NTE0ODU1NC4yMjY2ODI5MDEzODI0NDYyODkwNjI1LCJuYmYiOjE3NzUxNDg1NTQuMjI2Njg3OTA4MTcyNjA3NDIxODc1LCJleHAiOjE3OTA5NTk3NTQuMjE0MzE0OTM3NTkxNTUyNzM0Mzc1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.nTi0mbjndC3UWCFOEm1aKeeBGHd282juuF5dzE_uucESNNgNF4myX_IOALwuDOmq8tDuVazWpcALZfzU-tDvIyjMzhC1xNGtKA0_-z94ftrNhxWmzQFSzeX1wcczeTWgPRm7vYXhWSPjL4SqlQwemnq2uQSnHLQhenYAqezkJaQW-21GL-4-Gq87pYvAkREcv8pATSZwi7PvgMw4BdDFBEGBuybsVhgbFf35Z6Dmq_0L5neEeN9TvNfTLYWmjKOiI-WE0QGLfj622UlaJK4ivAjmfgic_EkndKR-9eQPGPO99dSG35_GGkGuhAM7eb2eSBfqVylzMp91nhHtYUzcOWnP710qPc75jCWDlHuLUUCqH4-Z9kSfIL8-gzh94MUrYeWyMsHYY_8T1QMC280yEKhFsm285zZEYaR1_PgJviojuzy9iZ4kJWs7d9Rws46ezXqnA_eDUQybZlNOEzYtB6o8tlJcr_HnjQOWrgcy4Vkn7_Gbtn3mBsZKrCB4M4FRLKafCgOAg27Hx3M3RArcha5OK3uttIm4NDDzZNNdIs34EzEOW8yBzKGDgF4U-VUiBFSTSwaiQU6-5zxsQ4bZnLOIqy-x_kKpfutw72RsKgUg0v3P-rS5ZL0yLnsNqfsiMEWGacJAYQ_MT6yaNGbrj3VaPJwtGD3buVbAzIrE5nE"}',
+          'Bearer $authToken',
     };
     return handler.next(options);
   }

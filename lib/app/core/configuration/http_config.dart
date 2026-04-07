@@ -15,7 +15,11 @@ class HttpConfig {
   static const String todayEarning = '/api/driver/today-earnings';
   static const String earning = '/api/driver/earnings';
 
+  static const String orderEstimate = '/api/order-estimate';
+
   static String orderDetail(int id) => '/api/driver/order-details/$id';
 
   static const String subscription = '/api/my-subscription';
+
+  static const String placeOrder = '/api/place-order';
 }

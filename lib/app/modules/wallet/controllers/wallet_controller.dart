@@ -7,8 +7,7 @@ import '../../../data/models/general/api_result.dart';
 import '../../../data/models/user_wallet/user_wallet.dart';
 
 class WalletController extends GetxController {
-  //TODO: Implement WalletController
-
+ 
   final count = 0.obs;
   @override
   void onInit() {
