@@ -27,7 +27,7 @@ class OrderHistoryModel {
 class Orders {
   int? id;
   String? orderUuid;
-  Null driverId;
+  int? driverId;
   int? userId;
   Null marchentId;
   String? receiverName;
