@@ -61,7 +61,11 @@ class _HomeScreenState extends State<HomeScreen> {
               Container(
                 color: Colors.white,
                 padding: const EdgeInsets.only(
-                    bottom: 12.0, top: 12.0, left: 12.0, right: 12.0),
+                  bottom: 12.0,
+                  top: 12.0,
+                  left: 12.0,
+                  right: 12.0,
+                ),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -72,7 +76,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     //     fontSize: 18.0, fontWeight: FontWeight.bold, color: Colors.black87
                     //   ),),
                     // ),
-
                     Align(
                       alignment: Alignment.center,
                       child: Image.asset("assets/icons/logo.png", width: 120.0),
@@ -131,7 +134,11 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget serviceGrid() {
     return Container(
       margin: const EdgeInsets.only(
-          left: 12.0, right: 12.0, top: 20.0, bottom: 20.0),
+        left: 12.0,
+        right: 12.0,
+        top: 20.0,
+        bottom: 20.0,
+      ),
       child: GridView.count(
         physics: const NeverScrollableScrollPhysics(),
         padding: const EdgeInsets.all(0.0),
@@ -139,66 +146,68 @@ class _HomeScreenState extends State<HomeScreen> {
         crossAxisSpacing: 15.0,
         mainAxisSpacing: 15.0,
         shrinkWrap: true,
-        children: List.generate(
-          ListData.service_list.length,
-          (index) {
-            return InkWell(
-              onTap: () async {
-                if (ListData.service_list[index]['name']
-                        .toString()
-                        .toLowerCase() ==
-                    "Generate QR".toLowerCase()) {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const MapScreen()));
-                } else if (ListData.service_list[index]['name']
-                        .toString()
-                        .toLowerCase() ==
-                    "Scan QR".toLowerCase()) {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const QRScannerPage()));
-                } else if (ListData.service_list[index]['name']
-                        .toString()
-                        .toLowerCase() ==
-                    "Rental".toLowerCase()) {
-                  Navigator.pushNamed(context, '/rental_home');
-                } else {}
-              },
-              child: Container(
-                padding: const EdgeInsets.all(15.0),
-                decoration: const BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.all(Radius.circular(15.0)),
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    Padding(
-                      padding: const EdgeInsets.only(left: 0.0, right: 0.0),
-                      child: CachedNetworkImage(
-                        height: 60.0,
-                        imageUrl:
-                            ListData.service_list[index]['image'].toString(),
-                        fit: BoxFit.contain,
-                        placeholder: (context, url) => Image.asset(
-                            "assets/banners/ic_app_card_placeholder.png",
-                            fit: BoxFit.cover),
-                        errorWidget: (context, url, error) =>
-                            const Icon(Icons.error),
-                      ),
-                    ),
-                    Text(ListData.service_list[index]['name'].toString(),
-                        maxLines: 1),
-                  ],
-                ),
+        children: List.generate(ListData.service_list.length, (index) {
+          return InkWell(
+            onTap: () async {
+              if (ListData.service_list[index]['name']
+                      .toString()
+                      .toLowerCase() ==
+                  "Generate QR".toLowerCase()) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const MapScreen()),
+                );
+              } else if (ListData.service_list[index]['name']
+                      .toString()
+                      .toLowerCase() ==
+                  "Scan QR".toLowerCase()) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const QRScannerPage(),
+                  ),
+                );
+              } else if (ListData.service_list[index]['name']
+                      .toString()
+                      .toLowerCase() ==
+                  "Rental".toLowerCase()) {
+                Navigator.pushNamed(context, '/rental_home');
+              } else {}
+            },
+            child: Container(
+              padding: const EdgeInsets.all(15.0),
+              decoration: const BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.all(Radius.circular(15.0)),
               ),
-            );
-          },
-        ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.only(left: 0.0, right: 0.0),
+                    child: CachedNetworkImage(
+                      height: 60.0,
+                      imageUrl: ListData.service_list[index]['image']
+                          .toString(),
+                      fit: BoxFit.contain,
+                      placeholder: (context, url) => Image.asset(
+                        "assets/banners/ic_app_card_placeholder.png",
+                        fit: BoxFit.cover,
+                      ),
+                      errorWidget: (context, url, error) =>
+                          const Icon(Icons.error),
+                    ),
+                  ),
+                  Text(
+                    ListData.service_list[index]['name'].toString(),
+                    maxLines: 1,
+                  ),
+                ],
+              ),
+            ),
+          );
+        }),
       ),
     );
   }
@@ -206,18 +215,25 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget whatsNew() {
     return Container(
       padding: const EdgeInsets.only(
-          left: 12.0, right: 12.0, top: 25.0, bottom: 20.0),
+        left: 12.0,
+        right: 12.0,
+        top: 25.0,
+        bottom: 20.0,
+      ),
       width: width,
       color: Colors.white,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
-          Text(AppStrings.whats_new,
-              style: TextStyle(
-                  color: AppColors.blackBold,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 17.0)),
+          Text(
+            AppStrings.whats_new,
+            style: TextStyle(
+              color: AppColors.blackBold,
+              fontWeight: FontWeight.bold,
+              fontSize: 17.0,
+            ),
+          ),
 
           // slider option
           slideMenu(),
@@ -242,17 +258,26 @@ class _HomeScreenState extends State<HomeScreen> {
           return Container(
             margin: const EdgeInsets.only(right: 10.0),
             padding: const EdgeInsets.only(
-                left: 14.0, right: 14.0, top: 7.0, bottom: 7.0),
+              left: 14.0,
+              right: 14.0,
+              top: 7.0,
+              bottom: 7.0,
+            ),
             decoration: BoxDecoration(
-                color: index == 0 ? AppColors.primary : Colors.white,
-                border: Border.all(
-                    color: index == 0 ? AppColors.primary : AppColors.lightGrey,
-                    width: 1.0),
-                borderRadius: BorderRadius.circular(10.0)),
-            child: Text(ListData.whatsNewList[index]['view'].toString(),
-                style: TextStyle(
-                    color: index == 0 ? Colors.white : AppColors.lightGrey,
-                    fontWeight: FontWeight.bold)),
+              color: index == 0 ? AppColors.primary : Colors.white,
+              border: Border.all(
+                color: index == 0 ? AppColors.primary : AppColors.lightGrey,
+                width: 1.0,
+              ),
+              borderRadius: BorderRadius.circular(10.0),
+            ),
+            child: Text(
+              ListData.whatsNewList[index]['view'].toString(),
+              style: TextStyle(
+                color: index == 0 ? Colors.white : AppColors.lightGrey,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
           );
         },
       ),
@@ -263,57 +288,64 @@ class _HomeScreenState extends State<HomeScreen> {
   int index = 1;
   Widget carousel() {
     return Container(
-        child: bannerList.isNotEmpty
-            ? CarouselSlider(
-                options: CarouselOptions(
-                    height: 200.0,
-                    viewportFraction: 0.9,
-                    initialPage: 0,
-                    onPageChanged: (index, _) {
-                      setState(() {
-                        // _current = index;
-                      });
-                    },
-                    autoPlay: true),
-                items: bannerList.map<Widget>((imageURL) {
-                  return Builder(
-                    builder: (BuildContext context) {
-                      return InkWell(
-                        onTap: () {
-                          _launchURL(imageURL['url'].toString());
-                        },
-                        child: Container(
-                          width: MediaQuery.of(context).size.width,
-                          margin: const EdgeInsets.symmetric(horizontal: 5.0),
-                          decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(10)),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(10.0),
-                            child: CachedNetworkImage(
-                              height: 200.0,
-                              imageUrl: imageURL['image_url'],
-                              fit: BoxFit.contain,
-                              placeholder: (context, url) => Image.asset(
-                                  "assets/banners/ic_app_card_placeholder.png",
-                                  fit: BoxFit.cover),
-                              errorWidget: (context, url, error) => Image.asset(
-                                  "assets/banners/ic_app_card_placeholder.png",
-                                  fit: BoxFit.cover),
+      child: bannerList.isNotEmpty
+          ? CarouselSlider(
+              options: CarouselOptions(
+                height: 200.0,
+                viewportFraction: 0.9,
+                initialPage: 0,
+                onPageChanged: (index, _) {
+                  setState(() {
+                    // _current = index;
+                  });
+                },
+                autoPlay: true,
+              ),
+              items: bannerList.map<Widget>((imageURL) {
+                return Builder(
+                  builder: (BuildContext context) {
+                    return InkWell(
+                      onTap: () {
+                        _launchURL(imageURL['url'].toString());
+                      },
+                      child: Container(
+                        width: MediaQuery.of(context).size.width,
+                        margin: const EdgeInsets.symmetric(horizontal: 5.0),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(10.0),
+                          child: CachedNetworkImage(
+                            height: 200.0,
+                            imageUrl: imageURL['image_url'],
+                            fit: BoxFit.contain,
+                            placeholder: (context, url) => Image.asset(
+                              "assets/banners/ic_app_card_placeholder.png",
+                              fit: BoxFit.cover,
+                            ),
+                            errorWidget: (context, url, error) => Image.asset(
+                              "assets/banners/ic_app_card_placeholder.png",
+                              fit: BoxFit.cover,
                             ),
                           ),
                         ),
-                      );
-                    },
-                  );
-                }).toList(),
-              )
-            : SizedBox(
-                height: 200.0,
-                width: double.infinity,
-                child: Image.asset("assets/banners/ic_app_card_placeholder.png",
-                    fit: BoxFit.cover),
-              ));
+                      ),
+                    );
+                  },
+                );
+              }).toList(),
+            )
+          : SizedBox(
+              height: 200.0,
+              width: double.infinity,
+              child: Image.asset(
+                "assets/banners/ic_app_card_placeholder.png",
+                fit: BoxFit.cover,
+              ),
+            ),
+    );
   }
 
   Widget search() {
@@ -321,17 +353,24 @@ class _HomeScreenState extends State<HomeScreen> {
       width: width,
       margin: const EdgeInsets.only(top: 20.0, bottom: 20.0),
       padding: const EdgeInsets.only(
-          top: 20.0, bottom: 10.0, left: 12.0, right: 12.0),
+        top: 20.0,
+        bottom: 10.0,
+        left: 12.0,
+        right: 12.0,
+      ),
       decoration: const BoxDecoration(color: Colors.white),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
-          Text("Features",
-              style: TextStyle(
-                  fontSize: 17.0,
-                  fontWeight: FontWeight.bold,
-                  color: AppColors.blackBold)),
+          Text(
+            "Features",
+            style: TextStyle(
+              fontSize: 17.0,
+              fontWeight: FontWeight.bold,
+              color: AppColors.blackBold,
+            ),
+          ),
 
           Container(
             margin: const EdgeInsets.only(top: 20.0, bottom: 10.0),
@@ -345,7 +384,10 @@ class _HomeScreenState extends State<HomeScreen> {
               children: <Widget>[
                 Container(
                   padding: const EdgeInsets.only(
-                      top: 10.0, bottom: 10.0, left: 10.0),
+                    top: 10.0,
+                    bottom: 10.0,
+                    left: 10.0,
+                  ),
                   child: InkWell(
                     onTap: () => Get.toNamed('/myqr'),
                     child: Row(
@@ -356,8 +398,11 @@ class _HomeScreenState extends State<HomeScreen> {
                             borderRadius: BorderRadius.circular(10.0),
                             color: AppColors.normalBG,
                           ),
-                          child: Icon(Icons.qr_code,
-                              color: AppColors.lightGrey, size: 32.0),
+                          child: Icon(
+                            Icons.qr_code,
+                            color: AppColors.lightGrey,
+                            size: 32.0,
+                          ),
                         ),
                         Container(
                           padding: const EdgeInsets.only(left: 10.0),
@@ -365,16 +410,22 @@ class _HomeScreenState extends State<HomeScreen> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: <Widget>[
-                              Text('My QR List',
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      color: AppColors.blackBold,
-                                      fontSize: 14.0)),
+                              Text(
+                                'My QR List',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.blackBold,
+                                  fontSize: 14.0,
+                                ),
+                              ),
                               const SizedBox(height: 4.0),
-                              Text('Your QR are list here. Tap to view more.',
-                                  style: TextStyle(
-                                      color: AppColors.lightGrey,
-                                      fontSize: 13.0))
+                              Text(
+                                'Your QR are list here. Tap to view more.',
+                                style: TextStyle(
+                                  color: AppColors.lightGrey,
+                                  fontSize: 13.0,
+                                ),
+                              ),
                             ],
                           ),
                         ),
@@ -430,7 +481,11 @@ class _HomeScreenState extends State<HomeScreen> {
       width: width,
       margin: const EdgeInsets.only(bottom: 20.0),
       padding: const EdgeInsets.only(
-          top: 20.0, bottom: 20.0, left: 12.0, right: 12.0),
+        top: 20.0,
+        bottom: 20.0,
+        left: 12.0,
+        right: 12.0,
+      ),
       decoration: const BoxDecoration(color: Colors.white),
       child: Column(
         children: <Widget>[
@@ -439,20 +494,28 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                Text(AppStrings.featured_restaurant,
-                    style: TextStyle(
-                        fontSize: 17.0,
-                        fontWeight: FontWeight.bold,
-                        color: AppColors.blackBold)),
+                Text(
+                  AppStrings.featured_restaurant,
+                  style: TextStyle(
+                    fontSize: 17.0,
+                    fontWeight: FontWeight.bold,
+                    color: AppColors.blackBold,
+                  ),
+                ),
                 Container(
                   child: Row(
                     children: <Widget>[
-                      Text('See All',
-                          style: TextStyle(color: AppColors.lightGrey)),
+                      Text(
+                        'See All',
+                        style: TextStyle(color: AppColors.lightGrey),
+                      ),
                       Padding(
                         padding: const EdgeInsets.only(left: 4.0),
-                        child: Icon(Icons.arrow_forward_ios_sharp,
-                            color: AppColors.lightGrey, size: 18.0),
+                        child: Icon(
+                          Icons.arrow_forward_ios_sharp,
+                          color: AppColors.lightGrey,
+                          size: 18.0,
+                        ),
                       ),
                     ],
                   ),
@@ -474,9 +537,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   width: 300.0,
                   margin: const EdgeInsets.only(right: 15.0),
                   decoration: BoxDecoration(
-                      border:
-                          Border.all(color: AppColors.borderColor, width: 1),
-                      borderRadius: BorderRadius.circular(10.0)),
+                    border: Border.all(color: AppColors.borderColor, width: 1),
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
                   child: Column(
                     children: <Widget>[
                       CachedNetworkImage(
@@ -496,16 +559,22 @@ class _HomeScreenState extends State<HomeScreen> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             const SizedBox(height: 3.0),
-                            Text(ListData.foodList[index]['name'].toString(),
-                                style: TextStyle(
-                                    color: AppColors.blackBold,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 15.0)),
+                            Text(
+                              ListData.foodList[index]['name'].toString(),
+                              style: TextStyle(
+                                color: AppColors.blackBold,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 15.0,
+                              ),
+                            ),
                             const SizedBox(height: 4.0),
-                            Text(ListData.foodList[index]['tag'].toString(),
-                                style: TextStyle(
-                                    color: AppColors.lightGrey,
-                                    fontSize: 14.0)),
+                            Text(
+                              ListData.foodList[index]['tag'].toString(),
+                              style: TextStyle(
+                                color: AppColors.lightGrey,
+                                fontSize: 14.0,
+                              ),
+                            ),
                             Container(
                               padding: const EdgeInsets.only(top: 4.0),
                               child: Row(
@@ -513,28 +582,38 @@ class _HomeScreenState extends State<HomeScreen> {
                                   const Icon(Icons.star, color: Colors.orange),
                                   Padding(
                                     padding: const EdgeInsets.only(
-                                        left: 4.0, right: 6.0),
+                                      left: 4.0,
+                                      right: 6.0,
+                                    ),
                                     child: Text(
-                                        ListData.foodList[index]['rating']
-                                            .toString(),
-                                        style: const TextStyle(fontSize: 13.0)),
+                                      ListData.foodList[index]['rating']
+                                          .toString(),
+                                      style: const TextStyle(fontSize: 13.0),
+                                    ),
                                   ),
                                   Text(
-                                      '(${ListData.foodList[index]['review_no']} Ratings)',
-                                      style: TextStyle(
-                                          color: AppColors.lightGrey,
-                                          fontSize: 13.0)),
+                                    '(${ListData.foodList[index]['review_no']} Ratings)',
+                                    style: TextStyle(
+                                      color: AppColors.lightGrey,
+                                      fontSize: 13.0,
+                                    ),
+                                  ),
                                   Container(
-                                      margin: const EdgeInsets.only(
-                                          left: 5.0, right: 5.0),
-                                      height: 15.0,
-                                      width: 1.0,
-                                      color: AppColors.lightGrey),
+                                    margin: const EdgeInsets.only(
+                                      left: 5.0,
+                                      right: 5.0,
+                                    ),
+                                    height: 15.0,
+                                    width: 1.0,
+                                    color: AppColors.lightGrey,
+                                  ),
                                   Text(
-                                      'Delivery Rs.${ListData.foodList[index]['delivery_amt']}',
-                                      style: TextStyle(
-                                          color: AppColors.lightGrey,
-                                          fontSize: 13.0))
+                                    'Delivery Rs.${ListData.foodList[index]['delivery_amt']}',
+                                    style: TextStyle(
+                                      color: AppColors.lightGrey,
+                                      fontSize: 13.0,
+                                    ),
+                                  ),
                                 ],
                               ),
                             ),
@@ -558,43 +637,59 @@ class _HomeScreenState extends State<HomeScreen> {
       width: width,
       margin: const EdgeInsets.only(bottom: 20.0),
       padding: const EdgeInsets.only(
-          top: 20.0, bottom: 20.0, left: 12.0, right: 12.0),
+        top: 20.0,
+        bottom: 20.0,
+        left: 12.0,
+        right: 12.0,
+      ),
       decoration: const BoxDecoration(color: Colors.white),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           SizedBox(
             width: width,
-            child: Text(AppStrings.get_discounts,
-                style: TextStyle(
-                    fontSize: 17.0,
-                    fontWeight: FontWeight.bold,
-                    color: AppColors.blackBold)),
+            child: Text(
+              AppStrings.get_discounts,
+              style: TextStyle(
+                fontSize: 17.0,
+                fontWeight: FontWeight.bold,
+                color: AppColors.blackBold,
+              ),
+            ),
           ),
           Container(
             padding: const EdgeInsets.only(top: 40.0, bottom: 40.0),
             child: Image.asset("assets/banners/free_ride_banner.png"),
           ),
-          Text(AppStrings.invite_friends,
-              style: TextStyle(
-                  fontSize: 16.0,
-                  fontWeight: FontWeight.bold,
-                  color: AppColors.blackBold)),
+          Text(
+            AppStrings.invite_friends,
+            style: TextStyle(
+              fontSize: 16.0,
+              fontWeight: FontWeight.bold,
+              color: AppColors.blackBold,
+            ),
+          ),
           Padding(
             padding: const EdgeInsets.only(top: 20.0, bottom: 10.0),
-            child: Text(AppStrings.invite_friend,
-                style: TextStyle(
-                    fontSize: 15.0,
-                    fontWeight: FontWeight.normal,
-                    color: AppColors.highlightBlackColor)),
+            child: Text(
+              AppStrings.invite_friend,
+              style: TextStyle(
+                fontSize: 15.0,
+                fontWeight: FontWeight.normal,
+                color: AppColors.highlightBlackColor,
+              ),
+            ),
           ),
           Padding(
             padding: const EdgeInsets.only(top: 10.0, bottom: 10.0),
-            child: Text(AppStrings.static_info,
-                style: TextStyle(
-                    fontSize: 15.0,
-                    fontWeight: FontWeight.normal,
-                    color: AppColors.highlightBlackColor)),
+            child: Text(
+              AppStrings.static_info,
+              style: TextStyle(
+                fontSize: 15.0,
+                fontWeight: FontWeight.normal,
+                color: AppColors.highlightBlackColor,
+              ),
+            ),
           ),
           Container(
             child: Row(
@@ -605,9 +700,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   margin: const EdgeInsets.only(top: 10.0, bottom: 10.0),
                   padding: const EdgeInsets.only(left: 12.0, right: 12.0),
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10.0),
-                      border:
-                          Border.all(color: AppColors.borderColor, width: 1.0)),
+                    borderRadius: BorderRadius.circular(10.0),
+                    border: Border.all(
+                      color: AppColors.borderColor,
+                      width: 1.0,
+                    ),
+                  ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
@@ -615,13 +713,18 @@ class _HomeScreenState extends State<HomeScreen> {
                         padding: const EdgeInsets.only(right: 10.0),
                         child: Row(
                           children: <Widget>[
-                            const Text('Share your code: ',
-                                style: TextStyle(fontSize: 15.0)),
-                            Text('KMC81',
-                                style: TextStyle(
-                                    color: AppColors.blackBold,
-                                    fontSize: 15.0,
-                                    fontWeight: FontWeight.bold))
+                            const Text(
+                              'Share your code: ',
+                              style: TextStyle(fontSize: 15.0),
+                            ),
+                            Text(
+                              'KMC81',
+                              style: TextStyle(
+                                color: AppColors.blackBold,
+                                fontSize: 15.0,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
                           ],
                         ),
                       ),
@@ -632,9 +735,11 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 10.0),
-                        child:
-                            Icon(Icons.content_copy, color: AppColors.primary),
-                      )
+                        child: Icon(
+                          Icons.content_copy,
+                          color: AppColors.primary,
+                        ),
+                      ),
                     ],
                   ),
                 ),
@@ -649,13 +754,17 @@ class _HomeScreenState extends State<HomeScreen> {
                       width: 62.0,
                       height: 45.0,
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10.0)),
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
                       child: Center(
-                          child: Text(
-                        'Invite'.toUpperCase(),
-                        style: const TextStyle(
-                            color: Colors.white, fontWeight: FontWeight.bold),
-                      )),
+                        child: Text(
+                          'Invite'.toUpperCase(),
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
                     ),
                   ),
                 ),
@@ -673,7 +782,11 @@ class _HomeScreenState extends State<HomeScreen> {
       width: width,
       margin: const EdgeInsets.only(bottom: 20.0),
       padding: const EdgeInsets.only(
-          top: 20.0, bottom: 20.0, left: 12.0, right: 12.0),
+        top: 20.0,
+        bottom: 20.0,
+        left: 12.0,
+        right: 12.0,
+      ),
       decoration: const BoxDecoration(color: Colors.white),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -683,26 +796,35 @@ class _HomeScreenState extends State<HomeScreen> {
             alignment: Alignment.center,
             child: Image.asset("assets/banners/food_banner.jpg", height: 140.0),
           ),
-          Text(AppStrings.invite_friends_food,
-              style: TextStyle(
-                  fontSize: 16.0,
-                  fontWeight: FontWeight.bold,
-                  color: AppColors.blackBold)),
+          Text(
+            AppStrings.invite_friends_food,
+            style: TextStyle(
+              fontSize: 16.0,
+              fontWeight: FontWeight.bold,
+              color: AppColors.blackBold,
+            ),
+          ),
           Padding(
             padding: const EdgeInsets.only(top: 20.0, bottom: 10.0),
-            child: Text(AppStrings.static_info_food,
-                style: TextStyle(
-                    fontSize: 15.0,
-                    fontWeight: FontWeight.normal,
-                    color: AppColors.highlightBlackColor)),
+            child: Text(
+              AppStrings.static_info_food,
+              style: TextStyle(
+                fontSize: 15.0,
+                fontWeight: FontWeight.normal,
+                color: AppColors.highlightBlackColor,
+              ),
+            ),
           ),
           Padding(
             padding: const EdgeInsets.only(top: 10.0, bottom: 10.0),
-            child: Text(AppStrings.static_info,
-                style: TextStyle(
-                    fontSize: 15.0,
-                    fontWeight: FontWeight.normal,
-                    color: AppColors.highlightBlackColor)),
+            child: Text(
+              AppStrings.static_info,
+              style: TextStyle(
+                fontSize: 15.0,
+                fontWeight: FontWeight.normal,
+                color: AppColors.highlightBlackColor,
+              ),
+            ),
           ),
           Container(
             child: Row(
@@ -713,9 +835,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   margin: const EdgeInsets.only(top: 10.0, bottom: 10.0),
                   padding: const EdgeInsets.only(left: 12.0, right: 12.0),
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10.0),
-                      border:
-                          Border.all(color: AppColors.borderColor, width: 1.0)),
+                    borderRadius: BorderRadius.circular(10.0),
+                    border: Border.all(
+                      color: AppColors.borderColor,
+                      width: 1.0,
+                    ),
+                  ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
@@ -723,13 +848,18 @@ class _HomeScreenState extends State<HomeScreen> {
                         padding: const EdgeInsets.only(right: 10.0),
                         child: Row(
                           children: <Widget>[
-                            const Text('Share your code: ',
-                                style: TextStyle(fontSize: 15.0)),
-                            Text('SIMA200',
-                                style: TextStyle(
-                                    color: AppColors.blackBold,
-                                    fontSize: 15.0,
-                                    fontWeight: FontWeight.bold))
+                            const Text(
+                              'Share your code: ',
+                              style: TextStyle(fontSize: 15.0),
+                            ),
+                            Text(
+                              'SIMA200',
+                              style: TextStyle(
+                                color: AppColors.blackBold,
+                                fontSize: 15.0,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
                           ],
                         ),
                       ),
@@ -740,9 +870,11 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 10.0),
-                        child:
-                            Icon(Icons.content_copy, color: AppColors.primary),
-                      )
+                        child: Icon(
+                          Icons.content_copy,
+                          color: AppColors.primary,
+                        ),
+                      ),
                     ],
                   ),
                 ),
@@ -757,13 +889,17 @@ class _HomeScreenState extends State<HomeScreen> {
                       width: 62.0,
                       height: 45.0,
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10.0)),
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
                       child: Center(
-                          child: Text(
-                        'Invite'.toUpperCase(),
-                        style: const TextStyle(
-                            color: Colors.white, fontWeight: FontWeight.bold),
-                      )),
+                        child: Text(
+                          'Invite'.toUpperCase(),
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
                     ),
                   ),
                 ),
@@ -781,7 +917,8 @@ class _HomeScreenState extends State<HomeScreen> {
     }
 
     Position position = await Geolocator.getCurrentPosition(
-        desiredAccuracy: LocationAccuracy.high);
+      desiredAccuracy: LocationAccuracy.high,
+    );
 
     setState(() {
       AppVariable.current_latitude = position.latitude;
@@ -795,15 +932,10 @@ class _HomeScreenState extends State<HomeScreen> {
         "https://easytaxinepal.com/nominatim/reverse?format=json&lat=$latitude&lon=$longitude&zoom=16&addressdetails=1";
     var dio = Dio();
     final response = await dio
-        .get(
-      pinURL,
-      options: Options(
-        headers: {},
-      ),
-    )
+        .get(pinURL, options: Options(headers: {}))
         .catchError((error, stackTrace) {
-      log("Error Data: $error");
-    });
+          log("Error Data: $error");
+        });
 
     final responseData = response.data;
     setState(() {
@@ -819,17 +951,17 @@ class _HomeScreenState extends State<HomeScreen> {
 
     final response = await dio
         .get(
-      ApiConstant.slider,
-      options: Options(
-        headers: {
-          'Accept': 'application/json',
-          'Authorization': "Bearer ${AppConstant.bearerToken.toString()}"
-        },
-      ),
-    )
+          ApiConstant.slider,
+          options: Options(
+            headers: {
+              'Accept': 'application/json',
+              'Authorization': "Bearer ${AppConstant.bearerToken.toString()}",
+            },
+          ),
+        )
         .catchError((error, stackTrace) {
-      log("Error: ${error['data']['message']}");
-    });
+          log("Error: ${error['data']['message']}");
+        });
 
     final responseData = response.data;
     if (response.statusCode == 200) {

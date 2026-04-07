@@ -6,13 +6,14 @@ class PastHistoryModal {
   int? currentPage;
   List<Data>? data;
 
-  PastHistoryModal(
-      {this.result,
-        this.message,
-        this.nextPageUrl,
-        this.totalPages,
-        this.currentPage,
-        this.data});
+  PastHistoryModal({
+    this.result,
+    this.message,
+    this.nextPageUrl,
+    this.totalPages,
+    this.currentPage,
+    this.data,
+  });
 
   PastHistoryModal.fromJson(Map<String, dynamic> json) {
     result = json['result'];
@@ -67,30 +68,31 @@ class Data {
   String? dropMarkerIcon;
   String? ployPoints;
 
-  Data(
-      {this.paymentMethod,
-        this.bookingId,
-        this.mapImageVisibility,
-        this.mapImage,
-        this.pickVisibility,
-        this.pickText,
-        this.dropVisibility,
-        this.dropLocation,
-        this.driverBlockVisibility,
-        this.statusText,
-        this.circularImage,
-        this.highlightedText,
-        this.highlightedSmallText,
-        this.valueText,
-        this.valueTextVisibility,
-        this.valueTextColor,
-        this.pickupLatitude,
-        this.pickupLongitude,
-        this.dropLatitude,
-        this.dropLongitude,
-        this.pickMarkerIcon,
-        this.dropMarkerIcon,
-        this.ployPoints});
+  Data({
+    this.paymentMethod,
+    this.bookingId,
+    this.mapImageVisibility,
+    this.mapImage,
+    this.pickVisibility,
+    this.pickText,
+    this.dropVisibility,
+    this.dropLocation,
+    this.driverBlockVisibility,
+    this.statusText,
+    this.circularImage,
+    this.highlightedText,
+    this.highlightedSmallText,
+    this.valueText,
+    this.valueTextVisibility,
+    this.valueTextColor,
+    this.pickupLatitude,
+    this.pickupLongitude,
+    this.dropLatitude,
+    this.dropLongitude,
+    this.pickMarkerIcon,
+    this.dropMarkerIcon,
+    this.ployPoints,
+  });
 
   Data.fromJson(Map<String, dynamic> json) {
     paymentMethod = json['payment_method'];

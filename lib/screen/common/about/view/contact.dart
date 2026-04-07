@@ -27,16 +27,13 @@ class ContactScreen extends StatelessWidget {
             const Text(
               "We'd love to hear from you! Please reach out to us with any questions, concerns, or feedback.",
               style: TextStyle(
-                  fontWeight: FontWeight.w400,
-                  color: Color(
-                    0xff2E3C5D,
-                  ),
-                  height: 1.5,
-                  fontSize: 20),
+                fontWeight: FontWeight.w400,
+                color: Color(0xff2E3C5D),
+                height: 1.5,
+                fontSize: 20,
+              ),
             ),
-            const SizedBox(
-              height: 15.0,
-            ),
+            const SizedBox(height: 15.0),
             InkWell(
               onTap: () {
                 launchUrl(Uri.parse("mailto:inquiry@ramropostalservice.com"));
@@ -45,7 +42,7 @@ class ContactScreen extends StatelessWidget {
                 "Our email: inquiry@ramropostalservice.com",
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
               ),
-            )
+            ),
           ],
         ),
       ),

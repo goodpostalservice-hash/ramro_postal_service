@@ -35,7 +35,10 @@ class NotificationController extends BaseController {
 
     try {
       final result = await restClient.request(
-          ApiConstant.deleteNotification, Method.POST, map);
+        ApiConstant.deleteNotification,
+        Method.POST,
+        map,
+      );
 
       if (result != null) {
         if (result is dio.Response) {
@@ -49,7 +52,8 @@ class NotificationController extends BaseController {
       // in exception, redirect the route to internet connection issue
       // Get.offAllNamed('/no_internet');
       showErrorMessage(
-          'Something went wrong while fetching data. Try again later.');
+        'Something went wrong while fetching data. Try again later.',
+      );
     }
   }
 
@@ -57,8 +61,11 @@ class NotificationController extends BaseController {
     final map = <String, dynamic>{};
 
     try {
-      final result =
-          await restClient.request(ApiConstant.notification, Method.GET, map);
+      final result = await restClient.request(
+        ApiConstant.notification,
+        Method.GET,
+        map,
+      );
 
       if (result != null) {
         if (result is dio.Response) {
@@ -73,10 +80,18 @@ class NotificationController extends BaseController {
           }
 
           isToLoadMore.value = false;
-          resultNotificationList.add(MyNotificationResponseModel(
-              title: "Hello", body: "Test notification"));
-          resultNotificationList.add(MyNotificationResponseModel(
-              title: "Hello", body: "Test notification 2"));
+          resultNotificationList.add(
+            MyNotificationResponseModel(
+              title: "Hello",
+              body: "Test notification",
+            ),
+          );
+          resultNotificationList.add(
+            MyNotificationResponseModel(
+              title: "Hello",
+              body: "Test notification 2",
+            ),
+          );
         }
       } else {
         isToLoadMore.value = false;
@@ -85,21 +100,29 @@ class NotificationController extends BaseController {
       // in exception, redirect the route to internet connection issue
       // Get.offAllNamed('/no_internet');
       showErrorMessage(
-          'Something went wrong while fetching data. Try again later.');
+        'Something went wrong while fetching data. Try again later.',
+      );
     }
   }
 
   sendNotification(
-      String title, String content, int isGlobal, int? userId) async {
+    String title,
+    String content,
+    int isGlobal,
+    int? userId,
+  ) async {
     final map = <String, dynamic>{
       "title": title,
       "body": content,
       "is_global": isGlobal,
-      "user_id": userId
+      "user_id": userId,
     };
     try {
-      final result =
-          await restClient.request(ApiConstant.notification, Method.POST, map);
+      final result = await restClient.request(
+        ApiConstant.notification,
+        Method.POST,
+        map,
+      );
 
       if (result != null) {
         if (result is dio.Response) {
@@ -116,7 +139,8 @@ class NotificationController extends BaseController {
       // in exception, redirect the route to internet connection issue
       // Get.offAllNamed('/no_internet');
       showErrorMessage(
-          'Something went wrong while fetching data. Try again later.');
+        'Something went wrong while fetching data. Try again later.',
+      );
     }
   }
 
@@ -124,8 +148,11 @@ class NotificationController extends BaseController {
     final map = <String, dynamic>{};
 
     try {
-      final result =
-          await restClient.request(ApiConstant.campaign, Method.GET, map);
+      final result = await restClient.request(
+        ApiConstant.campaign,
+        Method.GET,
+        map,
+      );
 
       if (result != null) {
         if (result is dio.Response) {
@@ -147,7 +174,8 @@ class NotificationController extends BaseController {
       // in exception, redirect the route to internet connection issue
       // Get.offAllNamed('/no_internet');
       showErrorMessage(
-          'Something went wrong while fetching data. Try again later.');
+        'Something went wrong while fetching data. Try again later.',
+      );
     }
   }
 }

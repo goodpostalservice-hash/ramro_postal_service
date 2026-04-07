@@ -1,15 +1,12 @@
 class GoogleMapModel {
-  GoogleMapModel({
-    required this.predictions,
-    required this.status,
-  });
+  GoogleMapModel({required this.predictions, required this.status});
   late final List<Predictions> predictions;
   late final String status;
 
   GoogleMapModel.fromJson(Map<String, dynamic> json) {
-    predictions = List.from(json['predictions'])
-        .map((e) => Predictions.fromJson(e))
-        .toList();
+    predictions = List.from(
+      json['predictions'],
+    ).map((e) => Predictions.fromJson(e)).toList();
     status = json['status'];
   }
 
@@ -41,13 +38,14 @@ class Predictions {
 
   Predictions.fromJson(Map<String, dynamic> json) {
     description = json['description'];
-    matchedSubstrings = List.from(json['matched_substrings'])
-        .map((e) => MatchedSubstrings.fromJson(e))
-        .toList();
+    matchedSubstrings = List.from(
+      json['matched_substrings'],
+    ).map((e) => MatchedSubstrings.fromJson(e)).toList();
     placeId = json['place_id'];
     reference = json['reference'];
-    structuredFormatting =
-        StructuredFormatting.fromJson(json['structured_formatting']);
+    structuredFormatting = StructuredFormatting.fromJson(
+      json['structured_formatting'],
+    );
     terms = List.from(json['terms']).map((e) => Terms.fromJson(e)).toList();
     types = List.castFrom<dynamic, String>(json['types']);
   }
@@ -55,8 +53,9 @@ class Predictions {
   Map<String, dynamic> toJson() {
     final data = <String, dynamic>{};
     data['description'] = description;
-    data['matched_substrings'] =
-        matchedSubstrings.map((e) => e.toJson()).toList();
+    data['matched_substrings'] = matchedSubstrings
+        .map((e) => e.toJson())
+        .toList();
     data['place_id'] = placeId;
     data['reference'] = reference;
     data['structured_formatting'] = structuredFormatting.toJson();
@@ -67,10 +66,7 @@ class Predictions {
 }
 
 class MatchedSubstrings {
-  MatchedSubstrings({
-    required this.length,
-    required this.offset,
-  });
+  MatchedSubstrings({required this.length, required this.offset});
   late final int length;
   late final int offset;
 
@@ -99,27 +95,25 @@ class StructuredFormatting {
 
   StructuredFormatting.fromJson(Map<String, dynamic> json) {
     mainText = json['main_text'];
-    mainTextMatchedSubstrings = List.from(json['main_text_matched_substrings'])
-        .map((e) => MainTextMatchedSubstrings.fromJson(e))
-        .toList();
+    mainTextMatchedSubstrings = List.from(
+      json['main_text_matched_substrings'],
+    ).map((e) => MainTextMatchedSubstrings.fromJson(e)).toList();
     secondaryText = json['secondary_text'];
   }
 
   Map<String, dynamic> toJson() {
     final data = <String, dynamic>{};
     data['main_text'] = mainText;
-    data['main_text_matched_substrings'] =
-        mainTextMatchedSubstrings.map((e) => e.toJson()).toList();
+    data['main_text_matched_substrings'] = mainTextMatchedSubstrings
+        .map((e) => e.toJson())
+        .toList();
     data['secondary_text'] = secondaryText;
     return data;
   }
 }
 
 class MainTextMatchedSubstrings {
-  MainTextMatchedSubstrings({
-    required this.length,
-    required this.offset,
-  });
+  MainTextMatchedSubstrings({required this.length, required this.offset});
   late final int length;
   late final int offset;
 
@@ -137,10 +131,7 @@ class MainTextMatchedSubstrings {
 }
 
 class Terms {
-  Terms({
-    required this.offset,
-    required this.value,
-  });
+  Terms({required this.offset, required this.value});
   late final int offset;
   late final String value;
 

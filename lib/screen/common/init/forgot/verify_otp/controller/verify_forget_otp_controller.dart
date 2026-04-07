@@ -8,31 +8,26 @@ import '../model/send_otp_response_model.dart';
 import 'package:dio/dio.dart' as dio;
 
 class VerifyForgetOTPController extends BaseController {
-
   final isToLoadMore = false.obs;
   var showPassword = false.obs;
 
   requestForgetPassword(String phone, String otp) async {
-
     isToLoadMore.value = true;
 
     try {
-      final map = {
-        'phone': phone,
-        'otp' : otp
-      };
+      final map = {'phone': phone, 'otp': otp};
 
       final result = await restClient.request(
-          ApiConstant.verifyForgetOTP, Method.POST, map
+        ApiConstant.verifyForgetOTP,
+        Method.POST,
+        map,
       );
 
       if (result != null) {
         if (result is dio.Response) {
-
           var responseData = SendOTPResponseModel.fromJson(result.data);
 
           if (responseData.success == true) {
-
             ChangeForgetPasswordScreen.phone = phone;
 
             Get.toNamed('/changePassword');

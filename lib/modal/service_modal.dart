@@ -37,15 +37,16 @@ class Data {
   String? updatedAt;
   int? sequence;
 
-  Data(
-      {this.id,
-        this.name,
-        this.image,
-        this.layoutType,
-        this.status,
-        this.createdAt,
-        this.updatedAt,
-        this.sequence});
+  Data({
+    this.id,
+    this.name,
+    this.image,
+    this.layoutType,
+    this.status,
+    this.createdAt,
+    this.updatedAt,
+    this.sequence,
+  });
 
   Data.fromJson(Map<String, dynamic> json) {
     id = json['id'];

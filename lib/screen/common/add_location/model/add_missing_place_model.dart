@@ -29,12 +29,13 @@ class AddLocationData {
   String? fullAddressDetail;
   String? houseNum;
 
-  AddLocationData(
-      {this.longitude,
-        this.latitude,
-        this.locationName,
-        this.fullAddressDetail,
-        this.houseNum});
+  AddLocationData({
+    this.longitude,
+    this.latitude,
+    this.locationName,
+    this.fullAddressDetail,
+    this.houseNum,
+  });
 
   AddLocationData.fromJson(Map<String, dynamic> json) {
     longitude = json['longitude'];

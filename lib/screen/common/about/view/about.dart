@@ -23,25 +23,24 @@ class AboutScreen extends GetView<AboutController> {
             ? SingleChildScrollView(
                 child: Padding(
                   padding: const EdgeInsets.symmetric(
-                      vertical: 12.0, horizontal: 10.0),
+                    vertical: 12.0,
+                    horizontal: 10.0,
+                  ),
                   child: Text(
                     controller.aboutUs.value == ""
                         ? "empty"
                         : controller.aboutUs.value,
                     style: const TextStyle(
-                        fontWeight: FontWeight.w400,
-                        color: Color(
-                          0xff2E3C5D,
-                        ),
-                        height: 1.5,
-                        fontSize: 18),
+                      fontWeight: FontWeight.w400,
+                      color: Color(0xff2E3C5D),
+                      height: 1.5,
+                      fontSize: 18,
+                    ),
                     textAlign: TextAlign.justify,
                   ),
                 ),
               )
-            : const Center(
-                child: CircularProgressIndicator(),
-              ),
+            : const Center(child: CircularProgressIndicator()),
       ),
     );
   }

@@ -13,7 +13,12 @@ class PasswordScreen extends GetView<PasswordController> {
   final _passwordController = TextEditingController();
   static final DeviceInfoPlugin deviceInfoPlugin = DeviceInfoPlugin();
   final Map<String, dynamic> _deviceData = <String, dynamic>{};
-  String? genderType, emailPlayerId = "082927238", modelName, deviceId, manufacture, operating_system;
+  String? genderType,
+      emailPlayerId = "082927238",
+      modelName,
+      deviceId,
+      manufacture,
+      operating_system;
 
   PasswordScreen({super.key});
 
@@ -29,9 +34,13 @@ class PasswordScreen extends GetView<PasswordController> {
         ),
         backgroundColor: AppColors.normalBG,
         centerTitle: true,
-        title: Text('Continue to Login'.toUpperCase(), style: const TextStyle(
-          color: Colors.black87, fontWeight: FontWeight.bold
-        ),),
+        title: Text(
+          'Continue to Login'.toUpperCase(),
+          style: const TextStyle(
+            color: Colors.black87,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -42,9 +51,14 @@ class PasswordScreen extends GetView<PasswordController> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const SizedBox(height: 30.0),
-                Text(AppStrings.enter_your_password, style: TextStyle(
-                    fontSize: 16.0, fontWeight: FontWeight.bold, color: AppColors.highlightBlackColor
-                )),
+                Text(
+                  AppStrings.enter_your_password,
+                  style: TextStyle(
+                    fontSize: 16.0,
+                    fontWeight: FontWeight.bold,
+                    color: AppColors.highlightBlackColor,
+                  ),
+                ),
 
                 passwordWidget(),
 
@@ -58,8 +72,20 @@ class PasswordScreen extends GetView<PasswordController> {
                     },
                     child: Container(
                       margin: const EdgeInsets.only(top: 20.0),
-                      padding: const EdgeInsets.only(top: 10.0, bottom: 10.0, left: 15.0, right: 15.0),
-                      child: Text('Forgot password?', style: TextStyle(color: AppColors.blackBold, fontSize: 16.0, fontStyle: FontStyle.italic)),
+                      padding: const EdgeInsets.only(
+                        top: 10.0,
+                        bottom: 10.0,
+                        left: 15.0,
+                        right: 15.0,
+                      ),
+                      child: Text(
+                        'Forgot password?',
+                        style: TextStyle(
+                          color: AppColors.blackBold,
+                          fontSize: 16.0,
+                          fontStyle: FontStyle.italic,
+                        ),
+                      ),
                     ),
                   ),
                 ),
@@ -70,7 +96,6 @@ class PasswordScreen extends GetView<PasswordController> {
       ),
     );
   }
-
 
   // void _handleGetDeviceState() async {
   //   var status = await OneSignal.shared.getDeviceState();
@@ -126,27 +151,34 @@ class PasswordScreen extends GetView<PasswordController> {
   // }
 
   Widget passwordWidget() {
-    return Obx(() => Container(
-      height: 55.0,
-      padding: const EdgeInsets.all(10.0),
-      margin: const EdgeInsets.only(top: 20.0, bottom: 25.0),
-      decoration: BoxDecoration(
+    return Obx(
+      () => Container(
+        height: 55.0,
+        padding: const EdgeInsets.all(10.0),
+        margin: const EdgeInsets.only(top: 20.0, bottom: 25.0),
+        decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(5.0),
-          border: Border.all(color: AppColors.borderColor, width: 1.0)
-      ),
-      child: TextFormField(
-        inputFormatters: [LengthLimitingTextInputFormatter(30)],
-        keyboardType: TextInputType.text,
-        controller: _passwordController,
-        obscureText: controller.isPasswordVisible.value,
-        style: TextStyle(color: AppColors.blackBold, fontSize: 17.0,
-            fontWeight: FontWeight.bold),
-        decoration: InputDecoration(
+          border: Border.all(color: AppColors.borderColor, width: 1.0),
+        ),
+        child: TextFormField(
+          inputFormatters: [LengthLimitingTextInputFormatter(30)],
+          keyboardType: TextInputType.text,
+          controller: _passwordController,
+          obscureText: controller.isPasswordVisible.value,
+          style: TextStyle(
+            color: AppColors.blackBold,
+            fontSize: 17.0,
+            fontWeight: FontWeight.bold,
+          ),
+          decoration: InputDecoration(
             isDense: true,
             hintText: 'XXXXXXXXXX',
-            hintStyle: TextStyle(color: AppColors.fieldHint, fontSize: 17.0,
-                fontWeight: FontWeight.bold),
+            hintStyle: TextStyle(
+              color: AppColors.fieldHint,
+              fontSize: 17.0,
+              fontWeight: FontWeight.bold,
+            ),
             border: InputBorder.none,
             suffixIcon: IconButton(
               onPressed: () {
@@ -158,40 +190,56 @@ class PasswordScreen extends GetView<PasswordController> {
               },
               splashColor: Colors.transparent,
               highlightColor: Colors.transparent,
-              icon: controller.isPasswordVisible.value ? const Icon(Icons.visibility_off) : const Icon(Icons.visibility),
-            )
+              icon: controller.isPasswordVisible.value
+                  ? const Icon(Icons.visibility_off)
+                  : const Icon(Icons.visibility),
+            ),
+          ),
         ),
       ),
-    ));
+    );
   }
 
   Widget submitWidget() {
-    return Obx(() => ElevatedButton(
-      onPressed: () {
-        if (_passwordController.text.isNotEmpty) {
-          controller.checkPasswordField(phone, _passwordController.text.toString());
-        }
-        // Navigator.push(context, MaterialPageRoute(builder: (context) => DashboardScreen()));
-      },
-      style: ElevatedButton.styleFrom(
-        backgroundColor: controller.isToLoadMore.value ? AppColors.disabledPrimaryBtn : AppColors.primary,
-      ),
-      child: Container(
-        width: double.infinity,
-        height: 50.0,
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(5.0)
+    return Obx(
+      () => ElevatedButton(
+        onPressed: () {
+          if (_passwordController.text.isNotEmpty) {
+            controller.checkPasswordField(
+              phone,
+              _passwordController.text.toString(),
+            );
+          }
+          // Navigator.push(context, MaterialPageRoute(builder: (context) => DashboardScreen()));
+        },
+        style: ElevatedButton.styleFrom(
+          backgroundColor: controller.isToLoadMore.value
+              ? AppColors.disabledPrimaryBtn
+              : AppColors.primary,
         ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(controller.isToLoadMore.value ? 'Please wait'.toUpperCase() : 'Sign In'.toUpperCase(), style: const TextStyle(fontSize: 15.0,
-                fontWeight: FontWeight.normal, color: Colors.white))
-          ],
+        child: Container(
+          width: double.infinity,
+          height: 50.0,
+          decoration: BoxDecoration(borderRadius: BorderRadius.circular(5.0)),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(
+                controller.isToLoadMore.value
+                    ? 'Please wait'.toUpperCase()
+                    : 'Sign In'.toUpperCase(),
+                style: const TextStyle(
+                  fontSize: 15.0,
+                  fontWeight: FontWeight.normal,
+                  color: Colors.white,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
-    ));
+    );
   }
 
   // Map<String, dynamic> _readAndroidBuildData(AndroidDeviceInfo build) {

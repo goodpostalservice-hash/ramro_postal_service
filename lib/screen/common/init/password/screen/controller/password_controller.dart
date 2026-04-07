@@ -8,6 +8,7 @@ import 'package:onesignal_flutter/onesignal_flutter.dart';
 import 'package:ramro_postal_service/screen/home_map/home_map_screen/presentation/driver_home_map_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../../../../../../app/core/utils/storage_util.dart';
 import '../../../../../../base/base_controller.dart';
 import '../../../../../../core/constants/api_constant.dart';
 import '../../../../../../core/constants/app_constant.dart';
@@ -50,6 +51,10 @@ class PasswordController extends BaseController {
           var responseData = LoginResponseModel.fromJson(result.data);
           if (responseData.success == true) {
             AppConstant.bearerToken = responseData.token.toString();
+            SStorageUtil.saveAuthData(
+              accessToken: AppConstant.bearerToken,
+              refreshToken: "",
+            );
 
             // after login clear the temp list and store new value
             AppConstant.logInfo = [];
@@ -98,7 +103,7 @@ class PasswordController extends BaseController {
               position.latitude,
               position.longitude,
             );
-        
+
             Get.offNamed('/dashboard');
 
             showSuccessMessage("Login success");

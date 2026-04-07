@@ -4,7 +4,7 @@ import 'package:get/get_state_manager/src/rx_flutter/rx_disposable.dart';
 import '../constants/api_constant.dart';
 import '../constants/app_constant.dart';
 
-enum Method { POST, GET, PUT, DELETE, PATCH,POST_JSON }
+enum Method { POST, GET, PUT, DELETE, PATCH, POST_JSON }
 
 const baseURL = ApiConstant.baseUrl;
 
@@ -13,9 +13,9 @@ class RestClient extends GetxService {
 
   //this is for header
   static header() => {
-        'Content-Type': 'application/json',
-        'Authorization': "Bearer ${AppConstant.bearerToken.toString()}"
-      };
+    'Content-Type': 'application/json',
+    'Authorization': "Bearer ${AppConstant.bearerToken.toString()}",
+  };
 
   //this is for header
   static normalHeader() => {'Content-Type': 'application/json'};
@@ -29,21 +29,32 @@ class RestClient extends GetxService {
   }
 
   void initInterceptors() {
-    _dio.interceptors.add(InterceptorsWrapper(onRequest: (options, handler) {
-      print('REQUEST[${options.method}] => PATH: ${options.path} '
-          '=> Request Values: ${options.queryParameters}, => HEADERS: ${options.headers}');
-      return handler.next(options);
-    }, onResponse: (response, handler) {
-      print('RESPONSE[${response.statusCode}] => DATA: ${response.data}');
-      return handler.next(response);
-    }, onError: (err, handler) {
-      print('ERROR[${err.response?.statusCode}]');
-      return handler.next(err);
-    }));
+    _dio.interceptors.add(
+      InterceptorsWrapper(
+        onRequest: (options, handler) {
+          print(
+            'REQUEST[${options.method}] => PATH: ${options.path} '
+            '=> Request Values: ${options.queryParameters}, => HEADERS: ${options.headers}',
+          );
+          return handler.next(options);
+        },
+        onResponse: (response, handler) {
+          print('RESPONSE[${response.statusCode}] => DATA: ${response.data}');
+          return handler.next(response);
+        },
+        onError: (err, handler) {
+          print('ERROR[${err.response?.statusCode}]');
+          return handler.next(err);
+        },
+      ),
+    );
   }
 
   Future<dynamic> request(
-      String url, Method method, Map<String, dynamic>? params) async {
+    String url,
+    Method method,
+    Map<String, dynamic>? params,
+  ) async {
     Response response;
 
     try {
@@ -53,23 +64,21 @@ class RestClient extends GetxService {
           data: FormData.fromMap(params!),
           options: Options(
             headers: {
-              "Authorization": "Bearer ${AppConstant.bearerToken.toString()}"
+              "Authorization": "Bearer ${AppConstant.bearerToken.toString()}",
             },
           ),
         );
-      }
-     else  if (method == Method.POST_JSON) {
+      } else if (method == Method.POST_JSON) {
         response = await _dio.post(
           url,
           data: params,
           options: Options(
             headers: {
-              "Authorization": "Bearer ${AppConstant.bearerToken.toString()}"
+              "Authorization": "Bearer ${AppConstant.bearerToken.toString()}",
             },
           ),
         );
-      }
-       else if (method == Method.DELETE) {
+      } else if (method == Method.DELETE) {
         response = await _dio.delete(url);
       } else if (method == Method.PATCH) {
         response = await _dio.patch(url);
@@ -79,7 +88,7 @@ class RestClient extends GetxService {
           queryParameters: params,
           options: Options(
             headers: {
-              "Authorization": "Bearer ${AppConstant.bearerToken.toString()}"
+              "Authorization": "Bearer ${AppConstant.bearerToken.toString()}",
             },
           ),
         );

@@ -28,7 +28,6 @@ Future<MapType?> showMapSettingsSheet(
   );
 }
 
-
 class _FloatingSheet extends StatelessWidget {
   const _FloatingSheet({required this.child});
 

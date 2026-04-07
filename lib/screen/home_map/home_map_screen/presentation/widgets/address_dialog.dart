@@ -11,6 +11,7 @@ Future<void> showAddressDetailsDialog(
   required String address,
   required Widget mapPreview, // pass your Static Map/Image here
   required VoidCallback onGetDirection,
+  required VoidCallback onPlaceOrder,
   required LatLng destinationLocation,
   VoidCallback? onClose,
 }) {
@@ -34,6 +35,7 @@ Future<void> showAddressDetailsDialog(
             destinationLocation: destinationLocation,
             mapPreview: mapPreview,
             onGetDirection: onGetDirection,
+            onPlaceOrder: onPlaceOrder,
             onClose: onClose ?? () => Navigator.of(ctx).pop(),
           ),
         ),
@@ -47,6 +49,7 @@ class _AddressDetailsCard extends StatelessWidget {
     required this.address,
     required this.mapPreview,
     required this.onGetDirection,
+    required this.onPlaceOrder,
     required this.onClose,
     required this.destinationLocation,
   });
@@ -54,6 +57,7 @@ class _AddressDetailsCard extends StatelessWidget {
   final String address;
   final Widget mapPreview;
   final LatLng destinationLocation;
+  final VoidCallback onPlaceOrder;
   final VoidCallback onGetDirection;
   final VoidCallback onClose;
 
@@ -170,6 +174,17 @@ class _AddressDetailsCard extends StatelessWidget {
                     child: AppButton(
                       label: 'Get direction',
                       onPressed: onGetDirection,
+                      icon: SvgPicture.asset(Assets.navigation),
+                    ),
+                  ),
+                  const SizedBox(height: 14),
+
+                  SizedBox(
+                    width: double.infinity,
+                    height: 42,
+                    child: AppButton(
+                      label: 'Place Order',
+                      onPressed: onPlaceOrder,
                       icon: SvgPicture.asset(Assets.navigation),
                     ),
                   ),

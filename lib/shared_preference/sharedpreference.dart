@@ -33,25 +33,23 @@ class PrefUtils {
     }
   }
 
-
   Future<String?> fetchPhoneFromSharedPreferences() async {
-  String? jsonData = _sharedPreferences!.getString('user_data');
+    String? jsonData = _sharedPreferences!.getString('user_data');
 
-  // Print the jsonData to check its contents and validate it is valid JSON
-  print(jsonData);
+    // Print the jsonData to check its contents and validate it is valid JSON
+    print(jsonData);
 
-  if (jsonData != null) {
-    try {
-      Map<String, dynamic> json = jsonDecode(jsonData);
-      return json['data']['phone'];
-    } catch (e) {
-      print('Error parsing JSON: $e');
+    if (jsonData != null) {
+      try {
+        Map<String, dynamic> json = jsonDecode(jsonData);
+        return json['data']['phone'];
+      } catch (e) {
+        print('Error parsing JSON: $e');
+      }
     }
-  }
 
-  return null;
-}
+    return null;
+  }
 }
 
 // Retrieve the JSON data from SharedPreferences and fetch the phone
-

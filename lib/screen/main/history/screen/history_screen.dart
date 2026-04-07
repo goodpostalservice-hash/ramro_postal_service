@@ -51,7 +51,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
                   ],
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),
@@ -83,18 +83,25 @@ class _HistoryScreenState extends State<HistoryScreen> {
               margin: const EdgeInsets.only(right: 10.0),
               decoration: customBoxDecoration(ListData.menu[index]['status']),
               padding: const EdgeInsets.only(
-                  left: 30.0, top: 2.0, bottom: 2.0, right: 30.0),
+                left: 30.0,
+                top: 2.0,
+                bottom: 2.0,
+                right: 30.0,
+              ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Text(ListData.menu[index]['name'],
-                      style: TextStyle(
-                          color: ListData.menu[index]['status'] == 1
-                              ? Colors.white
-                              : Colors.black54,
-                          fontSize: 15.0,
-                          fontWeight: FontWeight.bold))
+                  Text(
+                    ListData.menu[index]['name'],
+                    style: TextStyle(
+                      color: ListData.menu[index]['status'] == 1
+                          ? Colors.white
+                          : Colors.black54,
+                      fontSize: 15.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -107,17 +114,24 @@ class _HistoryScreenState extends State<HistoryScreen> {
   Widget showCancelled() {
     return Container(
       padding: const EdgeInsets.only(
-          top: 15.0, bottom: 15.0, left: 10.0, right: 10.0),
+        top: 15.0,
+        bottom: 15.0,
+        left: 10.0,
+        right: 10.0,
+      ),
       margin: const EdgeInsets.only(top: 20.0, bottom: 20.0),
       color: Colors.white,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          Text(AppStrings.show_cancelled_ride,
-              style: TextStyle(
-                  fontSize: 16.0,
-                  fontWeight: FontWeight.bold,
-                  color: AppColors.blackBold)),
+          Text(
+            AppStrings.show_cancelled_ride,
+            style: TextStyle(
+              fontSize: 16.0,
+              fontWeight: FontWeight.bold,
+              color: AppColors.blackBold,
+            ),
+          ),
           CupertinoSwitch(
             value: _switchValue,
             // activeTrackColor: AppColors.highlightBlackColor,
@@ -126,7 +140,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
                 _switchValue = value;
               });
             },
-          )
+          ),
         ],
       ),
     );
@@ -134,206 +148,237 @@ class _HistoryScreenState extends State<HistoryScreen> {
 
   Widget historyList() {
     return Container(
-        child: ListView.builder(
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      itemCount: 3,
-      itemBuilder: (context, index) {
-        return InkWell(
-          onTap: () {},
-          child: Container(
-            padding: const EdgeInsets.only(
-                top: 15.0, bottom: 15.0, left: 10.0, right: 10.0),
-            margin: const EdgeInsets.only(bottom: 15.0),
-            color: Colors.white,
-            child: Column(
-              children: <Widget>[
-                Container(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Text("Parcel Delivery",
+      child: ListView.builder(
+        shrinkWrap: true,
+        physics: const NeverScrollableScrollPhysics(),
+        itemCount: 3,
+        itemBuilder: (context, index) {
+          return InkWell(
+            onTap: () {},
+            child: Container(
+              padding: const EdgeInsets.only(
+                top: 15.0,
+                bottom: 15.0,
+                left: 10.0,
+                right: 10.0,
+              ),
+              margin: const EdgeInsets.only(bottom: 15.0),
+              color: Colors.white,
+              child: Column(
+                children: <Widget>[
+                  Container(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Text(
+                          "Parcel Delivery",
                           style: TextStyle(
-                              fontSize: 16.0,
-                              fontWeight: FontWeight.bold,
-                              color: AppColors.blackBold)),
-                      Container(
-                        child: Row(
-                          children: <Widget>[
-                            Text("View more",
-                                style: TextStyle(
-                                    fontSize: 16.0,
-                                    fontWeight: FontWeight.bold,
-                                    color: AppColors.blackBold)),
-                            const SizedBox(width: 5.0),
-                            Icon(Icons.arrow_forward_ios_sharp,
-                                color: AppColors.lightGrey, size: 18.0)
-                          ],
+                            fontSize: 16.0,
+                            fontWeight: FontWeight.bold,
+                            color: AppColors.blackBold,
+                          ),
                         ),
-                      )
-                    ],
-                  ),
-                ),
-
-                // location point
-                Container(
-                  padding: const EdgeInsets.only(top: 20.0, bottom: 10.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      // pickup drop up
-                      Container(
-                        child: Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
+                        Container(
+                          child: Row(
                             children: <Widget>[
-                              Row(
-                                children: <Widget>[
-                                  Container(
-                                    margin: const EdgeInsets.only(top: 20.0),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      mainAxisAlignment: MainAxisAlignment.end,
-                                      children: <Widget>[
-                                        Container(
-                                          height: 10.0,
-                                          width: 10.0,
-                                          decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(90.0),
-                                              color: AppColors
-                                                  .highlightBlackColor),
-                                        ),
-                                        const SizedBox(
-                                          height: 10.0,
-                                          width: 1.0,
-                                          child: DottedLine(
-                                            dashGapLength: 1.0,
-                                            direction: Axis.vertical,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  Container(
-                                    width: width - 80,
-                                    padding: const EdgeInsets.only(
-                                        left: 10.0, right: 10.0),
-                                    child: Text(
-                                      "Daraz warehouse 02, Baneshwor",
-                                      style: TextStyle(
-                                          color: AppColors.highlightBlackColor,
-                                          fontSize: 15.0),
-                                      overflow: TextOverflow.ellipsis,
-                                      maxLines: 2,
-                                    ),
-                                  ),
-                                ],
+                              Text(
+                                "View more",
+                                style: TextStyle(
+                                  fontSize: 16.0,
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.blackBold,
+                                ),
                               ),
-                              Row(
-                                children: <Widget>[
-                                  Container(
-                                    margin: const EdgeInsets.only(top: 0.0),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      mainAxisAlignment: MainAxisAlignment.end,
-                                      children: <Widget>[
-                                        const SizedBox(
-                                          height: 10.0,
-                                          width: 1.0,
-                                          child: DottedLine(
-                                            dashGapLength: 1.0,
-                                            direction: Axis.vertical,
-                                          ),
-                                        ),
-                                        Container(
-                                          height: 10.0,
-                                          width: 10.0,
-                                          decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(90.0),
-                                              color: AppColors.primary),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  Container(
-                                    width: width - 80.0,
-                                    padding: const EdgeInsets.only(
-                                        left: 10.0, right: 10.0, top: 10.0),
-                                    child: Text("Kalinchowk 02, Bhaktapur",
-                                        style: TextStyle(
-                                            color:
-                                                AppColors.highlightBlackColor,
-                                            fontSize: 15.0),
-                                        overflow: TextOverflow.ellipsis,
-                                        maxLines: 2),
-                                  ),
-                                ],
-                              )
+                              const SizedBox(width: 5.0),
+                              Icon(
+                                Icons.arrow_forward_ios_sharp,
+                                color: AppColors.lightGrey,
+                                size: 18.0,
+                              ),
                             ],
                           ),
                         ),
-                      ),
-                      // image
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(90.0),
-                        child: CachedNetworkImage(
-                          height: 50.0,
-                          width: 50.0,
-                          imageUrl:
-                              "https://console.kr-asia.com/wp-content/uploads/2018/09/Food-Delivery-M-Size-1.jpg",
-                          fit: BoxFit.cover,
-                          placeholder: (context, url) => Image.asset(
-                              "assets/banners/ic_app_card_placeholder.png",
-                              fit: BoxFit.cover),
-                          errorWidget: (context, url, error) =>
-                              const Icon(Icons.error),
-                        ),
-                      )
-                    ],
+                      ],
+                    ),
                   ),
-                ),
 
-                Divider(
-                  color: AppColors.lightGrey,
-                ),
-
-                // request
-                Container(
-                  padding: const EdgeInsets.only(top: 10.0, bottom: 5.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Text("View Parcel Detail".toUpperCase(),
-                          style: TextStyle(
-                              fontSize: 15.0,
-                              fontWeight: FontWeight.bold,
-                              color: AppColors.primary)),
-                      Container(
-                        child: const Row(
-                          children: <Widget>[
-                            Text('Rating (4.5)',
-                                style: TextStyle(
-                                    fontSize: 15.0,
-                                    fontWeight: FontWeight.bold)),
-                            Padding(
-                              padding: EdgeInsets.only(left: 10.0),
-                              child: Icon(Icons.star, color: Colors.orange),
+                  // location point
+                  Container(
+                    padding: const EdgeInsets.only(top: 20.0, bottom: 10.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        // pickup drop up
+                        Container(
+                          child: Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                Row(
+                                  children: <Widget>[
+                                    Container(
+                                      margin: const EdgeInsets.only(top: 20.0),
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.end,
+                                        children: <Widget>[
+                                          Container(
+                                            height: 10.0,
+                                            width: 10.0,
+                                            decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(90.0),
+                                              color:
+                                                  AppColors.highlightBlackColor,
+                                            ),
+                                          ),
+                                          const SizedBox(
+                                            height: 10.0,
+                                            width: 1.0,
+                                            child: DottedLine(
+                                              dashGapLength: 1.0,
+                                              direction: Axis.vertical,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    Container(
+                                      width: width - 80,
+                                      padding: const EdgeInsets.only(
+                                        left: 10.0,
+                                        right: 10.0,
+                                      ),
+                                      child: Text(
+                                        "Daraz warehouse 02, Baneshwor",
+                                        style: TextStyle(
+                                          color: AppColors.highlightBlackColor,
+                                          fontSize: 15.0,
+                                        ),
+                                        overflow: TextOverflow.ellipsis,
+                                        maxLines: 2,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Row(
+                                  children: <Widget>[
+                                    Container(
+                                      margin: const EdgeInsets.only(top: 0.0),
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.end,
+                                        children: <Widget>[
+                                          const SizedBox(
+                                            height: 10.0,
+                                            width: 1.0,
+                                            child: DottedLine(
+                                              dashGapLength: 1.0,
+                                              direction: Axis.vertical,
+                                            ),
+                                          ),
+                                          Container(
+                                            height: 10.0,
+                                            width: 10.0,
+                                            decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(90.0),
+                                              color: AppColors.primary,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    Container(
+                                      width: width - 80.0,
+                                      padding: const EdgeInsets.only(
+                                        left: 10.0,
+                                        right: 10.0,
+                                        top: 10.0,
+                                      ),
+                                      child: Text(
+                                        "Kalinchowk 02, Bhaktapur",
+                                        style: TextStyle(
+                                          color: AppColors.highlightBlackColor,
+                                          fontSize: 15.0,
+                                        ),
+                                        overflow: TextOverflow.ellipsis,
+                                        maxLines: 2,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
                             ),
-                          ],
+                          ),
                         ),
-                      ),
-                    ],
+                        // image
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(90.0),
+                          child: CachedNetworkImage(
+                            height: 50.0,
+                            width: 50.0,
+                            imageUrl:
+                                "https://console.kr-asia.com/wp-content/uploads/2018/09/Food-Delivery-M-Size-1.jpg",
+                            fit: BoxFit.cover,
+                            placeholder: (context, url) => Image.asset(
+                              "assets/banners/ic_app_card_placeholder.png",
+                              fit: BoxFit.cover,
+                            ),
+                            errorWidget: (context, url, error) =>
+                                const Icon(Icons.error),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-              ],
+
+                  Divider(color: AppColors.lightGrey),
+
+                  // request
+                  Container(
+                    padding: const EdgeInsets.only(top: 10.0, bottom: 5.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Text(
+                          "View Parcel Detail".toUpperCase(),
+                          style: TextStyle(
+                            fontSize: 15.0,
+                            fontWeight: FontWeight.bold,
+                            color: AppColors.primary,
+                          ),
+                        ),
+                        Container(
+                          child: const Row(
+                            children: <Widget>[
+                              Text(
+                                'Rating (4.5)',
+                                style: TextStyle(
+                                  fontSize: 15.0,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(left: 10.0),
+                                child: Icon(Icons.star, color: Colors.orange),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
-          ),
-        );
-      },
-    ));
+          );
+        },
+      ),
+    );
   }
 }

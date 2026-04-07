@@ -5,7 +5,6 @@ import '../../home_map/home_map_screen/presentation/driver_home_map_screen.dart'
 class SplashController {
   late Position pos;
 
-
   Future<bool> determinePosition() async {
     bool serviceEnabled;
     LocationPermission permission;
@@ -28,11 +27,14 @@ class SplashController {
       if (permission == LocationPermission.deniedForever) {
         // Permissions are denied forever, handle appropriately.
         return Future.error(
-            'Location permissions are permanently denied, we cannot request permissions.');
+          'Location permissions are permanently denied, we cannot request permissions.',
+        );
       }
       Position position = await Geolocator.getCurrentPosition();
-      DriverHomeMapScreen.currentLocationAtStart =
-          LatLng(position.latitude, position.longitude);
+      DriverHomeMapScreen.currentLocationAtStart = LatLng(
+        position.latitude,
+        position.longitude,
+      );
       pos = position;
       return true;
     } catch (e) {

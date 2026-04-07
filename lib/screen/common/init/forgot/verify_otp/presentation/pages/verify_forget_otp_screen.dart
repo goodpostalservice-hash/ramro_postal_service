@@ -6,7 +6,6 @@ import '../../../../../../../resource/color.dart';
 import '../../controller/verify_forget_otp_controller.dart';
 
 class VerifyForgetOTPScreen extends GetView<VerifyForgetOTPController> {
-
   static String phone = '';
 
   final formKey = GlobalKey<FormState>();
@@ -49,13 +48,11 @@ class VerifyForgetOTPScreen extends GetView<VerifyForgetOTPController> {
                 //     style: const TextStyle(color: Colors.black87, fontSize: 15.0, fontWeight: FontWeight.normal
                 //   ), textAlign: TextAlign.center,),
                 // ),
-
                 otp(),
 
                 button(),
 
                 const SizedBox(height: 20.0),
-
               ],
             ),
           ),
@@ -83,18 +80,25 @@ class VerifyForgetOTPScreen extends GetView<VerifyForgetOTPController> {
               textAlign: TextAlign.center,
               inputFormatters: [LengthLimitingTextInputFormatter(6)],
               style: const TextStyle(
-                  fontSize: 26.0, fontWeight: FontWeight.bold
+                fontSize: 26.0,
+                fontWeight: FontWeight.bold,
               ),
               obscureText: false,
               decoration: InputDecoration(
                 isDense: true,
                 fillColor: Colors.white,
-                focusedBorder:OutlineInputBorder(
-                  borderSide: const BorderSide(color: Colors.black54, width: 1.0),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: const BorderSide(
+                    color: Colors.black54,
+                    width: 1.0,
+                  ),
                   borderRadius: BorderRadius.circular(5.0),
                 ),
                 enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: AppColors.borderColor, width: 1.0),
+                  borderSide: BorderSide(
+                    color: AppColors.borderColor,
+                    width: 1.0,
+                  ),
                   borderRadius: BorderRadius.circular(5.0),
                 ),
               ),
@@ -106,34 +110,49 @@ class VerifyForgetOTPScreen extends GetView<VerifyForgetOTPController> {
   }
 
   Widget button() {
-    return Obx(() => ElevatedButton(
-      onPressed: () {
-        controller.isToLoadMore.value = true;
-        if (_fieldOne.text.length == 6) {
-          // Navigator.push(context, MaterialPageRoute(builder: (context) => PasswordScreen()));
-          // controller.loadProductData('977${_phoneController.text}');
-          controller.requestForgetPassword(VerifyForgetOTPScreen.phone, _fieldOne.text.toString());
-          // controller.loadProductData('9779811811888');
-        } else {
-          showErrorMessage('Invalid phone number');
-        }
-      },
-      style: ElevatedButton.styleFrom(
-        backgroundColor: controller.isToLoadMore.value ? AppColors.disabledPrimaryBtn : AppColors.primary,
-      ),
-      child: SizedBox(
-        width: double.infinity,
-        height: 50.0,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(controller.isToLoadMore.value ? 'Please wait'.toUpperCase() : 'Verify OTP'.toUpperCase(), style: const TextStyle(fontSize: 15.0,
-                fontWeight: FontWeight.normal, color: Colors.white))
-          ],
+    return Obx(
+      () => ElevatedButton(
+        onPressed: () {
+          controller.isToLoadMore.value = true;
+          if (_fieldOne.text.length == 6) {
+            // Navigator.push(context, MaterialPageRoute(builder: (context) => PasswordScreen()));
+            // controller.loadProductData('977${_phoneController.text}');
+            controller.requestForgetPassword(
+              VerifyForgetOTPScreen.phone,
+              _fieldOne.text.toString(),
+            );
+            // controller.loadProductData('9779811811888');
+          } else {
+            showErrorMessage('Invalid phone number');
+          }
+        },
+        style: ElevatedButton.styleFrom(
+          backgroundColor: controller.isToLoadMore.value
+              ? AppColors.disabledPrimaryBtn
+              : AppColors.primary,
+        ),
+        child: SizedBox(
+          width: double.infinity,
+          height: 50.0,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(
+                controller.isToLoadMore.value
+                    ? 'Please wait'.toUpperCase()
+                    : 'Verify OTP'.toUpperCase(),
+                style: const TextStyle(
+                  fontSize: 15.0,
+                  fontWeight: FontWeight.normal,
+                  color: Colors.white,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
-    ));
+    );
   }
 
   Widget info() {
@@ -142,16 +161,21 @@ class VerifyForgetOTPScreen extends GetView<VerifyForgetOTPController> {
       child: Text.rich(
         TextSpan(
           children: [
-            TextSpan(text: 'We have sent you an otp at your ', style: TextStyle(
-                color: AppColors.lightGrey, fontSize: 15.0
-            )),
+            TextSpan(
+              text: 'We have sent you an otp at your ',
+              style: TextStyle(color: AppColors.lightGrey, fontSize: 15.0),
+            ),
             TextSpan(
               text: VerifyForgetOTPScreen.phone,
-              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 15.0),
+              style: const TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 15.0,
+              ),
             ),
-            TextSpan(text: '. Please enter your otp to reset your password.', style: TextStyle(
-                color: AppColors.lightGrey, fontSize: 15.0
-            )),
+            TextSpan(
+              text: '. Please enter your otp to reset your password.',
+              style: TextStyle(color: AppColors.lightGrey, fontSize: 15.0),
+            ),
           ],
         ),
         textAlign: TextAlign.center,

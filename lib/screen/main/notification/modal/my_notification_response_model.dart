@@ -5,8 +5,13 @@ class MyNotificationResponseModel {
   String? id;
   String? createdAt;
 
-  MyNotificationResponseModel(
-      {this.title, this.image, this.body, this.id, this.createdAt});
+  MyNotificationResponseModel({
+    this.title,
+    this.image,
+    this.body,
+    this.id,
+    this.createdAt,
+  });
 
   MyNotificationResponseModel.fromJson(Map<String, dynamic> json) {
     title = json['title'];

@@ -159,17 +159,17 @@ class _DialogHelperState extends State<DialogHelper> {
                 children: [
                   widget.isinternet
                       ? CircleAvatar(
-                        backgroundColor: Colors.transparent,
-                        // Top Circle with icon
-                        maxRadius: 20.0,
-                        child: Image.asset('assets/images/no-internet.png'),
-                      )
+                          backgroundColor: Colors.transparent,
+                          // Top Circle with icon
+                          maxRadius: 20.0,
+                          child: Image.asset('assets/images/no-internet.png'),
+                        )
                       : CircleAvatar(
-                        backgroundColor: Colors.transparent,
-                        // Top Circle with icon
-                        maxRadius: 20.0,
-                        child: Image.asset('assets/images/errorimage.png'),
-                      ),
+                          backgroundColor: Colors.transparent,
+                          // Top Circle with icon
+                          maxRadius: 20.0,
+                          child: Image.asset('assets/images/errorimage.png'),
+                        ),
                   const SizedBox(width: 10),
                   Text(
                     widget.title,

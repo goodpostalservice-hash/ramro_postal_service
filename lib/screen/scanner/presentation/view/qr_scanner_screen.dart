@@ -20,9 +20,7 @@ class _QRScannerScreenState extends State<QRScannerScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: true,
-      ),
+      appBar: AppBar(automaticallyImplyLeading: true),
       body: Container(
         padding: const EdgeInsets.all(12.0),
         child: Text(scanDetails.toString()),

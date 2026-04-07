@@ -14,7 +14,6 @@ class SendOPTScreen extends StatefulWidget {
 }
 
 class _SendOPTScreenState extends State<SendOPTScreen> {
-
   bool isLoading = false;
   final formKey = GlobalKey<FormState>();
   final TextEditingController _phoneController = TextEditingController();
@@ -50,17 +49,26 @@ class _SendOPTScreenState extends State<SendOPTScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const SizedBox(height: 70.0),
-                Text(AppStrings.enter_your_mobile, style: TextStyle(
-                    fontSize: 16.0, fontWeight: FontWeight.bold, color: AppColors.highlightBlackColor
-                )),
+                Text(
+                  AppStrings.enter_your_mobile,
+                  style: TextStyle(
+                    fontSize: 16.0,
+                    fontWeight: FontWeight.bold,
+                    color: AppColors.highlightBlackColor,
+                  ),
+                ),
 
                 dropDownCountry(),
 
                 ElevatedButton(
                   onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => VerifyOPTScreen(
-                        widget.phone, widget.playerId
-                    )));
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            VerifyOPTScreen(widget.phone, widget.playerId),
+                      ),
+                    );
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: AppColors.primary,
@@ -69,15 +77,21 @@ class _SendOPTScreenState extends State<SendOPTScreen> {
                     width: double.infinity,
                     height: 50.0,
                     decoration: BoxDecoration(
-                        // color: isLoading ? AppColors.disabledPrimaryBtn : AppColors.primary,
-                        borderRadius: BorderRadius.circular(5.0)
+                      // color: isLoading ? AppColors.disabledPrimaryBtn : AppColors.primary,
+                      borderRadius: BorderRadius.circular(5.0),
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Text('Send OTP'.toUpperCase(), style: const TextStyle(fontSize: 15.0,
-                            fontWeight: FontWeight.normal, color: Colors.white))
+                        Text(
+                          'Send OTP'.toUpperCase(),
+                          style: const TextStyle(
+                            fontSize: 15.0,
+                            fontWeight: FontWeight.normal,
+                            color: Colors.white,
+                          ),
+                        ),
                       ],
                     ),
                   ),
@@ -87,9 +101,15 @@ class _SendOPTScreenState extends State<SendOPTScreen> {
                   alignment: Alignment.center,
                   child: Padding(
                     padding: const EdgeInsets.only(top: 20.0, bottom: 20.0),
-                    child: Text('Please wait. Sometime it takes few minutes to receive otp on your device.', style: TextStyle(color: AppColors.lightGrey,
-                        fontSize: 15.0, fontWeight: FontWeight.normal), textAlign:
-                    TextAlign.center),
+                    child: Text(
+                      'Please wait. Sometime it takes few minutes to receive otp on your device.',
+                      style: TextStyle(
+                        color: AppColors.lightGrey,
+                        fontSize: 15.0,
+                        fontWeight: FontWeight.normal,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
                   ),
                 ),
               ],
@@ -106,9 +126,9 @@ class _SendOPTScreenState extends State<SendOPTScreen> {
       padding: const EdgeInsets.all(10.0),
       margin: const EdgeInsets.only(top: 20.0, bottom: 25.0),
       decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(5.0),
-          border: Border.all(color: AppColors.borderColor, width: 1.0)
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(5.0),
+        border: Border.all(color: AppColors.borderColor, width: 1.0),
       ),
       child: Row(
         children: <Widget>[
@@ -120,13 +140,19 @@ class _SendOPTScreenState extends State<SendOPTScreen> {
                 controller: _phoneController,
                 inputFormatters: [LengthLimitingTextInputFormatter(10)],
                 keyboardType: TextInputType.number,
-                style: TextStyle(color: AppColors.blackBold, fontSize: 17.0,
-                    fontWeight: FontWeight.bold),
+                style: TextStyle(
+                  color: AppColors.blackBold,
+                  fontSize: 17.0,
+                  fontWeight: FontWeight.bold,
+                ),
                 decoration: InputDecoration(
                   isDense: true,
                   hintText: 'XXXXXXXXXX',
-                  hintStyle: TextStyle(color: AppColors.fieldHint, fontSize: 17.0,
-                      fontWeight: FontWeight.bold),
+                  hintStyle: TextStyle(
+                    color: AppColors.fieldHint,
+                    fontSize: 17.0,
+                    fontWeight: FontWeight.bold,
+                  ),
                   border: InputBorder.none,
                 ),
               ),

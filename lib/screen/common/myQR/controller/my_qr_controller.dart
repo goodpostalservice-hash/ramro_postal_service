@@ -33,8 +33,11 @@ class MyQRController extends BaseController {
     final map = <String, dynamic>{};
 
     try {
-      final result =
-          await restClient.request(ApiConstant.myQR, Method.GET, map);
+      final result = await restClient.request(
+        ApiConstant.myQR,
+        Method.GET,
+        map,
+      );
 
       if (result != null) {
         if (result is dio.Response) {
@@ -62,7 +65,8 @@ class MyQRController extends BaseController {
       // in exception, redirect the route to internet connection issue
       // Get.offAllNamed('/no_internet');
       showErrorMessage(
-          'Something went wrong while fetching data. Try again later.');
+        'Something went wrong while fetching data. Try again later.',
+      );
     }
   }
 
@@ -72,8 +76,11 @@ class MyQRController extends BaseController {
     try {
       final map = {'id': selectedId};
 
-      final result =
-          await restClient.request(ApiConstant.deleteQR, Method.POST, map);
+      final result = await restClient.request(
+        ApiConstant.deleteQR,
+        Method.POST,
+        map,
+      );
 
       if (result != null) {
         if (result is dio.Response) {
@@ -101,8 +108,11 @@ class MyQRController extends BaseController {
     try {
       final map = {'id': id, 'is_default': isDefault};
 
-      final result =
-          await restClient.request(ApiConstant.setDefault, Method.POST, map);
+      final result = await restClient.request(
+        ApiConstant.setDefault,
+        Method.POST,
+        map,
+      );
 
       if (result != null) {
         if (result is dio.Response) {

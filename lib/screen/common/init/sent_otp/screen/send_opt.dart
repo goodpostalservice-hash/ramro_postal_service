@@ -4,7 +4,6 @@ import '../../../../../resource/color.dart';
 import '../../../../../resource/string.dart';
 
 class SendOTPScreen extends StatefulWidget {
-
   String country_code, phone, verifier;
   SendOTPScreen(this.country_code, this.phone, this.verifier, {super.key});
 
@@ -45,9 +44,14 @@ class _SendOTPScreenState extends State<SendOTPScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const SizedBox(height: 70.0),
-                Text(AppStrings.enter_your_password, style: TextStyle(
-                    fontSize: 16.0, fontWeight: FontWeight.bold, color: AppColors.highlightBlackColor
-                )),
+                Text(
+                  AppStrings.enter_your_password,
+                  style: TextStyle(
+                    fontSize: 16.0,
+                    fontWeight: FontWeight.bold,
+                    color: AppColors.highlightBlackColor,
+                  ),
+                ),
 
                 phoneWidget(),
 
@@ -65,17 +69,20 @@ class _SendOTPScreenState extends State<SendOTPScreen> {
       padding: const EdgeInsets.all(10.0),
       margin: const EdgeInsets.only(top: 20.0, bottom: 25.0),
       decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(5.0),
-          border: Border.all(color: AppColors.borderColor, width: 1.0)
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(5.0),
+        border: Border.all(color: AppColors.borderColor, width: 1.0),
       ),
       child: TextFormField(
         inputFormatters: [LengthLimitingTextInputFormatter(30)],
         keyboardType: TextInputType.text,
         controller: _phoneController,
         obscureText: false,
-        style: TextStyle(color: AppColors.blackBold, fontSize: 17.0,
-            fontWeight: FontWeight.bold),
+        style: TextStyle(
+          color: AppColors.blackBold,
+          fontSize: 17.0,
+          fontWeight: FontWeight.bold,
+        ),
         decoration: const InputDecoration(
           isDense: true,
           border: InputBorder.none,
@@ -86,29 +93,33 @@ class _SendOTPScreenState extends State<SendOTPScreen> {
 
   Widget submitWidget() {
     return SizedBox(
-        width: double.infinity,
-        height: 50.0,
-        child: ElevatedButton(
-          onPressed: () {
-
-          },
-          child: Container(
-            width: double.infinity,
-            height: 50.0,
-            decoration: BoxDecoration(
-                color: true ? AppColors.primary : AppColors.disabledPrimaryBtn,
-                borderRadius: BorderRadius.circular(5.0)
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Text('Sign In'.toUpperCase(), style: const TextStyle(fontSize: 15.0,
-                    fontWeight: FontWeight.normal, color: Colors.white))
-              ],
-            ),
+      width: double.infinity,
+      height: 50.0,
+      child: ElevatedButton(
+        onPressed: () {},
+        child: Container(
+          width: double.infinity,
+          height: 50.0,
+          decoration: BoxDecoration(
+            color: true ? AppColors.primary : AppColors.disabledPrimaryBtn,
+            borderRadius: BorderRadius.circular(5.0),
           ),
-        )
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(
+                'Sign In'.toUpperCase(),
+                style: const TextStyle(
+                  fontSize: 15.0,
+                  fontWeight: FontWeight.normal,
+                  color: Colors.white,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

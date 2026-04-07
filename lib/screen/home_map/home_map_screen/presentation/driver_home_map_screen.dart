@@ -19,6 +19,7 @@ import '../../../common/search/presentation/view/google_search_screen.dart';
 import 'widgets/address_dialog.dart';
 import 'widgets/home_bottom_panel.dart';
 import 'widgets/map_type_setting.dart';
+import 'widgets/order_selection_bs.dart';
 
 class DriverHomeMapScreen extends StatefulWidget {
   const DriverHomeMapScreen({super.key});
@@ -360,6 +361,13 @@ class _DriverHomeMapScreenState extends State<DriverHomeMapScreen> {
     showAddressDetailsDialog(
       context,
       destinationLocation: latLng,
+      onPlaceOrder: () {
+        Navigator.of(context).pop();
+        showBottomSheet(
+          context: context,
+          builder: (context) => OrderSelectionBottomSheet(),
+        );
+      },
       address: await getCurrentLocationName(latLng.latitude, latLng.longitude),
       mapPreview: Image.network(
         'https://maps.gstatic.com/tactile/basepage/pegman_sherlock.png', // replace with your static map
@@ -620,6 +628,13 @@ class _DriverHomeMapScreenState extends State<DriverHomeMapScreen> {
                   //     destination: latLng,
                   //   ),
                   // );
+                },
+                onPlaceOrder: () {
+                  Navigator.of(context).pop();
+                  showBottomSheet(
+                    context: context,
+                    builder: (context) => OrderSelectionBottomSheet(),
+                  );
                 },
               );
               // _showAddressActionSheet(

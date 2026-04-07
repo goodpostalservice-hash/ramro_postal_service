@@ -27,8 +27,11 @@ class AboutController extends BaseController {
     try {
       final map = <String, dynamic>{};
 
-      final result =
-          await restClient.request(ApiConstant.aboutUs, Method.GET, map);
+      final result = await restClient.request(
+        ApiConstant.aboutUs,
+        Method.GET,
+        map,
+      );
       if (result != null) {
         aboutUs.value = result.data;
       } else {
@@ -43,8 +46,11 @@ class AboutController extends BaseController {
     try {
       final map = <String, dynamic>{};
 
-      final result =
-          await restClient.request(ApiConstant.privacyPolicy, Method.GET, map);
+      final result = await restClient.request(
+        ApiConstant.privacyPolicy,
+        Method.GET,
+        map,
+      );
 
       if (result != null) {
         privacyContent.value = result.data;
@@ -60,8 +66,11 @@ class AboutController extends BaseController {
     try {
       final map = <String, dynamic>{};
 
-      final result =
-          await restClient.request(ApiConstant.faqQues, Method.GET, map);
+      final result = await restClient.request(
+        ApiConstant.faqQues,
+        Method.GET,
+        map,
+      );
 
       if (result != null) {
         if (result is dio.Response) {

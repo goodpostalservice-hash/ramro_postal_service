@@ -4,7 +4,9 @@ import 'package:ramro_postal_service/screen/home_map/home_map_screen/presentatio
 class PickUpHistoryBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut<HomeDriverMapController>(() => HomeDriverMapController(),
-        fenix: false);
+    Get.lazyPut<HomeDriverMapController>(
+      () => HomeDriverMapController(),
+      fenix: false,
+    );
   }
 }
