@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 
 import '../../../core/values/s_dimension.dart';
 import '../../../core/values/s_spacing.dart';
@@ -21,103 +22,109 @@ class MySubscriptionView extends GetView<MySubscriptionController> {
         padding: SSpacing.lgMargin,
         child: Obx(() {
           final package =
-              controller.walletResult.value.data?.subscription?.package;
-          final sub = controller.walletResult.value.data?.subscription;
-          return Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              // Status Banner
-              Card(
-                color: theme.colorScheme.primaryContainer,
-                child: Padding(
-                  padding: SSpacing.lgMargin,
-                  child: Row(
-                    children: [
-                      Icon(
-                        Icons.verified_user,
-                        color: theme.colorScheme.onPrimaryContainer,
-                        size: 32,
-                      ),
-                      SSpacing.mdW,
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              package?.title ?? 'No Active Plan',
-                              style: theme.textTheme.headlineSmall?.copyWith(
-                                color: theme.colorScheme.onPrimaryContainer,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            Text(
-                              'Status: ${sub?.status?.toUpperCase() ?? "N/A"}',
-                              style: theme.textTheme.labelLarge?.copyWith(
-                                color: theme.colorScheme.onPrimaryContainer,
-                              ),
-                            ),
-                          ],
+              controller.mySubscriptionResult.value.data?.subscription?.package;
+          final sub = controller.mySubscriptionResult.value.data?.subscription;
+          return Skeletonizer(
+            enabled: controller.mySubscriptionResult.value.isLoading,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // Status Banner
+                Card(
+                  color: theme.colorScheme.primaryContainer,
+                  child: Padding(
+                    padding: SSpacing.lgMargin,
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.verified_user,
+                          color: theme.colorScheme.onPrimaryContainer,
+                          size: 32,
                         ),
+                        SSpacing.mdW,
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                package?.title ?? 'No Active Plan',
+                                style: theme.textTheme.headlineSmall?.copyWith(
+                                  color: theme.colorScheme.onPrimaryContainer,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              Text(
+                                'Status: ${sub?.status?.toUpperCase() ?? "N/A"}',
+                                style: theme.textTheme.labelLarge?.copyWith(
+                                  color: theme.colorScheme.onPrimaryContainer,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                SSpacing.mdH,
+
+                // Token & Validity Section
+                Text(
+                  'Subscription Overview',
+                  style: theme.textTheme.titleMedium,
+                ),
+                SSpacing.mdH,
+                Row(
+                  children: [
+                    Expanded(
+                      child: _SummaryCard(
+                        label: 'Available Tokens',
+                        value: '${sub?.availableTokens ?? 0}',
+                        icon: Icons.toll,
+                        theme: theme,
+                      ),
+                    ),
+                    SSpacing.mdW,
+                    Expanded(
+                      child: _SummaryCard(
+                        label: 'Valid Until',
+                        value: _formatDate(sub?.validUntil),
+                        icon: Icons.event_available,
+                        theme: theme,
+                      ),
+                    ),
+                  ],
+                ),
+                SSpacing.mdH,
+
+                // Package Details
+                Text('Package Details', style: theme.textTheme.titleMedium),
+                SSpacing.mdH,
+                Card(
+                  child: Column(
+                    children: [
+                      _DetailRow(
+                        label: 'Price',
+                        value: '${package?.price ?? '0.00'}',
+                        theme: theme,
+                      ),
+                      _DetailRow(
+                        label: 'Package Type',
+                        value:
+                            package?.packageType?.replaceAll('_', ' ') ?? 'N/A',
+                        theme: theme,
+                      ),
+                      _DetailRow(
+                        label: 'Purchase Date',
+                        value: _formatDate(sub?.createdAt),
+                        theme: theme,
+                        isLast: true,
                       ),
                     ],
                   ),
                 ),
-              ),
-              SSpacing.mdH,
-
-              // Token & Validity Section
-              Text('Subscription Overview', style: theme.textTheme.titleMedium),
-              SSpacing.mdH,
-              Row(
-                children: [
-                  Expanded(
-                    child: _SummaryCard(
-                      label: 'Available Tokens',
-                      value: '${sub?.availableTokens ?? 0}',
-                      icon: Icons.toll,
-                      theme: theme,
-                    ),
-                  ),
-                  SSpacing.mdW,
-                  Expanded(
-                    child: _SummaryCard(
-                      label: 'Valid Until',
-                      value: _formatDate(sub?.validUntil),
-                      icon: Icons.event_available,
-                      theme: theme,
-                    ),
-                  ),
-                ],
-              ),
-              SSpacing.mdH,
-
-              // Package Details
-              Text('Package Details', style: theme.textTheme.titleMedium),
-              SSpacing.mdH,
-              Card(
-                child: Column(
-                  children: [
-                    _DetailRow(
-                      label: 'Price',
-                      value: '${package?.price ?? '0.00'}',
-                      theme: theme,
-                    ),
-                    _DetailRow(
-                      label: 'Package Type',
-                      value:
-                          package?.packageType?.replaceAll('_', ' ') ?? 'N/A',
-                      theme: theme,
-                    ),
-                    _DetailRow(
-                      label: 'Purchase Date',
-                      value: _formatDate(sub?.createdAt),
-                      theme: theme,
-                      isLast: true,
-                    ),
-                  ],
-                ),
-              ),
-            ],
+              ],
+            ),
           );
         }),
       ),

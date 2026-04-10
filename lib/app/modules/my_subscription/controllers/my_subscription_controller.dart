@@ -1,6 +1,5 @@
 import 'package:get/get.dart';
 
-import '../../../core/common_widgets/center_loading_bar.dart';
 import '../../../core/utils/snackbar_util.dart';
 import '../../../data/models/general/api_result.dart';
 import '../../../data/models/my_subscription_response/my_subscription_response.dart';
@@ -16,10 +15,7 @@ class MySubscriptionController extends GetxController {
   @override
   void onReady() {
     super.onReady();
-    Get.showOverlay(
-      asyncFunction: getMySubscription,
-      loadingWidget: const CenterLoadingBar(),
-    );
+    getMySubscription();
   }
 
   @override
@@ -29,22 +25,22 @@ class MySubscriptionController extends GetxController {
 
   void increment() => count.value++;
 
-  var walletResult = APIResult<MySubscriptionResponse>().obs;
+  var mySubscriptionResult = APIResult<MySubscriptionResponse>().obs;
 
   Future<void> getMySubscription() async {
-    walletResult.value = APIResult.loading();
+    mySubscriptionResult.value = APIResult.loading();
 
     var response = await MySubscriptionService.getMySubscription();
-    walletResult.value = response.fold(
+    mySubscriptionResult.value = response.fold(
       (l) => APIResult.error(l),
       (r) => APIResult.success(r),
     );
 
-    if (walletResult.value.isSuccessful) {
+    if (mySubscriptionResult.value.isSuccessful) {
     } else {
       SSnackbarUtil.showSnackbar(
         "Error",
-        walletResult.value.error ?? "Something went wrong",
+        mySubscriptionResult.value.error ?? "Something went wrong",
         SnackbarType.error,
       );
     }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:ramro_postal_service/app/core/values/s_spacing.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 
 import '../controllers/wallet_controller.dart';
 
@@ -20,86 +21,89 @@ class WalletView extends GetView<WalletController> {
         padding: SSpacing.lgMargin,
         child: Obx(() {
           final wallet = controller.walletResult.value.data?.wallet;
-          return Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              // Main Balance Card
-              Card(
-                child: Padding(
-                  padding: SSpacing.lgMargin,
+          return Skeletonizer(
+            enabled: controller.walletResult.value.isLoading,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // Main Balance Card
+                Card(
+                  child: Padding(
+                    padding: SSpacing.lgMargin,
+                    child: Column(
+                      children: [
+                        Text(
+                          'Available Balance',
+                          style: theme.textTheme.labelLarge,
+                        ),
+                        SSpacing.smH,
+                        Text(
+                          '${wallet?.avilableTokens ?? 0}',
+                          style: theme.textTheme.displayMedium?.copyWith(
+                            color: theme.colorScheme.primary,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        SSpacing.smH,
+                        Divider(color: theme.colorScheme.outlineVariant),
+                        SSpacing.smH,
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            _TokenStat(
+                              label: 'Used Tokens',
+                              value: '${wallet?.usedTokens ?? 0}',
+                              theme: theme,
+                            ),
+                            _TokenStat(
+                              label: 'Wallet ID',
+                              value: '#${wallet?.id ?? 'N/A'}',
+                              theme: theme,
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                SSpacing.lgH,
+
+                // Details Section
+                Text('Account Information', style: theme.textTheme.titleMedium),
+                SSpacing.smH,
+                Card(
                   child: Column(
                     children: [
-                      Text(
-                        'Available Balance',
-                        style: theme.textTheme.labelLarge,
+                      _InfoTile(
+                        label: 'User Type',
+                        value: wallet?.userType ?? 'Standard',
+                        icon: Icons.person_outline,
+                        theme: theme,
                       ),
-                      SSpacing.smH,
-                      Text(
-                        '${wallet?.avilableTokens ?? 0}',
-                        style: theme.textTheme.displayMedium?.copyWith(
-                          color: theme.colorScheme.primary,
-                          fontWeight: FontWeight.bold,
-                        ),
+                      _InfoTile(
+                        label: 'User ID',
+                        value: '${wallet?.userId ?? 'N/A'}',
+                        icon: Icons.fingerprint,
+                        theme: theme,
                       ),
-                      SSpacing.smH,
-                      Divider(color: theme.colorScheme.outlineVariant),
-                      SSpacing.smH,
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          _TokenStat(
-                            label: 'Used Tokens',
-                            value: '${wallet?.usedTokens ?? 0}',
-                            theme: theme,
-                          ),
-                          _TokenStat(
-                            label: 'Wallet ID',
-                            value: '#${wallet?.id ?? 'N/A'}',
-                            theme: theme,
-                          ),
-                        ],
+                      _InfoTile(
+                        label: 'Created At',
+                        value: _formatDate(wallet?.createdAt),
+                        icon: Icons.calendar_today,
+                        theme: theme,
+                      ),
+                      _InfoTile(
+                        label: 'Last Updated',
+                        value: _formatDate(wallet?.updatedAt),
+                        icon: Icons.update,
+                        theme: theme,
+                        isLast: true,
                       ),
                     ],
                   ),
                 ),
-              ),
-              SSpacing.lgH,
-
-              // Details Section
-              Text('Account Information', style: theme.textTheme.titleMedium),
-              SSpacing.smH,
-              Card(
-                child: Column(
-                  children: [
-                    _InfoTile(
-                      label: 'User Type',
-                      value: wallet?.userType ?? 'Standard',
-                      icon: Icons.person_outline,
-                      theme: theme,
-                    ),
-                    _InfoTile(
-                      label: 'User ID',
-                      value: '${wallet?.userId ?? 'N/A'}',
-                      icon: Icons.fingerprint,
-                      theme: theme,
-                    ),
-                    _InfoTile(
-                      label: 'Created At',
-                      value: _formatDate(wallet?.createdAt),
-                      icon: Icons.calendar_today,
-                      theme: theme,
-                    ),
-                    _InfoTile(
-                      label: 'Last Updated',
-                      value: _formatDate(wallet?.updatedAt),
-                      icon: Icons.update,
-                      theme: theme,
-                      isLast: true,
-                    ),
-                  ],
-                ),
-              ),
-            ],
+              ],
+            ),
           );
         }),
       ),
