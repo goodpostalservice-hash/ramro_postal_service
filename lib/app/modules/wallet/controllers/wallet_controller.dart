@@ -7,7 +7,6 @@ import '../../../data/models/general/api_result.dart';
 import '../../../data/models/user_wallet/user_wallet.dart';
 
 class WalletController extends GetxController {
- 
   final count = 0.obs;
   @override
   void onInit() {
@@ -17,10 +16,8 @@ class WalletController extends GetxController {
   @override
   void onReady() {
     super.onReady();
-    Get.showOverlay(
-      asyncFunction: getUserWallet,
-      loadingWidget: const CenterLoadingBar(),
-    );
+
+    getUserWallet();
   }
 
   @override
