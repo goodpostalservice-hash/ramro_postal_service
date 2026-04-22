@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:flutter/src/widgets/framework.dart';
 import 'package:ramro_postal_service/app/core/configuration/http_config.dart';
 import 'package:ramro_postal_service/app/data/models/estimate_cost_response/estimate_cost_response.dart';
 import 'package:ramro_postal_service/app/data/models/order_detail_response/order_detail_response.dart';
@@ -38,7 +39,7 @@ class OrderDetailService {
       addAuthInterceptor: true,
     );
 
-    if (res.isSuccess) {
+    if (res.data != null) {
       late EstimateCostResponse data;
       try {
         data = EstimateCostResponse.fromMap(res.data ?? {});
@@ -52,7 +53,7 @@ class OrderDetailService {
   }
 
   static Future<Either<String, OrderDetailResponse>> placeOrder({
-    required PlaceOrderParam params,
+    required PlaceOrderParam params, required BuildContext context,
   }) async {
     var res = await SApi().post(
       HttpConfig.placeOrder,

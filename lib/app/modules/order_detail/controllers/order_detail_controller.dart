@@ -16,10 +16,7 @@ class OrderDetailController extends GetxController {
   @override
   void onReady() {
     super.onReady();
-    Get.showOverlay(
-      asyncFunction: getOrderDetail,
-      loadingWidget: const CenterLoadingBar(),
-    );
+    getOrderDetail();
   }
 
   @override

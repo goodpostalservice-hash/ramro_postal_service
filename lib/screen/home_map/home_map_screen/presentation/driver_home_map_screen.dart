@@ -365,7 +365,21 @@ class _DriverHomeMapScreenState extends State<DriverHomeMapScreen> {
         Navigator.of(context).pop();
         showBottomSheet(
           context: context,
-          builder: (context) => OrderSelectionBottomSheet(),
+          builder: (context) => OrderSelectionBottomSheet(
+            senderLat: driverHouseListController
+                .myCurrentLocation
+                .value
+                .latitude
+                .toString(),
+
+            senderLng: driverHouseListController
+                .myCurrentLocation
+                .value
+                .longitude
+                .toString(),
+            receiverLat: latLng.latitude.toString(),
+            receiverLng: latLng.longitude.toString(),
+          ),
         );
       },
       address: await getCurrentLocationName(latLng.latitude, latLng.longitude),
@@ -633,7 +647,21 @@ class _DriverHomeMapScreenState extends State<DriverHomeMapScreen> {
                   Navigator.of(context).pop();
                   showBottomSheet(
                     context: context,
-                    builder: (context) => OrderSelectionBottomSheet(),
+                    builder: (context) => OrderSelectionBottomSheet(
+                      senderLat: driverHouseListController
+                          .myCurrentLocation
+                          .value
+                          .latitude
+                          .toString(),
+
+                      senderLng: driverHouseListController
+                          .myCurrentLocation
+                          .value
+                          .longitude
+                          .toString(),
+                      receiverLat: address.latitude.toString(),
+                      receiverLng: address.longitude.toString(),
+                    ),
                   );
                 },
               );
