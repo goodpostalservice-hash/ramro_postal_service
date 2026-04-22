@@ -2,10 +2,10 @@ class ProfileResponseModel {
   int? id;
   String? uuid;
   String? firstName;
-  Null lastName;
-  Null image;
-  Null email;
-  Null emailVerifiedAt;
+  String? lastName;
+  String? image;
+  String? email;
+  String? emailVerifiedAt;
   String? countryCode;
   String? phone;
   int? isPhoneVerified;

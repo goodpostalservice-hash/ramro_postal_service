@@ -1,5 +1,7 @@
 import 'package:dio/dio.dart' as dio;
 import 'package:get/get.dart';
+import 'package:ramro_postal_service/app/core/utils/storage_util.dart';
+import 'package:ramro_postal_service/app/core/values/const_keys.dart';
 import 'package:ramro_postal_service/base/base_controller.dart';
 import 'package:ramro_postal_service/core/constants/api_constant.dart';
 import 'package:ramro_postal_service/core/network/network_dio.dart';
@@ -18,7 +20,9 @@ class OrderHistoryController extends BaseController {
 
     try {
       final result = await restClient.request(
-        ApiConstant.orderHistory,
+        SStorageUtil.getData(key: SConstKeys.selectedRole) == 'rider'
+            ? ApiConstant.orderHistory
+            : ApiConstant.driverOrderHistory,
         Method.GET,
         map,
       );
@@ -37,5 +41,11 @@ class OrderHistoryController extends BaseController {
     } on Exception {
       isLoading.value = false;
     }
+  }
+
+  @override
+  void onInit() {
+    super.onInit();
+    getOrderHistory();
   }
 }

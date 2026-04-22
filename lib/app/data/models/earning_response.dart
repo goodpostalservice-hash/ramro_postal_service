@@ -4,14 +4,14 @@ import 'package:equatable/equatable.dart';
 
 class EarningResponse extends Equatable {
   final bool? success;
-  final int? earnings;
+  final String? earnings;
 
   const EarningResponse({this.success, this.earnings});
 
   factory EarningResponse.fromMap(Map<String, dynamic> data) {
     return EarningResponse(
       success: data['success'] as bool?,
-      earnings: data['earnings'] as int?,
+      earnings: data['earnings'] as String?,
     );
   }
 
@@ -29,7 +29,7 @@ class EarningResponse extends Equatable {
   /// Converts [EarningResponse] to a JSON string.
   String toJson() => json.encode(toMap());
 
-  EarningResponse copyWith({bool? success, int? earnings}) {
+  EarningResponse copyWith({bool? success, String? earnings}) {
     return EarningResponse(
       success: success ?? this.success,
       earnings: earnings ?? this.earnings,

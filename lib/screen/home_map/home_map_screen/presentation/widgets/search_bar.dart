@@ -12,8 +12,10 @@ class SearchPanel extends StatelessWidget {
     this.onTap,
     this.readOnly = false,
     this.suggestions = const <String>[],
+
     this.onSuggestionTap,
     this.margin = const EdgeInsets.symmetric(horizontal: 12),
+    this.focusNode,
   });
 
   final TextEditingController? controller;
@@ -22,6 +24,7 @@ class SearchPanel extends StatelessWidget {
   final ValueChanged<String>? onSubmitted;
   final VoidCallback? onTap;
   final bool readOnly;
+  final FocusNode? focusNode;
 
   /// Chips shown below the field (e.g., history or quick shortcuts)
   final List<String> suggestions;
@@ -57,6 +60,7 @@ class SearchPanel extends StatelessWidget {
                     controller: controller,
                     // onTap: onTap,
                     onChanged: onChanged,
+                    focusNode: focusNode,
                     onSubmitted: onSubmitted,
                     readOnly: readOnly,
                     textInputAction: TextInputAction.search,

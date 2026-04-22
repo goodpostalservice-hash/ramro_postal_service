@@ -7,7 +7,6 @@ import '../../../data/models/today_earning_response.dart';
 import '../../../data/services/earning_dashboard/earning_dashboard_service.dart';
 
 class EarningDashboardController extends GetxController {
-  //TODO: Implement EarningDashboardController
 
   final count = 0.obs;
   @override

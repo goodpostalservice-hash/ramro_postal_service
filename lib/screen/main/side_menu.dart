@@ -101,14 +101,7 @@ class MenuScreen extends GetView<ProfileController> {
                             Get.toNamed(Routes.EARNING_DASHBOARD);
                           },
                         ),
-                        const _DividerLine(),
-                        _SettingsTile.navTile(
-                          leadingIcon: Assets.language,
-                          title: 'Order History',
-                          onTap: () {
-                            Get.to(() => OrderHistoryScreen());
-                          },
-                        ),
+
                         const _DividerLine(),
                         _SettingsTile.navTile(
                           leadingIcon: Assets.language,
@@ -126,6 +119,14 @@ class MenuScreen extends GetView<ProfileController> {
                           },
                         ),
                       ],
+                      const _DividerLine(),
+                      _SettingsTile.navTile(
+                        leadingIcon: Assets.language,
+                        title: 'Order History',
+                        onTap: () {
+                          Get.to(() => OrderHistoryScreen());
+                        },
+                      ),
                       const _DividerLine(),
                       _SettingsTile.navTile(
                         leadingIcon: Assets.addMissingPlace,

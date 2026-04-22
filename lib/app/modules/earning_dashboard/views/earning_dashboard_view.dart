@@ -40,7 +40,7 @@ class EarningDashboardView extends GetView<EarningDashboardController> {
                       ),
                       SizedBox(height: SDimension.sm),
                       Text(
-                        '\$${totalEarnings.toStringAsFixed(2)}',
+                        '\$ $totalEarnings',
                         style: theme.textTheme.displayMedium?.copyWith(
                           color: theme.colorScheme.onPrimary,
                           fontWeight: FontWeight.bold,

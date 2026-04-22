@@ -12,6 +12,7 @@ class ApiConstant {
   static const String driverLogin = '$baseUrl/driver/login';
   static const String placeOrder = '$baseUrl/place-order';
   static const String orderHistory = '$baseUrl/order-history';
+  static const String driverOrderHistory = '$baseUrl/driver/order-history';
   static const String orderEstimate = '$baseUrl/order-estimate';
   static const String myQR = '$baseUrl/my-qrcodes';
   static const String availablePackages = '$baseUrl/package';
@@ -53,7 +54,7 @@ class ApiConstant {
   static const String houseNumber = '$baseUrl/latest-location';
 
   //search result
-  static const String searchResult = '$baseUrl/search-map';
+  static const String searchResult = '$baseUrl/search';
   static const String searchResultGoogle =
       'https://maps.googleapis.com/maps/api/place/autocomplete/json';
   static const String loginWithGoogle = '$baseUrl/google-callback';

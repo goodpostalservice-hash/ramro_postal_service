@@ -463,40 +463,40 @@ class _QRScannerPageState extends State<QRScannerPage>
                     ),
                   ),
                   onPressed: () async {
-                    final searchController = Get.put(SearchMapController());
-                    final searchResult = await searchController
-                        .getSearchAddresses(_scannedCode);
+                    // final searchController = Get.put(SearchMapController());
+                    // final searchResult = await searchController
+                    //     .getSearchAddresses(_scannedCode);
 
-                    if (searchResult != null) {
-                      Get.to(
-                        () => ShowSearchOnMapScreen(
-                          latitude: double.parse(searchResult[0]['latitude']),
-                          longitude: double.parse(searchResult[0]['longitude']),
-                          address: searchResult[0]['full_address_detail'],
-                          houseno: searchResult[0]['house_num'],
-                          street: searchResult[0]['street'],
-                          zone: searchResult[0]['zone'],
-                          sub: searchResult[0]['sub_zone'],
-                        ),
-                      );
-                    } else {
-                      LatLng? cods = await getPlaceCoordinates(_scannedCode!);
-                      if (cods != null) {
-                        Get.to(
-                          () => ShowSearchOnMapScreen(
-                            latitude: cods.latitude,
-                            longitude: cods.longitude,
-                            address: _scannedCode!,
-                            houseno: '',
-                            street: '',
-                            zone: "",
-                            sub: '',
-                          ),
-                        );
-                      } else {
-                        showErrorMessage("could not open this address in map");
-                      }
-                    }
+                    // if (searchResult != null) {
+                    //   Get.to(
+                    //     () => ShowSearchOnMapScreen(
+                    //       latitude: double.parse(searchResult[0]['latitude']),
+                    //       longitude: double.parse(searchResult[0]['longitude']),
+                    //       address: searchResult[0]['full_address_detail'],
+                    //       houseno: searchResult[0]['house_num'],
+                    //       street: searchResult[0]['street'],
+                    //       zone: searchResult[0]['zone'],
+                    //       sub: searchResult[0]['sub_zone'],
+                    //     ),
+                    //   );
+                    // } else {
+                    //   LatLng? cods = await getPlaceCoordinates(_scannedCode!);
+                    //   if (cods != null) {
+                    //     Get.to(
+                    //       () => ShowSearchOnMapScreen(
+                    //         latitude: cods.latitude,
+                    //         longitude: cods.longitude,
+                    //         address: _scannedCode!,
+                    //         houseno: '',
+                    //         street: '',
+                    //         zone: "",
+                    //         sub: '',
+                    //       ),
+                    //     );
+                    //   } else {
+                    //     showErrorMessage("could not open this address in map");
+                    //   }
+                    // }
                   },
                   child: const Text(
                     'Show in map',
