@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../constants/app_export.dart';
+import '../constants/app_exports.dart';
 
 class CustomTextFormField extends StatelessWidget {
   const CustomTextFormField({
@@ -19,7 +19,7 @@ class CustomTextFormField extends StatelessWidget {
   final FormFieldValidator<String>? validator;
 
   OutlineInputBorder _border(Color color) => OutlineInputBorder(
-    borderRadius: BorderRadius.circular(15.0),
+    borderRadius: AppRadius.textFieldRadius,
     borderSide: BorderSide(color: color, width: 1),
   );
 
@@ -28,7 +28,7 @@ class CustomTextFormField extends StatelessWidget {
     final Color border = appTheme.gray400;
 
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 12.0),
+      padding: AppSpacing.symmetric(vertical: AppSpacing.md),
       child: TextFormField(
         controller: controller,
         textInputAction: TextInputAction.done,
@@ -48,10 +48,7 @@ class CustomTextFormField extends StatelessWidget {
 
           // Make the input compact and consistent
           isDense: true,
-          contentPadding: const EdgeInsets.symmetric(
-            horizontal: 16,
-            vertical: 14,
-          ),
+          contentPadding: AppSpacing.inputContentPadding,
 
           filled: true,
 
@@ -63,8 +60,8 @@ class CustomTextFormField extends StatelessWidget {
           border: _border(border),
           enabledBorder: _border(border),
           focusedBorder: _border(border),
-          errorBorder: _border(Colors.red.shade400),
-          focusedErrorBorder: _border(Colors.red.shade400),
+          errorBorder: _border(appTheme.errorColor),
+          focusedErrorBorder: _border(appTheme.errorColor),
 
           // (Optional) control error text size/spacing
           errorStyle: const TextStyle(fontSize: 12, height: 1.1),

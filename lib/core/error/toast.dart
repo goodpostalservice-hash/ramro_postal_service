@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:ramro_postal_service/core/design_system/design_system.dart';
 
 showSuccessMessage(message) {
   Fluttertoast.showToast(
@@ -7,9 +7,9 @@ showSuccessMessage(message) {
     toastLength: Toast.LENGTH_SHORT,
     gravity: ToastGravity.CENTER,
     timeInSecForIosWeb: 1,
-    backgroundColor: Colors.green,
-    textColor: Colors.white,
-    fontSize: 16.0,
+    backgroundColor: AppSemanticColors.light.success,
+    textColor: appTheme.white,
+    fontSize: AppSizes.toastFontSize,
   );
 }
 
@@ -19,9 +19,9 @@ showErrorMessage(message) {
     toastLength: Toast.LENGTH_SHORT,
     gravity: ToastGravity.CENTER,
     timeInSecForIosWeb: 1,
-    backgroundColor: Colors.red,
-    textColor: Colors.white,
-    fontSize: 16.0,
+    backgroundColor: appTheme.errorColor,
+    textColor: appTheme.white,
+    fontSize: AppSizes.toastFontSize,
   );
 }
 
@@ -31,8 +31,8 @@ showErrorLongMessage(message) {
     toastLength: Toast.LENGTH_LONG,
     gravity: ToastGravity.CENTER,
     timeInSecForIosWeb: 1,
-    backgroundColor: Colors.red,
-    textColor: Colors.white,
-    fontSize: 16.0,
+    backgroundColor: appTheme.errorColor,
+    textColor: appTheme.white,
+    fontSize: AppSizes.toastFontSize,
   );
 }

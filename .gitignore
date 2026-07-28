@@ -43,3 +43,17 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# FVM Version Cache
+.fvm/
+.env
+
+# Local editor configuration
+.vscode/
+.marscode/
+
+# Android/Java crash dumps
+android/java_pid*.hprof
+
+# Local secret
+android/app/src/main/res/values/mapbox_access_token.xml

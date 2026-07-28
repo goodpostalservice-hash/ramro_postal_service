@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:ramro_postal_service/core/constants/app_export.dart';
+import 'package:ramro_postal_service/core/constants/app_exports.dart';
 
 TextStyle tableHeader() {
-  return const TextStyle(
-    color: Colors.black87,
-    fontSize: 13.0,
+  return TextStyle(
+    color: appTheme.black,
+    fontSize: AppTheme.light.textTheme.bodySmall?.fontSize,
     fontWeight: FontWeight.bold,
   );
 }
 
 TextStyle contentHeader() {
-  return const TextStyle(
-    color: Colors.black87,
-    fontSize: 12.0,
+  return TextStyle(
+    color: appTheme.black,
+    fontSize: AppTheme.light.textTheme.bodySmall?.fontSize,
     fontWeight: FontWeight.w400,
   );
 }
@@ -20,12 +20,12 @@ TextStyle contentHeader() {
 Container header(String header) {
   return Container(
     width: double.infinity,
-    padding: const EdgeInsets.only(top: 20.0, bottom: 20.0),
+    padding: AppSpacing.symmetric(vertical: AppSpacing.xl),
     child: Text(
       header,
-      style: const TextStyle(
-        color: Colors.white,
-        fontSize: 18.0,
+      style: TextStyle(
+        color: appTheme.white,
+        fontSize: AppTheme.light.textTheme.titleMedium?.fontSize,
         fontWeight: FontWeight.bold,
       ),
       textAlign: TextAlign.start,
@@ -36,12 +36,12 @@ Container header(String header) {
 Container darkHeader(String header) {
   return Container(
     width: double.infinity,
-    padding: const EdgeInsets.only(top: 20.0, bottom: 20.0),
+    padding: AppSpacing.symmetric(vertical: AppSpacing.xl),
     child: Text(
       header,
-      style: const TextStyle(
-        color: Colors.black87,
-        fontSize: 18.0,
+      style: TextStyle(
+        color: appTheme.black,
+        fontSize: AppTheme.light.textTheme.titleMedium?.fontSize,
         fontWeight: FontWeight.bold,
       ),
       textAlign: TextAlign.start,
@@ -56,9 +56,9 @@ AppBar titleAppBar(String title) {
     automaticallyImplyLeading: false,
     title: Text(
       title,
-      style: const TextStyle(
-        color: Colors.white,
-        fontSize: 18.0,
+      style: TextStyle(
+        color: appTheme.white,
+        fontSize: AppTheme.light.textTheme.titleMedium?.fontSize,
         fontWeight: FontWeight.bold,
       ),
     ),
@@ -71,29 +71,30 @@ AppBar backAppBar(String title, BuildContext context) {
     backgroundColor: appTheme.gray25,
     automaticallyImplyLeading: true,
     centerTitle: true,
-    leadingWidth: 70,
+    leadingWidth: AppSizes.avatarXl,
     leading: Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 15.0),
+      padding: AppSpacing.symmetric(
+        vertical: AppSpacing.sm,
+        horizontal: AppSpacing.md,
+      ),
       child: Material(
         color: appTheme.gray50,
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: AppRadius.cardRadius,
         child: InkWell(
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: AppRadius.cardRadius,
           onTap: () => Navigator.pop(context),
-          child: const SizedBox(
-            width: 40,
-            height: 40,
-            child: Icon(Icons.arrow_back, color: Colors.black),
+          child: SizedBox(
+            width: AppSpacing.colossal,
+            height: AppSpacing.colossal,
+            child: Icon(Icons.arrow_back, color: appTheme.black),
           ),
         ),
       ),
     ),
     title: Text(
       title,
-      style: TextStyle(
-        color: appTheme.black,
-        fontSize: 17.0,
-        fontWeight: FontWeight.bold,
+      style: CustomTextStyles.titleLargeBlack20_500.copyWith(
+        fontSize: getFontSize(20),
       ),
     ),
   );

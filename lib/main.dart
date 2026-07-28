@@ -1,54 +1,45 @@
-import 'dart:io';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get/get.dart';
-import 'package:onesignal_flutter/onesignal_flutter.dart';
-import 'package:ramro_postal_service/app/routes/app_pages.dart';
-import 'package:ramro_postal_service/core/themes/theme_helper.dart';
-import 'package:ramro_postal_service/firebase_options.dart';
-import 'app/core/utils/storage_util.dart';
-import 'core/constants/app_constant.dart';
-import 'core/network/network_dio.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:ramro_postal_service/core/design_system/design_system.dart';
+import 'package:ramro_postal_service/di/initial_binding.dart';
+import 'core/models/user_model.dart';
+import 'core/network/api_client.dart';
+import 'core/services/location_service_permission.dart';
+import 'core/storage/secure_storage.dart';
+import 'core/storage/storage_util.dart';
+import 'core/storage/token_provider.dart';
+import 'routes/app_routes.dart';
+
+//other imports
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
+  await dotenv.load();
   await SStorageUtil.initStorage();
-  // Platform.isAndroid
-  //     ? await Firebase.initializeApp()
-  //     : await Firebase.initializeApp(
-  //         options: const FirebaseOptions(
-  //             apiKey: 'AIzaSyAWDFvDvVl6izpEu_NdZX6pPFVJzYXNS_k',
-  //             appId: 'com.rps.ramropostalservice',
-  //             messagingSenderId: '229788114887',
-  //             projectId: 'ramro-postal-service'));
-  HttpOverrides.global = MyHttpOverrides();
-  initServices();
-  // WakelockPlus.enable();
 
-  // redirect to main screen
+  await Get.putAsync<LocationPermissionService>(() async {
+    final service = LocationPermissionService();
+    await service.checkStatus(); // get initial state
+    return service;
+  });
 
-  await initOneSignal();
+  Get.put<SecureStorageService>(SecureStorageService(), permanent: true);
 
-  runApp(const MyApp());
-}
-
-Future<void> initOneSignal() async {
-  // 1. Initialize the SDK with your app ID
-  OneSignal.initialize(AppConstant.oneSignalAppId);
-
-  OneSignal.Notifications.requestPermission(
-    true, // or false if you want to show your own pre-permission UI first
+  Get.put<TokenProvider>(
+    AppTokenProvider(secureStorage: Get.find<SecureStorageService>()),
+    permanent: true,
   );
 
-  // 3. Handle notifications shown while the app is in the foreground
-  OneSignal.Notifications.addForegroundWillDisplayListener((event) {
-    // You get the full notification here
-    final notification = event.notification;
-    print("Notification will show in foreground: ${notification.body}");
-  });
+  Get.put<ApiClient>(
+    ApiClient(tokenProvider: Get.find<TokenProvider>()),
+    permanent: true,
+  );
+
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -68,22 +59,11 @@ class MyApp extends StatelessWidget {
     );
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: theme,
-      initialRoute: AppPages.INITIAL,
-      getPages: AppPages.routes,
+      theme: AppTheme.light,
+
+      initialRoute: AppRoutes.splash,
+      initialBinding: InitialBinding(),
+      getPages: AppRoutes.pages,
     );
-  }
-}
-
-initServices() async {
-  await Get.putAsync<RestClient>(() => RestClient().init());
-}
-
-class MyHttpOverrides extends HttpOverrides {
-  @override
-  HttpClient createHttpClient(SecurityContext? context) {
-    return super.createHttpClient(context)
-      ..badCertificateCallback =
-          (X509Certificate cert, String host, int port) => true;
   }
 }

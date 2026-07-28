@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 
-import '../constants/app_export.dart';
+import '../constants/app_exports.dart';
 
 customBackButton(context) {
   return Container(
-    width: getHorizontalSize(40.0),
-    height: getVerticalSize(40.0),
+    width: AppSpacing.colossal,
+    height: AppSpacing.colossal,
     decoration: BoxDecoration(
       color: appTheme.gray50,
-      borderRadius: BorderRadius.circular(12.0),
+      borderRadius: AppRadius.cardRadius,
     ),
-    margin: const EdgeInsets.only(top: 40.0, bottom: 10.0),
+    margin: AppSpacing.only(top: AppSpacing.colossal, bottom: AppSpacing.sm),
     child: IconButton(
-      icon: const Icon(Icons.arrow_back, color: Colors.black),
+      icon: Icon(Icons.arrow_back, color: appTheme.black),
       onPressed: () => Navigator.pop(context),
     ),
   );
